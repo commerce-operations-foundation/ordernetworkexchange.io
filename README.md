@@ -1,2 +1,3 @@
-# orderexchangenetwork.com
-Website for the onX protocol Order Exchange Network— deployed to Netlify
+# ordernetworkexchange.io
+
+Website for the onX protocol Order Network Exchange — deployed to Netlify.
