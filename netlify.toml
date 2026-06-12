@@ -1,5 +1,18 @@
-# Netlify configuration for orderexchangenetwork.com
+# Netlify configuration for ordernetworkexchange.io
 # Plain static site for now; update [build] when a framework is added.
 
 [build]
 publish = "."
+
+# 301 redirect legacy domain to the primary domain
+[[redirects]]
+from = "https://orderexchangenetwork.com/*"
+to = "https://ordernetworkexchange.io/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.orderexchangenetwork.com/*"
+to = "https://ordernetworkexchange.io/:splat"
+status = 301
+force = true
