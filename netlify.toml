@@ -1,0 +1,5 @@
+# Netlify configuration for orderexchangenetwork.com
+# Plain static site for now; update [build] when a framework is added.
+
+[build]
+publish = "."
