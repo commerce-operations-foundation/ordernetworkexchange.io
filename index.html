@@ -3,757 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The onX protocol — Order Network Exchange — a Commerce Operations Foundation initiative making brands and fulfillment legible to the AI agents already shopping for customers.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ordernetworkexchange.io/">
-    <meta property="og:site_name" content="Commerce Operations Foundation">
-    <meta property="og:title" content="Order Network Exchange — the onX Protocol">
-    <meta property="og:description" content="An onX protocol initiative from the Commerce Operations Foundation, making brands and fulfillment legible to AI shopping agents.">
-    <meta property="og:image" content="https://ordernetworkexchange.io/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Order Network Exchange — the onX protocol">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Order Network Exchange — the onX Protocol">
-    <meta name="twitter:description" content="An onX protocol initiative from the Commerce Operations Foundation, making brands and fulfillment legible to AI shopping agents.">
-    <meta name="twitter:image" content="https://ordernetworkexchange.io/og-image.png">
+<meta name="description" content="onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents speak the same language.">
+<link rel="canonical" href="https://ordernetworkexchange.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ordernetworkexchange.io/">
+<meta property="og:site_name" content="Commerce Operations Foundation">
+<meta property="og:title" content="Commerce Operations Foundation — onX">
+<meta property="og:description" content="onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents speak the same language.">
+<meta property="og:image" content="https://ordernetworkexchange.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commerce Operations Foundation — onX">
+<meta name="twitter:description" content="onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents speak the same language.">
+<meta name="twitter:image" content="https://ordernetworkexchange.io/og-image.png">
 <title>Commerce Operations Foundation — onX</title>
+<link rel="icon" type="image/svg+xml" href="/assets/onx-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  /* ---- "Blueprint" mid-tone palette ---- */
-  --canvas:#0e2a3a;          /* deep blueprint blue */
-  --canvas-2:#0a2230;
-  --surface:#102f41;         /* panel — a shade lighter than canvas */
-  --surface-2:#0c2735;
-  --ink:#eaf4f8;             /* near-white drafting ink */
-  --ink-soft:#b7d2dd;
-  --muted:#7fa3b4;
-  --muted-2:#5c8298;
-  --line:rgba(140,200,225,.16);      /* blueprint grid line */
-  --line-strong:rgba(140,200,225,.32);
-  --blueprint:#6db6d6;       /* cyan drafting line */
-  --blueprint-soft:rgba(109,182,214,.5);
-
-  --lime:#b6e63a;--lime-bright:#c8f24e;--blue:#5cc4e6;--blue-bright:#7ed8f2;--amber:#f0a94e;--violet:#a78bfa;
-
-  --dark:#071821;--dark-2:#0a222e;   /* darker bands for contrast */
-  --radius:6px;              /* tighter, more technical corners */
-  --maxw:1180px;
-  --shadow:0 22px 60px -30px rgba(0,0,0,.65);
-  --shadow-sm:0 10px 30px -20px rgba(0,0,0,.6);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--canvas);color:var(--ink);font-family:'Archivo',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
-
-/* ===== GLOBAL BLUEPRINT SUBSTRATE (fixed, parallax-driven) ===== */
-.blueprint-bg{position:fixed;inset:0;z-index:-2;background:
-  radial-gradient(ellipse 90% 70% at 70% -10%, #14384c 0%, transparent 60%),
-  radial-gradient(ellipse 80% 60% at 10% 110%, #0c2735 0%, transparent 55%),
-  linear-gradient(180deg,#0e2a3a,#0a2230);}
-.blueprint-grid{position:fixed;inset:-10%;z-index:-2;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(140,200,225,.07) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(140,200,225,.07) 1px,transparent 1px),
-    linear-gradient(rgba(140,200,225,.13) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(140,200,225,.13) 1px,transparent 1px);
-  background-size:32px 32px,32px 32px,160px 160px,160px 160px;
-  will-change:transform;}
-.blueprint-marks{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.bp-mark{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blueprint-soft);letter-spacing:.1em;opacity:.55;white-space:nowrap;will-change:transform}
-.bp-line{position:absolute;background:var(--blueprint-soft);opacity:.4;will-change:transform}
-.bp-cross{position:absolute;width:14px;height:14px;opacity:.5;will-change:transform}
-.bp-cross::before,.bp-cross::after{content:"";position:absolute;background:var(--blueprint)}
-.bp-cross::before{left:6px;top:0;width:1px;height:14px}
-.bp-cross::after{top:6px;left:0;height:1px;width:14px}
-.bp-circle{position:absolute;border:1px solid var(--blueprint-soft);border-radius:50%;opacity:.4;will-change:transform}
-.mono{font-family:'IBM Plex Mono',monospace}
-h1,h2,h3,h4{font-weight:800;line-height:1.05;letter-spacing:-.02em}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.page{display:none;animation:fade .5s ease}
-.page.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.cof-logo{display:flex;align-items:center;gap:11px}
-.cof-logo svg{display:block}
-.cof-logo .wordmark{display:flex;flex-direction:column;line-height:1}
-.cof-logo .wm-1{font-weight:800;font-size:15px;letter-spacing:-.02em;color:var(--ink)}
-.cof-logo .wm-2{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-.nav{position:sticky;top:0;z-index:100;background:rgba(11,34,46,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:600}
-.nav-links a{color:var(--muted);transition:.2s;cursor:pointer}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{background:var(--lime);color:#0a2230;padding:10px 19px;border-radius:var(--radius);font-weight:700;font-size:14px;cursor:pointer;border:none;transition:.2s}
-.nav-cta:hover{background:var(--lime-bright);transform:translateY(-1px)}
-.logo{cursor:pointer}
-.hero{position:relative;padding:96px 0 70px;overflow:hidden;color:var(--ink)}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-grid{position:absolute;inset:-20%;background-image:linear-gradient(rgba(140,200,225,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(140,200,225,.08) 1px,transparent 1px);background-size:62px 62px;mask-image:radial-gradient(ellipse 75% 60% at 50% 25%,#000 30%,transparent 78%);will-change:transform}
-.glow{position:absolute;border-radius:50%;filter:blur(95px);will-change:transform}
-.glow.g1{width:560px;height:560px;background:radial-gradient(circle,rgba(182,230,58,.20),transparent 70%);top:-180px;left:50%;transform:translateX(-60%)}
-.glow.g2{width:480px;height:480px;background:radial-gradient(circle,rgba(92,196,230,.22),transparent 70%);top:-40px;right:4%}
-.orb{position:absolute;border-radius:50%;border:1px solid var(--blueprint-soft);will-change:transform}
-.orb.o1{width:120px;height:120px;top:140px;left:8%}
-.orb.o2{width:60px;height:60px;top:340px;right:12%;background:rgba(182,230,58,.1)}
-.orb.o3{width:200px;height:200px;bottom:-60px;left:18%}
-.hero-inner{position:relative;z-index:3;text-align:center;max-width:940px;margin:0 auto;will-change:transform}
-.kicker{display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-bright);border:1px solid var(--line-strong);border-radius:100px;padding:7px 16px;margin-bottom:30px;background:rgba(92,196,230,.08)}
-.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--lime-bright);box-shadow:0 0 12px var(--lime-bright)}
-.hero h1{font-size:clamp(40px,6.4vw,78px);letter-spacing:-.035em;margin-bottom:24px}
-.hero h1 .hl{background:linear-gradient(110deg,var(--lime-bright),var(--blue-bright));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p.lede{font-size:clamp(18px,2.2vw,22px);color:var(--ink-soft);max-width:680px;margin:0 auto 14px;font-weight:400}
-.hero .micro{font-size:14px;color:var(--muted);margin-bottom:42px}
-.router-label{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:6px 0 22px}
-.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto}
-.door{position:relative;text-align:left;cursor:pointer;background:rgba(20,56,76,.5);border:1px solid var(--line-strong);border-radius:var(--radius);padding:28px 26px;transition:.28s cubic-bezier(.2,.7,.3,1);overflow:hidden;backdrop-filter:blur(6px)}
-.door::after{content:"";position:absolute;top:9px;right:9px;width:9px;height:9px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);opacity:.6}
-.door::before{content:"";position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-bottom:1px solid var(--accent);border-left:1px solid var(--accent);opacity:.6}
-.door:hover{transform:translateY(-7px);border-color:var(--accent);background:rgba(20,56,76,.8);box-shadow:0 26px 60px -28px var(--accent)}
-.door .ico{width:46px;height:46px;border-radius:var(--radius);display:grid;place-items:center;font-size:22px;background:rgba(140,200,225,.08);border:1px solid var(--line-strong);margin-bottom:18px}
-.door .who{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-.door h3{font-size:23px;margin-bottom:9px;color:var(--ink)}
-.door p{font-size:14.5px;color:var(--ink-soft);margin-bottom:20px;min-height:62px}
-.door .go{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--ink)}
-.door .go .arr{transition:.25s}
-.door:hover .go .arr{transform:translateX(5px)}
-.door.brand{--accent:var(--lime-bright)}.door.tech{--accent:var(--blue-bright)}.door.si{--accent:var(--amber)}
-.proof{padding:56px 0 64px;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proof .stat-row{display:flex;justify-content:center;gap:58px;flex-wrap:wrap;margin-bottom:42px}
-.stat{text-align:center}
-.stat .num{font-size:clamp(34px,4.5vw,50px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(120deg,var(--lime),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.stat .lbl{font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;margin-top:4px}
-.marquee{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marquee-track{display:flex;gap:14px;width:max-content;animation:scroll 40s linear infinite}
-.proof:hover .marquee-track{animation-play-state:paused}
-@keyframes scroll{to{transform:translateX(-50%)}}
-.chip{flex:none;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);border:1px solid var(--line);border-radius:var(--radius);padding:11px 18px;background:var(--surface);white-space:nowrap}
-.section{padding:84px 0;position:relative}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--blue));margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent,var(--blue))}
-.section h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;margin-bottom:18px;max-width:760px}
-.section .sub{font-size:18px;color:var(--muted);max-width:620px;margin-bottom:44px}
-.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center}
-.ba .col{border-radius:var(--radius);padding:28px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm)}
-.ba .before{background:rgba(220,90,90,.07);border-color:rgba(220,90,90,.28);border-style:dashed}
-.ba .after{background:rgba(182,230,58,.07);border-color:rgba(182,230,58,.32)}
-.ba .col .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:block}
-.ba .before .tag{color:#f0918f}.ba .after .tag{color:var(--lime)}
-.ba ul{list-style:none}
-.ba li{font-size:14.5px;color:var(--ink-soft);padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line)}
-.ba li:last-child{border:none}
-.ba .before li::before{content:"✕";position:absolute;left:0;color:#f0918f;font-weight:700}
-.ba .after li::before{content:"→";position:absolute;left:0;color:var(--lime);font-weight:700}
-.ba .arrow-mid{font-size:26px;color:var(--lime)}
-.band{margin:0 auto;border-radius:var(--radius);padding:58px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--dark-2),#061620);color:#fff;box-shadow:var(--shadow);border:1px solid var(--line-strong)}
-.band::before{content:"";position:absolute;inset:14px;border:1px solid var(--blueprint-soft);opacity:.3;pointer-events:none;border-radius:2px}
-.band .bglow{position:absolute;width:440px;height:440px;border-radius:50%;filter:blur(85px);opacity:.35;top:-200px;left:50%;transform:translateX(-50%);background:var(--accent,var(--lime-bright));will-change:transform}
-.band .eyebrow{color:var(--blue-bright);justify-content:center}
-.band h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px;position:relative;color:#fff}
-.band p{color:#bccbd4;max-width:540px;margin:0 auto 30px;position:relative}
-.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;padding:14px 26px;border-radius:var(--radius);cursor:pointer;border:none;transition:.22s;font-family:'Archivo',sans-serif}
-.btn-primary{background:var(--lime);color:#0a2230}
-.band .btn-primary{background:var(--lime-bright)}
-.btn-primary:hover{background:var(--blue);color:#062028;transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:inherit;border:1px solid var(--line-strong)}
-.band .btn-ghost{border-color:rgba(255,255,255,.25);color:#fff}
-.btn-ghost:hover{border-color:currentColor}
-.btn-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;position:relative}
-.phero{position:relative;padding:84px 0 54px;overflow:hidden;border-bottom:1px solid var(--line)}
-.phero .pglow{position:absolute;width:620px;height:420px;top:-140px;left:24%;background:radial-gradient(circle,var(--pg),transparent 70%);opacity:.4;filter:blur(40px);will-change:transform}
-.phero .orb{border-color:var(--line-strong)}
-.crumbs{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted-2);margin-bottom:24px;position:relative;z-index:2}
-.crumbs a{color:var(--accent);cursor:pointer}
-.crumbs span{margin:0 8px;opacity:.5}
-.phero-inner{position:relative;z-index:2;max-width:790px}
-.ptag{display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:6px 15px;margin-bottom:24px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
-.phero h1{font-size:clamp(36px,5.4vw,62px);letter-spacing:-.035em;margin-bottom:22px}
-.phero h1 .hl{color:var(--accent)}
-.phero p{font-size:20px;color:var(--ink-soft);max-width:610px}
-.qnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;position:relative;z-index:2}
-.qnav a{font-family:'IBM Plex Mono',monospace;font-size:13px;border:1px solid var(--line-strong);border-radius:var(--radius);padding:9px 18px;color:var(--muted);transition:.2s;cursor:pointer;background:var(--surface)}
-.qnav a:hover{border-color:var(--accent);color:var(--ink)}
-.qnav a .n{color:var(--accent);font-weight:600;margin-right:6px}
-.qblock{padding:74px 0;border-bottom:1px solid var(--line)}
-.qhead{display:flex;align-items:flex-start;gap:20px;margin-bottom:38px}
-.qhead .qn{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:#0a2230;background:var(--accent);min-width:46px;height:46px;border-radius:var(--radius);display:grid;place-items:center;flex:none;box-shadow:0 8px 20px -10px var(--accent)}
-.qhead h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em}
-.qhead .qlede{color:var(--muted);font-size:17px;margin-top:6px;max-width:570px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.cards.two{grid-template-columns:repeat(2,1fr)}
-.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s;box-shadow:var(--shadow-sm)}
-.card::after{content:"";position:absolute;top:10px;right:10px;width:8px;height:8px;border-top:1px solid var(--line-strong);border-right:1px solid var(--line-strong)}
-.card:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 22px 50px -28px var(--accent)}
-.card .cico{width:42px;height:42px;border-radius:var(--radius);display:grid;place-items:center;font-size:20px;background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent) 34%,transparent);margin-bottom:16px}
-.card h4{font-size:18px;margin-bottom:9px}
-.card p{font-size:14.5px;color:var(--muted)}
-.steps{display:grid;gap:14px;counter-reset:s}
-.step{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;transition:.2s;box-shadow:var(--shadow-sm)}
-.step:hover{border-color:var(--accent);transform:translateX(4px)}
-.step .sn{counter-increment:s;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:var(--accent);border:1.5px solid var(--accent);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none}
-.step .sn::before{content:counter(s,decimal-leading-zero)}
-.step h4{font-size:18px;margin-bottom:6px}
-.step p{font-size:14.5px;color:var(--muted)}
-.step .scta{margin-top:12px;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);cursor:pointer;font-weight:500}
-.tool{position:relative;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
-.tool::before{content:"DWG-01 / ACTIVATION";position:absolute;top:-1px;right:18px;transform:translateY(-50%);background:var(--canvas);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted-2)}
-.tool-steps{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
-.tstep{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted-2);display:flex;align-items:center;gap:8px}
-.tstep .b{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line-strong);display:grid;place-items:center;font-size:11px}
-.tstep.on{color:var(--lime)}
-.tstep.on .b{border-color:var(--lime);background:var(--lime);color:#0a2230;font-weight:700}
-.tstep .line{width:30px;height:1.5px;background:var(--line-strong)}
-.tool h3{font-size:21px;margin-bottom:6px}
-.tool .thelp{font-size:14.5px;color:var(--muted);margin-bottom:24px}
-.vendor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px}
-.vendor{cursor:pointer;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:var(--surface-2);transition:.18s;display:flex;align-items:center;gap:11px;user-select:none}
-.vendor:hover{border-color:var(--line-strong);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-.vendor.sel{border-color:var(--lime);background:rgba(182,230,58,.1)}
-.vendor .vdot{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--line-strong);flex:none;transition:.18s;display:grid;place-items:center;background:var(--canvas-2)}
-.vendor.sel .vdot{background:var(--lime);border-color:var(--lime)}
-.vendor.sel .vdot::after{content:"✓";font-size:11px;color:#0a2230;font-weight:800}
-.vendor .vname{font-size:14px;font-weight:600}
-.vendor .vtype{font-size:11px;color:var(--muted-2);font-family:'IBM Plex Mono',monospace}
-.cat-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:24px 0 12px}
-.cat-label:first-child{margin-top:0}
-.tool-foot{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap;gap:14px}
-.selcount{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted)}
-.selcount b{color:var(--lime)}
-.packet{display:none}
-.packet.show{display:block;animation:fade .4s}
-.contact-card{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:12px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
-.contact-card .ci{display:flex;align-items:center;gap:14px}
-.contact-card .av{width:42px;height:42px;border-radius:var(--radius);background:linear-gradient(135deg,var(--blue),var(--lime));display:grid;place-items:center;font-weight:800;color:#0a2230;flex:none;font-size:14px}
-.contact-card .cn{font-weight:700;font-size:15px}
-.contact-card .cr{font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
-.contact-card .cv{font-size:12.5px;color:var(--blue);margin-top:2px}
-.statusbadge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 10px;border-radius:4px;white-space:nowrap}
-.statusbadge.live{background:rgba(182,230,58,.14);color:var(--lime);border:1px solid rgba(182,230,58,.4)}
-.statusbadge.build{background:rgba(240,169,78,.14);color:var(--amber);border:1px solid rgba(240,169,78,.4)}
-.draft{background:var(--canvas-2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;line-height:1.7;color:var(--ink-soft);white-space:pre-wrap}
-.draft .hl{color:var(--lime);font-weight:600}
-.blog-hero{padding:74px 0 42px;border-bottom:1px solid var(--line)}
-.track-filter{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
-.tf{font-family:'IBM Plex Mono',monospace;font-size:13px;border:1px solid var(--line-strong);border-radius:var(--radius);padding:8px 16px;cursor:pointer;color:var(--muted);transition:.2s;background:var(--surface)}
-.tf:hover{color:var(--ink)}
-.tf.active{background:var(--lime);color:#0a2230;border-color:var(--lime)}
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:46px 0}
-.post{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
-.post:hover{transform:translateY(-6px);border-color:var(--pc);box-shadow:0 22px 50px -28px var(--pc)}
-.post .thumb{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.post .thumb::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
-.post .thumb .pnum{position:absolute;bottom:12px;left:18px;font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600;color:rgba(255,255,255,.95);letter-spacing:-.04em;z-index:2}
-.post .pbody{padding:20px;flex:1;display:flex;flex-direction:column}
-.post .ptrack{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pc);margin-bottom:11px}
-.post h4{font-size:18px;line-height:1.25;margin-bottom:9px}
-.post p{font-size:14px;color:var(--muted);flex:1}
-.post .pmeta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted-2);margin-top:16px;display:flex;justify-content:space-between}
-.article{max-width:760px;margin:0 auto;padding:64px 0}
-.article .atrack{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:20px}
-.article h1{font-size:clamp(32px,4.6vw,52px);letter-spacing:-.03em;line-height:1.08;margin-bottom:24px}
-.article .abyline{display:flex;align-items:center;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px;color:var(--muted);font-size:14px}
-.article .abyline .aav{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--lime),var(--blue));flex:none}
-.article .lead{font-size:21px;line-height:1.55;color:var(--ink);margin-bottom:28px;font-weight:500}
-.article p{color:var(--ink-soft);margin-bottom:22px;font-size:17px}
-.article h2{font-size:28px;margin:42px 0 16px;letter-spacing:-.02em}
-.article blockquote{border-left:3px solid var(--lime);padding:6px 0 6px 24px;margin:30px 0;font-size:21px;font-weight:500;color:var(--ink);font-style:italic}
-.article .placeholder-note{background:rgba(92,196,230,.08);border:1px dashed var(--blue);border-radius:var(--radius);padding:18px 22px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--blue);margin:30px 0}
-.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.tier{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;position:relative;transition:.25s;box-shadow:var(--shadow-sm)}
-.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.tier.feature{border-color:var(--lime);box-shadow:0 24px 56px -30px var(--lime)}
-.tier.feature::before{content:"MOST ACTIVE";position:absolute;top:-11px;left:28px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:var(--lime);color:#0a2230;padding:4px 12px;border-radius:4px;font-weight:700}
-.tier .tname{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.tier h3{font-size:26px;margin-bottom:8px}
-.tier .tdesc{font-size:14px;color:var(--muted);margin-bottom:22px;min-height:42px}
-.tier ul{list-style:none;margin-bottom:26px}
-.tier li{font-size:14px;color:var(--ink-soft);padding:9px 0 9px 24px;position:relative;border-bottom:1px solid var(--line)}
-.tier li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
-.footer{background:var(--dark);color:var(--muted);padding:58px 0 40px;margin-top:40px;border-top:1px solid var(--line)}
-.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:42px}
-.foot-top h5{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
-.foot-top a{display:block;color:var(--muted);font-size:14.5px;padding:5px 0;cursor:pointer;transition:.2s}
-.foot-top a:hover{color:var(--ink)}
-.foot-blurb{font-size:14.5px;color:var(--muted);max-width:280px;margin-top:14px}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px;font-size:13px;color:var(--muted-2);flex-wrap:wrap;gap:12px}
-.center{text-align:center}
-.scrollanim{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.3,1)}
-.scrollanim.in{opacity:1;transform:none}
-@media(max-width:900px){.nav-links{display:none}.doors,.cards,.cards.two,.posts,.tier-grid,.foot-top{grid-template-columns:1fr}.ba{grid-template-columns:1fr}.ba .arrow-mid{transform:rotate(90deg)}.hero{padding:64px 0 44px}.proof .stat-row{gap:28px}.blueprint-marks{display:none}}
-/* ===== HOW IT WORKS — animated blueprint demo ===== */
-.hiw{padding:90px 0 96px;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hiw .hiw-head{text-align:center;max-width:680px;margin:0 auto 14px}
-.hiw .hiw-head h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;margin-bottom:14px}
-.hiw .hiw-head p{color:var(--ink-soft);font-size:18px}
-.hiw-stage-cap{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin:30px 0 28px}
-.hiw-stage-cap b{color:var(--blue)}
-/* the schematic */
-.schema{position:relative;max-width:1000px;margin:0 auto;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);padding:38px 30px 30px;box-shadow:var(--shadow)}
-.schema::before{content:"DWG-02 / ORDER FLOW";position:absolute;top:-1px;right:18px;transform:translateY(-50%);background:var(--canvas);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted-2)}
-.schema-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch;position:relative}
-.node{position:relative;text-align:center;padding:0 6px;z-index:2}
-.node .box{position:relative;background:var(--surface-2);border:1.5px solid var(--line-strong);border-radius:var(--radius);padding:18px 10px 16px;transition:.45s cubic-bezier(.2,.7,.3,1);min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.node .nico{width:44px;height:44px;border-radius:var(--radius);display:grid;place-items:center;font-size:22px;background:rgba(140,200,225,.08);border:1px solid var(--line-strong);transition:.45s}
-.node .nname{font-size:13.5px;font-weight:700;line-height:1.2}
-.node .nsub{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted-2);text-transform:uppercase}
-.node .ntag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;background:var(--canvas);padding:1px 8px;color:var(--muted-2);white-space:nowrap;opacity:0;transition:.3s}
-/* active node */
-.node.lit .box{border-color:var(--nc);background:color-mix(in srgb,var(--nc) 12%,var(--surface));box-shadow:0 0 0 4px color-mix(in srgb,var(--nc) 14%,transparent),0 18px 40px -22px var(--nc);transform:translateY(-4px)}
-.node.lit .nico{background:color-mix(in srgb,var(--nc) 18%,transparent);border-color:var(--nc);box-shadow:0 0 18px -2px var(--nc)}
-.node.lit .ntag{opacity:1;color:var(--nc)}
-.node.done .box{border-color:color-mix(in srgb,var(--nc) 45%,var(--line-strong))}
-.node.done .nico{border-color:color-mix(in srgb,var(--nc) 45%,var(--line-strong))}
-.node .onx-pulse{position:absolute;inset:-6px;border:1.5px solid var(--lime);border-radius:calc(var(--radius) + 4px);opacity:0}
-.node.onxlit .onx-pulse{animation:onxpulse 1.2s ease-out infinite}
-@keyframes onxpulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
-/* connectors between nodes */
-.connect{position:absolute;top:60px;height:2px;background:var(--line-strong);z-index:1;overflow:hidden}
-.connect .flow{position:absolute;inset:0;width:100%;background:linear-gradient(90deg,transparent,var(--lime),transparent);transform:translateX(-100%);opacity:0}
-.connect.flowing .flow{opacity:1;animation:flow 1s linear infinite}
-@keyframes flow{to{transform:translateX(100%)}}
-.connect.solid{background:linear-gradient(90deg,color-mix(in srgb,var(--lime) 60%,transparent),color-mix(in srgb,var(--blue) 60%,transparent))}
-/* onX layer label that appears under the row */
-.onx-layer{margin-top:26px;position:relative;border:1.5px dashed var(--lime);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:16px;opacity:.35;transition:.5s;background:rgba(182,230,58,.04)}
-.onx-layer.active{opacity:1;background:rgba(182,230,58,.09);box-shadow:0 0 0 4px rgba(182,230,58,.08)}
-.onx-layer .ox-badge{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#0a2230;background:var(--lime);padding:6px 12px;border-radius:4px;white-space:nowrap}
-.onx-layer .ox-txt{font-size:14px;color:var(--ink-soft)}
-.onx-layer .ox-txt b{color:var(--lime)}
-.onx-layer .ox-tools{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted-2);white-space:nowrap}
-/* stage rail */
-.hiw-rail{display:flex;gap:8px;max-width:1000px;margin:26px auto 0;align-items:center}
-.rail-step{flex:1;cursor:pointer;border:none;background:none;text-align:left;padding:0}
-.rail-step .bar{height:4px;border-radius:3px;background:var(--line-strong);overflow:hidden;position:relative}
-.rail-step .bar span{position:absolute;inset:0;background:linear-gradient(90deg,var(--lime),var(--blue));transform:scaleX(0);transform-origin:left;border-radius:3px}
-.rail-step.active .bar span{animation:railfill var(--dur,4s) linear forwards}
-.rail-step.complete .bar span{transform:scaleX(1)}
-@keyframes railfill{to{transform:scaleX(1)}}
-.rail-step .rl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--muted-2);margin-top:8px;display:block;transition:.2s}
-.rail-step.active .rl{color:var(--ink)}
-.hiw-controls{display:flex;justify-content:center;gap:14px;margin-top:26px;align-items:center}
-.hiw-play{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);padding:9px 16px;border-radius:var(--radius);cursor:pointer;transition:.2s}
-.hiw-play:hover{border-color:var(--lime);color:var(--ink)}
-.hiw-narr{text-align:center;max-width:620px;margin:22px auto 0;min-height:48px}
-.hiw-narr .nh{font-size:19px;font-weight:700;margin-bottom:4px}
-.hiw-narr .nb{color:var(--muted);font-size:15px}
-@media(max-width:760px){
-  .schema-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-  .connect{display:none}
-  .onx-layer{flex-wrap:wrap}.onx-layer .ox-tools{margin-left:0;width:100%}
-  .hiw-rail{flex-wrap:wrap}.rail-step{flex:1 1 40%}
-}
-</style>
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-
-<!-- ===== GLOBAL BLUEPRINT SUBSTRATE ===== -->
 <div class="blueprint-bg"></div>
 <div class="blueprint-grid" id="bpGrid" data-par-fixed="0.12"></div>
 <div class="blueprint-marks" id="bpMarks"></div>
-
 <nav class="nav"><div class="wrap nav-inner">
-  <div class="logo" data-logo onclick="go('home')"></div>
-  <div class="nav-links">
-    <a onclick="go('brands')">For Brands</a><a onclick="go('tech')">For Tech Vendors</a>
-    <a onclick="go('si')">For SIs</a><a onclick="go('blog')">Insights</a><a onclick="go('membership')">Membership</a>
+  <a class="logo" href="/" data-logo aria-label="Commerce Operations Foundation — onX home"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For SIs</a><a href="/insights">Insights</a><a href="/membership">Membership</a>
+    <a class="nav-cta-mobile" href="/brands">Activate onX →</a>
   </div>
-  <button class="nav-cta" onclick="go('brands')">Activate onX →</button>
+  <a class="nav-cta" href="/brands">Activate onX →</a>
 </div></nav>
 
-<!-- HOME -->
-<div class="page active" id="home">
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-grid" data-par="0.18"></div>
-      <div class="glow g1" data-par="0.34"></div>
-      <div class="glow g2" data-par="0.5"></div>
-      <div class="orb o1" data-par="0.7"></div>
-      <div class="orb o2" data-par="-0.4"></div>
-      <div class="orb o3" data-par="0.25"></div>
-    </div>
-    <div class="wrap hero-inner" data-par="-0.12">
-      <div class="kicker"><span class="dot"></span> The open standard for agentic commerce</div>
-      <h1>AI made buying effortless.<br>Now we make fulfillment <span class="hl">intelligent.</span></h1>
-      <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
-      <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 14 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
-      <div class="router-label">Start with what you are →</div>
-      <div class="doors">
-        <div class="door brand" onclick="go('brands')"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></div>
-        <div class="door tech" onclick="go('tech')"><div class="ico">⚙️</div><div class="who">Technology Vendors</div><h3>I build OMS / WMS / platforms</h3><p>Ship a compliant onX endpoint, join the Technical Steering Committee, and become the default your customers ask for.</p><span class="go">Enter the Tech track <span class="arr">→</span></span></div>
-        <div class="door si" onclick="go('si')"><div class="ico">🔧</div><div class="who">Systems Integrators</div><h3>I implement &amp; integrate</h3><p>Lead onX rollouts for your clients, get certified, and turn the standard into a repeatable services practice.</p><span class="go">Enter the SI track <span class="arr">→</span></span></div>
-      </div>
-    </div>
-  </section>
-  <div class="proof"><div class="wrap">
-    <div class="stat-row">
-      <div class="stat"><div class="num">62+</div><div class="lbl">Founding Members</div></div>
-      <div class="stat"><div class="num">$1T+</div><div class="lbl">GMV Represented</div></div>
-      <div class="stat"><div class="num">14</div><div class="lbl">MCP Tools Defined</div></div>
-      <div class="stat"><div class="num">100%</div><div class="lbl">Open &amp; Vendor-Neutral</div></div>
-    </div>
-    <div class="marquee"><div class="marquee-track" id="mq"></div></div>
-  </div></div>
-
-  <!-- ===== HOW IT WORKS — animated demo ===== -->
-  <section class="hiw" id="hiw">
-    <div class="wrap">
-      <div class="hiw-head">
-        <div class="eyebrow center" style="--accent:var(--blue)">How it works</div>
-        <h2>Watch onX kick in.</h2>
-        <p>Follow one order from a shopper's AI agent all the way to their doorstep — and see where the standard does its work.</p>
-      </div>
-      <div class="hiw-stage-cap">STAGE <b id="stageNum">1</b> / 5 &nbsp;·&nbsp; <span id="stageName">Agentic discovery</span></div>
-
-      <div class="schema">
-        <div class="schema-grid" id="schemaGrid">
-          <!-- connectors (absolute) -->
-          <div class="connect" id="c0" style="left:20%;width:20%"><div class="flow"></div></div>
-          <div class="connect" id="c1" style="left:40%;width:20%"><div class="flow"></div></div>
-          <div class="connect" id="c2" style="left:60%;width:20%"><div class="flow"></div></div>
-          <div class="connect" id="c3" style="left:80%;width:20%;display:none"></div>
-          <!-- nodes -->
-          <div class="node" id="n0" style="--nc:var(--blue-bright)"><div class="box"><span class="ntag">the shopper</span><div class="nico">🛍️</div><div class="nname">Shopper</div><div class="nsub">"find me X"</div></div></div>
-          <div class="node" id="n1" style="--nc:var(--blue-bright)"><div class="box"><span class="ntag">AI layer</span><div class="nico">🤖</div><div class="nname">AI Agent</div><div class="nsub">ACP · AP2</div></div></div>
-          <div class="node" id="n2" style="--nc:var(--lime)"><div class="onx-pulse"></div><div class="box"><span class="ntag">your channel</span><div class="nico">🏷️</div><div class="nname">Your Store</div><div class="nsub">selling channel</div></div></div>
-          <div class="node" id="n3" style="--nc:var(--lime)"><div class="onx-pulse"></div><div class="box"><span class="ntag">orchestration</span><div class="nico">⚙️</div><div class="nname">OMS</div><div class="nsub">order mgmt</div></div></div>
-          <div class="node" id="n4" style="--nc:var(--amber)"><div class="onx-pulse"></div><div class="box"><span class="ntag">fulfillment</span><div class="nico">📦</div><div class="nname">WMS / 3PL</div><div class="nsub">ship &amp; track</div></div></div>
-        </div>
-
-        <div class="onx-layer" id="onxLayer">
-          <span class="ox-badge">onX</span>
-          <span class="ox-txt" id="onxTxt">The open standard that lets these systems speak one language.</span>
-          <span class="ox-tools mono" id="onxTools">14 MCP tools · 9 resources</span>
-        </div>
-      </div>
-
-      <div class="hiw-narr" id="hiwNarr">
-        <div class="nh" id="narrH">A shopper asks their AI agent to buy something.</div>
-        <div class="nb" id="narrB">Agentic commerce starts the journey — the agent captures intent and is ready to transact.</div>
-      </div>
-
-      <div class="hiw-rail" id="hiwRail"></div>
-
-      <div class="hiw-controls">
-        <button class="hiw-play" id="playBtn" onclick="toggleHiw()">⏸ Pause</button>
-        <button class="hiw-play" onclick="go('brands')">See your activation path →</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section wrap" style="--accent:var(--blue)">
-    <div class="eyebrow">The shift nobody can opt out of</div>
-    <h2>Commerce is being rebuilt around agents. The plumbing isn't ready.</h2>
-    <p class="sub">AI agents now start the buying journey — but every brand, platform, and 3PL still speaks a different dialect for orders, inventory, and fulfillment. onX is the shared language that closes the gap.</p>
-    <div class="ba">
-      <div class="col before"><span class="tag">Without a standard</span><ul><li>Brittle point-to-point integrations between every system</li><li>Each new partner = another custom build</li><li>Invisible to AI shopping agents — get skipped</li><li>Manual fixes that never scale</li></ul></div>
-      <div class="arrow-mid">→</div>
-      <div class="col after"><span class="tag">With onX</span><ul><li>One open contract every system implements once</li><li>New partners connect in days, not quarters</li><li>Agent-readable — get found, get chosen</li><li>Governed in the open, owned by no one</li></ul></div>
-    </div>
-  </section>
-  <section class="section wrap" style="--accent:var(--lime);padding-top:0"><div class="band">
-    <div class="bglow" data-par="0.3"></div>
-    <div class="eyebrow center">The EDI moment for AI commerce</div>
-    <h2>EDI standardized how businesses traded for 40 years.<br>onX does it for the age of agents.</h2>
-    <p>When the industry agreed on a common format, an entire economy of interoperability followed. onX is that agreement — purpose-built for AI-native, post-purchase order data.</p>
-    <div class="btn-row"><button class="btn btn-primary" onclick="go('brands')">See how brands activate it</button><button class="btn btn-ghost" onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">View the spec on GitHub ↗</button></div>
-  </div></section>
-  <section class="section wrap" style="--accent:var(--violet);padding-top:0">
-    <div class="eyebrow">From the Foundation</div><h2>Insights &amp; field notes</h2>
-    <p class="sub">Three running series — one for each audience — that turn the standard into action.</p>
-    <div class="posts" id="homePosts"></div>
-    <div class="center"><button class="btn btn-ghost" style="border-color:var(--line-strong)" onclick="go('blog')">Browse all insights →</button></div>
-  </section>
-</div>
-
-<!-- BRANDS -->
-<div class="page" id="brands" style="--accent:var(--lime);--pg:rgba(159,212,32,.4)">
-  <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%"></div>
-    <div class="wrap"><div class="crumbs"><a onclick="go('home')">Home</a><span>/</span>For Brands &amp; Retailers</div>
-      <div class="phero-inner"><div class="ptag">🏷️ Brands &amp; Retailers</div>
-        <h1>Your customers are already shopping with agents.<br>Make sure they can <span class="hl">buy &amp; receive</span> from you.</h1>
-        <p>You don't have to build onX yourself. You activate it — by asking the OMS, WMS, and integration partners you already work with to turn it on.</p>
-        <div class="qnav"><a onclick="scrollToId('b-what')"><span class="n">01</span>What is it?</a><a onclick="scrollToId('b-why')"><span class="n">02</span>Why do I need it?</a><a onclick="scrollToId('b-how')"><span class="n">03</span>How do I get started?</a></div>
-      </div></div></section>
-  <section class="qblock wrap" id="b-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, in your terms?</h2><p class="qlede">A free, open standard that lets every system in your commerce stack — and the AI agents now shopping on your customers' behalf — exchange order and fulfillment data the same way.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🤖</div><h4>Agent-readable orders</h4><p>When an AI agent places or tracks an order, onX gives it a structured, predictable way to talk to your fulfillment systems.</p></div><div class="card"><div class="cico">🔗</div><h4>One language, every partner</h4><p>Your OMS, WMS, 3PL, and platform all speak onX — so handoffs stop breaking and data stops getting lost in translation.</p></div><div class="card"><div class="cico">🆓</div><h4>Open &amp; free to adopt</h4><p>No license, no lock-in. Stewarded by a vendor-neutral foundation and built on the Model Context Protocol.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="b-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because in agentic commerce, if your fulfillment data isn't legible to agents, your products effectively don't exist to them. Get found, or get skipped.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">👁️</div><h4>Get found by AI agents</h4><p>Agents route shoppers to merchants they can transact with cleanly. onX makes you one of them.</p></div><div class="card"><div class="cico">⚡</div><h4>Cut integration drag</h4><p>Stop paying for one-off connections between every system and partner. Standardize once.</p></div><div class="card"><div class="cico">📦</div><h4>Fewer broken handoffs</h4><p>Consistent order data means fewer manual fixes, fewer WISMO tickets, faster delivery promises.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="b-how" style="border-bottom:none"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started? Activate your stack.</h2><p class="qlede">Pick the vendors and integrators you already use. We'll assemble the right contacts and a ready-to-send note asking them to enable onX for your account. Demand pulls the standard forward.</p></div></div>
-    <div class="tool" id="activationTool">
-      <div class="tool-steps"><div class="tstep on" id="ts1"><span class="b">1</span> Select your vendors</div><div class="line"></div><div class="tstep" id="ts2"><span class="b">2</span> Review contacts</div><div class="line"></div><div class="tstep" id="ts3"><span class="b">3</span> Send activation request</div></div>
-      <div id="selectStage"><h3>Which systems power your commerce stack?</h3><p class="thelp">Select one or more. Mix and match across OMS, WMS/3PL, platforms, and your integration partner.</p><div id="vendorGroups"></div>
-        <div class="tool-foot"><div class="selcount">Selected: <b id="selNum">0</b> partners</div><button class="btn btn-primary" id="genBtn" onclick="buildPacket()" disabled style="opacity:.4">Generate activation packet →</button></div></div>
-      <div class="packet" id="packetStage"><h3>Your onX activation packet</h3><p class="thelp">The right people to reach, their current onX status, and a drafted outreach note you can edit and send. <b style="color:var(--lime)">Demand-side activation, automated.</b></p><div id="contactList"></div><div class="draft" id="draftNote"></div>
-        <div class="tool-foot"><button class="btn btn-ghost" style="border-color:var(--line-strong)" onclick="resetTool()">← Edit selection</button><div class="btn-row" style="justify-content:flex-end"><button class="btn btn-ghost" style="border-color:var(--line-strong)" onclick="alert('Demo: would copy the drafted note to your clipboard.')">Copy note</button><button class="btn btn-primary" onclick="alert('Demo: would send via your connected email + notify COF to support the rollout.')">Send &amp; notify the Foundation →</button></div></div></div>
-    </div>
-    <div class="cards two" style="margin-top:36px"><div class="card"><div class="cico">📋</div><h4>Not sure who to ask?</h4><p>Talk to the Foundation — we'll help you map your stack and identify the fastest path to a live onX connection.</p><button class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" onclick="go('membership')">Get rollout support</button></div><div class="card"><div class="cico">📖</div><h4>Want the brand playbook?</h4><p>Read the Brand Activation series — practical guides for making the internal case and running a pilot.</p><button class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" onclick="go('blog')">Read the series</button></div></div>
-  </section>
-  <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3"></div><h2>The brands that ask first, win first.</h2><p>Activation is a conversation you start with partners you already trust. We'll help you have it.</p><div class="btn-row"><button class="btn btn-primary" onclick="scrollToId('b-how')">Build my activation packet</button><button class="btn btn-ghost" onclick="go('membership')">Become a member</button></div></div></section>
-</div>
-
-<!-- TECH -->
-<div class="page" id="tech" style="--accent:var(--blue);--pg:rgba(110,206,235,.4)">
-  <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%;background:rgba(110,206,235,.12)"></div>
-    <div class="wrap"><div class="crumbs"><a onclick="go('home')">Home</a><span>/</span>For Technology Vendors</div>
-      <div class="phero-inner"><div class="ptag">⚙️ Technology Vendors</div><h1>The spec is live and your peers are already <span class="hl">building.</span></h1><p>OMS, WMS, platforms and integration tools are shipping onX endpoints now. Be the vendor your customers find compliant when they come asking — because they will.</p>
-        <div class="qnav"><a onclick="scrollToId('t-what')"><span class="n">01</span>What is it?</a><a onclick="scrollToId('t-why')"><span class="n">02</span>Why do I need it?</a><a onclick="scrollToId('t-how')"><span class="n">03</span>How do I get started?</a></div>
-      </div></div></section>
-  <section class="qblock wrap" id="t-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, technically?</h2><p class="qlede">An open MCP-based specification — 14 tools and 9 shared resources — defining how order and fulfillment systems expose capabilities to agents and to each other.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🛠️</div><h4>14 MCP tools</h4><p>A defined surface area covering order capture through shipment tracking — the full post-purchase lifecycle.</p></div><div class="card"><div class="cico">📚</div><h4>9 shared resources</h4><p>Common schemas so an order means the same thing across every compliant system.</p></div><div class="card"><div class="cico">🐙</div><h4>Open reference server</h4><p>A public GitHub reference implementation to build and validate against — not a paper standard.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="t-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because brands are about to start asking "are you onX-compliant?" the way they once asked about API availability. The answer is a deal-maker or deal-breaker.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🎯</div><h4>Demand is coming to you</h4><p>Our Brand Activation flow routes interested brands directly to their vendors. Be ready to say yes.</p></div><div class="card"><div class="cico">🚪</div><h4>Stop building one-offs</h4><p>Implement the contract once instead of maintaining a custom integration per customer and partner.</p></div><div class="card"><div class="cico">🏛️</div><h4>Shape the standard</h4><p>Early implementers sit on the Technical Steering Committee and influence where the spec goes next.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="t-how" style="border-bottom:none"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">A clear path from clone to compliant. Most of your peers are already somewhere on it.</p></div></div>
-    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Clone the reference server</h4><p>Pull the public onX MCP reference implementation and run it locally to see the tools and resources in action.</p><span class="scta" onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">github.com/commerce-operations-foundation ↗</span></div></div><div class="step"><div class="sn"></div><div><h4>Map your APIs to the 14 tools</h4><p>Align your existing order/fulfillment surface to the onX tool definitions. Most vendors already cover the majority.</p></div></div><div class="step"><div class="sn"></div><div><h4>Implement &amp; self-validate</h4><p>Build your endpoint and test it against the conformance suite in the reference repo.</p></div></div><div class="step"><div class="sn"></div><div><h4>Join the Technical Steering Committee</h4><p>Bring your implementation learnings to the group steering the spec — and get listed as a compliant vendor.</p><span class="scta" onclick="go('membership')">Apply to the TSC →</span></div></div><div class="step"><div class="sn"></div><div><h4>Get listed &amp; get found</h4><p>Compliant vendors appear in the Brand Activation tool — so demand flows to you automatically.</p></div></div></div>
-  </section>
-  <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--blue-bright)"></div><h2>Your customers will ask. Be the easy yes.</h2><p>Join the vendors already building onX into their roadmap and shaping the standard from the inside.</p><div class="btn-row"><button class="btn btn-primary" onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">Start on GitHub ↗</button><button class="btn btn-ghost" onclick="go('membership')">Join the TSC</button></div></div></section>
-</div>
-
-<!-- SI -->
-<div class="page" id="si" style="--accent:var(--amber);--pg:rgba(232,146,58,.36)">
-  <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%;background:rgba(232,146,58,.12)"></div>
-    <div class="wrap"><div class="crumbs"><a onclick="go('home')">Home</a><span>/</span>For Systems Integrators</div>
-      <div class="phero-inner"><div class="ptag">🔧 Systems Integrators</div><h1>Every brand activating onX needs someone to <span class="hl">make it real.</span></h1><p>That someone is you. Turn the standard into a repeatable, high-margin services practice — and become the partner brands and vendors call first.</p>
-        <div class="qnav"><a onclick="scrollToId('s-what')"><span class="n">01</span>What is it?</a><a onclick="scrollToId('s-why')"><span class="n">02</span>Why do I need it?</a><a onclick="scrollToId('s-how')"><span class="n">03</span>How do I get started?</a></div>
-      </div></div></section>
-  <section class="qblock wrap" id="s-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, for your practice?</h2><p class="qlede">A standard implementation pattern. Instead of bespoke integration work per client, onX gives you a repeatable blueprint you can productize.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🧩</div><h4>A repeatable pattern</h4><p>One well-defined contract to implement across clients — estimable scopes, predictable delivery.</p></div><div class="card"><div class="cico">📈</div><h4>A new service line</h4><p>onX assessments, activations, and migrations become packaged offerings with clear deliverables.</p></div><div class="card"><div class="cico">🤝</div><h4>A trusted credential</h4><p>Certification signals to brands and vendors that you can execute onX rollouts reliably.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="s-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because a wave of activation is forming, and the integrators who are ready will capture the implementation demand the standard creates.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🌊</div><h4>Ride the activation wave</h4><p>As brands push vendors to enable onX, someone has to integrate, test, and operationalize it.</p></div><div class="card"><div class="cico">💼</div><h4>Higher-margin work</h4><p>Standardized scopes mean less discovery, faster delivery, and better margins than custom integration.</p></div><div class="card"><div class="cico">⭐</div><h4>Referral flow</h4><p>Certified partners get surfaced to brands seeking implementation help directly from the Foundation.</p></div></div>
-  </section>
-  <section class="qblock wrap" id="s-how" style="border-bottom:none"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">Build the capability, prove it, then get listed as a go-to onX partner.</p></div></div>
-    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Skill up your team</h4><p>Get your architects through the onX technical docs and reference implementation.</p><span class="scta" onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">Open the docs &amp; repo ↗</span></div></div><div class="step"><div class="sn"></div><div><h4>Run a reference implementation</h4><p>Deliver an onX activation with a willing client or vendor partner to build a proof point.</p></div></div><div class="step"><div class="sn"></div><div><h4>Productize your offering</h4><p>Package assessment, activation, and migration into named services with fixed scopes.</p></div></div><div class="step"><div class="sn"></div><div><h4>Get certified</h4><p>Validate your capability with the Foundation and earn the certified implementation partner credential.</p><span class="scta" onclick="go('membership')">Apply for certification →</span></div></div><div class="step"><div class="sn"></div><div><h4>Get referred</h4><p>Certified partners are surfaced to brands in the activation flow — inbound demand, not cold outreach.</p></div></div></div>
-  </section>
-  <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--amber)"></div><h2>Be the partner the activation wave runs through.</h2><p>Certified onX integrators don't chase the work. The work comes to them.</p><div class="btn-row"><button class="btn btn-primary" onclick="go('membership')">Become a certified partner</button><button class="btn btn-ghost" onclick="go('blog')">Read the SI playbook</button></div></div></section>
-</div>
-
-<!-- BLOG -->
-<div class="page" id="blog" style="--accent:var(--violet)">
-  <section class="blog-hero"><div class="wrap"><div class="crumbs"><a onclick="go('home')">Home</a><span>/</span>Insights</div><div class="eyebrow" style="--accent:var(--violet)">Insights</div><h2 style="font-size:clamp(32px,4.6vw,52px)">Three series. One mission:<br>turn the standard into action.</h2>
-    <div class="track-filter" id="trackFilter"><div class="tf active" data-track="all" onclick="filterPosts('all',this)">All insights</div><div class="tf" data-track="brand" onclick="filterPosts('brand',this)">Brand Activation</div><div class="tf" data-track="tech" onclick="filterPosts('tech',this)">Vendor Engineering</div><div class="tf" data-track="si" onclick="filterPosts('si',this)">Integrator Playbook</div><div class="tf" data-track="vision" onclick="filterPosts('vision',this)">The Big Picture</div></div>
-  </div></section>
-  <div class="wrap"><div class="posts" id="blogPosts"></div><p class="center mono" style="color:var(--muted-2);padding-bottom:60px">Article bodies are illustrative placeholders — titles &amp; framing only.</p></div>
-</div>
-
-<!-- ARTICLE -->
-<div class="page" id="article"><div class="wrap"><article class="article">
-  <div class="crumbs" style="margin-bottom:30px"><a onclick="go('home')">Home</a><span>/</span><a onclick="go('blog')">Insights</a><span>/</span>Article</div>
-  <div class="atrack" id="artTrack">BRAND ACTIVATION SERIES</div>
-  <h1 id="artTitle">Get Found or Get Skipped: Why Brands Can't Sit Out Agentic Commerce</h1>
-  <div class="abyline"><div class="aav"></div><div><b style="color:var(--ink)">Kelly Goetsch</b> · Founding President, COF<br>8 min read · Brand Activation</div></div>
-  <p class="lead">AI has made buying effortless. Now we need to make fulfillment intelligent — and that starts with brands deciding to be legible to the agents already shopping on their customers' behalf.</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete brand scenario, and walk the reader toward a clear next action inside the Brand track.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated shopping changes the economics of discoverability, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical activation path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the activation tool and membership path — every article ends by routing back into the relevant persona flow.</p>
-  <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><button class="btn btn-primary" onclick="go('brands')">Build your activation packet →</button></div>
-</article></div></div>
-
-<!-- MEMBERSHIP -->
-<div class="page" id="membership" style="--accent:var(--lime);--pg:rgba(159,212,32,.3)">
-  <section class="phero"><div class="pglow" data-par="0.4"></div><div class="wrap"><div class="crumbs"><a onclick="go('home')">Home</a><span>/</span>Membership</div><div class="phero-inner"><h1>Join the foundation shaping<br>AI-era commerce.</h1><p>62+ founding members and $1T+ in GMV are already in. Pick the path that matches how you'll move the standard forward.</p></div></div></section>
-  <section class="section wrap"><div class="tier-grid">
-    <div class="tier"><div class="tname">Brands &amp; Retailers</div><h3>Activate</h3><p class="tdesc">For merchants pushing their stack to adopt onX.</p><ul><li>Brand activation toolkit</li><li>Rollout support from the Foundation</li><li>Listed as an adopting brand</li><li>Early access to brand playbooks</li></ul><button class="btn btn-primary" onclick="alert('Demo: brand membership / activation intake form.')">Start activating</button></div>
-    <div class="tier feature"><div class="tname">Technology Vendors</div><h3>Build &amp; Steer</h3><p class="tdesc">For OMS / WMS / platform vendors implementing onX.</p><ul><li>Seat on the Technical Steering Committee</li><li>Listed as a compliant vendor</li><li>Inbound demand from the activation tool</li><li>Influence over the spec roadmap</li></ul><button class="btn btn-primary" onclick="alert('Demo: vendor / TSC application form.')">Join the TSC</button></div>
-    <div class="tier"><div class="tname">Systems Integrators</div><h3>Certify</h3><p class="tdesc">For SIs building an onX delivery practice.</p><ul><li>Certified implementation partner status</li><li>Referral flow from brands</li><li>Implementation enablement &amp; toolkits</li><li>Co-marketing with the Foundation</li></ul><button class="btn btn-primary" onclick="alert('Demo: SI certification application form.')">Get certified</button></div>
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid" data-par="0.18"></div>
+    <div class="glow g1" data-par="0.34"></div>
+    <div class="glow g2" data-par="0.5"></div>
+    <div class="orb o1" data-par="0.7"></div>
+    <div class="orb o2" data-par="-0.4"></div>
+    <div class="orb o3" data-par="0.25"></div>
   </div>
-  <div class="band" style="margin-top:40px"><div class="bglow" data-par="0.3"></div><h2>Not sure where you fit?</h2><p>Tell us about your role and we'll point you to the fastest path in.</p><div class="btn-row"><button class="btn btn-primary" onclick="alert('Demo: contact form.')">Talk to the Foundation</button><button class="btn btn-ghost" onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">Explore the spec ↗</button></div></div>
-  </section>
-</div>
+  <div class="wrap hero-inner" data-par="-0.12">
+    <div class="kicker"><span class="dot"></span> The open standard for agentic commerce</div>
+    <h1>AI made buying effortless.<br>Now we make fulfillment <span class="hl">intelligent.</span></h1>
+    <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
+    <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 14 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
+    <div class="router-label">Start with what you are →</div>
+    <div class="doors">
+      <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
+      <a class="door tech" href="/tech"><div class="ico">⚙️</div><div class="who">Technology Vendors</div><h3>I build OMS / WMS / platforms</h3><p>Ship a compliant onX endpoint, join the Technical Steering Committee, and become the default your customers ask for.</p><span class="go">Enter the Tech track <span class="arr">→</span></span></a>
+      <a class="door si" href="/integrators"><div class="ico">🔧</div><div class="who">Systems Integrators</div><h3>I implement &amp; integrate</h3><p>Lead onX rollouts for your clients, get certified, and turn the standard into a repeatable services practice.</p><span class="go">Enter the SI track <span class="arr">→</span></span></a>
+    </div>
+  </div>
+</section>
+<div class="proof"><div class="wrap">
+  <div class="stat-row">
+    <div class="stat"><div class="num">62+</div><div class="lbl">Founding Members</div></div>
+    <div class="stat"><div class="num">$1T+</div><div class="lbl">GMV Represented</div></div>
+    <div class="stat"><div class="num">14</div><div class="lbl">MCP Tools Defined</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lbl">Open &amp; Vendor-Neutral</div></div>
+  </div>
+  <div class="marquee"><div class="marquee-track" id="mq"></div></div>
+</div></div>
 
+<section class="hiw" id="hiw">
+  <div class="wrap">
+    <div class="hiw-head">
+      <div class="eyebrow center" style="--accent:var(--blue)">How it works</div>
+      <h2>Watch onX kick in.</h2>
+      <p>Follow one order from a shopper's AI agent all the way to their doorstep — and see where the standard does its work.</p>
+    </div>
+    <div class="hiw-stage-cap">STAGE <b id="stageNum">1</b> / 5 &nbsp;·&nbsp; <span id="stageName">Agentic discovery</span></div>
+    <div class="schema">
+      <div class="schema-grid" id="schemaGrid">
+        <div class="connect" id="c0" style="left:20%;width:20%"><div class="flow"></div></div>
+        <div class="connect" id="c1" style="left:40%;width:20%"><div class="flow"></div></div>
+        <div class="connect" id="c2" style="left:60%;width:20%"><div class="flow"></div></div>
+        <div class="connect" id="c3" style="left:80%;width:20%;display:none"></div>
+        <div class="node" id="n0" style="--nc:var(--blue-bright)"><div class="box"><span class="ntag">the shopper</span><div class="nico">🛍️</div><div class="nname">Shopper</div><div class="nsub">"find me X"</div></div></div>
+        <div class="node" id="n1" style="--nc:var(--blue-bright)"><div class="box"><span class="ntag">AI layer</span><div class="nico">🤖</div><div class="nname">AI Agent</div><div class="nsub">ACP · AP2</div></div></div>
+        <div class="node" id="n2" style="--nc:var(--lime)"><div class="onx-pulse"></div><div class="box"><span class="ntag">your channel</span><div class="nico">🏷️</div><div class="nname">Your Store</div><div class="nsub">selling channel</div></div></div>
+        <div class="node" id="n3" style="--nc:var(--lime)"><div class="onx-pulse"></div><div class="box"><span class="ntag">orchestration</span><div class="nico">⚙️</div><div class="nname">OMS</div><div class="nsub">order mgmt</div></div></div>
+        <div class="node" id="n4" style="--nc:var(--amber)"><div class="onx-pulse"></div><div class="box"><span class="ntag">fulfillment</span><div class="nico">📦</div><div class="nname">WMS / 3PL</div><div class="nsub">ship &amp; track</div></div></div>
+      </div>
+      <div class="onx-layer" id="onxLayer">
+        <span class="ox-badge">onX</span>
+        <span class="ox-txt" id="onxTxt">The open standard that lets these systems speak one language.</span>
+        <span class="ox-tools mono" id="onxTools">14 MCP tools · 9 resources</span>
+      </div>
+    </div>
+    <div class="hiw-narr" id="hiwNarr">
+      <div class="nh" id="narrH">A shopper asks their AI agent to buy something.</div>
+      <div class="nb" id="narrB">Agentic commerce starts the journey — the agent captures intent and is ready to transact.</div>
+    </div>
+    <div class="hiw-rail" id="hiwRail"></div>
+    <div class="hiw-controls">
+      <button class="hiw-play" id="playBtn" onclick="toggleHiw()">⏸ Pause</button>
+      <a class="hiw-play" href="/brands">See your activation path →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" style="--accent:var(--blue)">
+  <div class="eyebrow">The shift nobody can opt out of</div>
+  <h2>Commerce is being rebuilt around agents. The plumbing isn't ready.</h2>
+  <p class="sub">AI agents now start the buying journey — but every brand, platform, and 3PL still speaks a different dialect for orders, inventory, and fulfillment. onX is the shared language that closes the gap.</p>
+  <div class="ba">
+    <div class="col before"><span class="tag">Without a standard</span><ul><li>Brittle point-to-point integrations between every system</li><li>Each new partner = another custom build</li><li>Invisible to AI shopping agents — get skipped</li><li>Manual fixes that never scale</li></ul></div>
+    <div class="arrow-mid">→</div>
+    <div class="col after"><span class="tag">With onX</span><ul><li>One open contract every system implements once</li><li>New partners connect in days, not quarters</li><li>Agent-readable — get found, get chosen</li><li>Governed in the open, owned by no one</li></ul></div>
+  </div>
+</section>
+<section class="section wrap" style="--accent:var(--lime);padding-top:0"><div class="band">
+  <div class="bglow" data-par="0.3"></div>
+  <div class="eyebrow center">The EDI moment for AI commerce</div>
+  <h2>EDI standardized how businesses traded for 40 years.<br>onX does it for the age of agents.</h2>
+  <p>When the industry agreed on a common format, an entire economy of interoperability followed. onX is that agreement — purpose-built for AI-native, post-purchase order data.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="/brands">See how brands activate it</a><a class="btn btn-ghost" href="https://github.com/commerce-operations-foundation" target="_blank" rel="noopener">View the spec on GitHub ↗</a></div>
+</div></section>
+<section class="section wrap" style="--accent:var(--violet);padding-top:0">
+  <div class="eyebrow">From the Foundation</div><h2>Insights &amp; field notes</h2>
+  <p class="sub">Three running series — one for each audience — that turn the standard into action.</p>
+  <div class="posts"><a class="post" href="/insights/get-found-or-get-skipped-why-brands-cant-sit-out-agentic-com" data-track="brand" style="--pc:#b6e63a"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, #b6e63a 55%, #0a2230), #0a2230 92%)"><div class="pnum">onX</div></div><div class="pbody"><div class="ptrack">Brand Activation</div><h4>Get Found or Get Skipped: Why Brands Can’t Sit Out Agentic Commerce</h4><p>The discoverability stakes of agent-mediated shopping — and why legibility to agents is now table stakes.</p><div class="pmeta"><span>8 min read</span><span>Read →</span></div></div></a><a class="post" href="/insights/the-20-minute-internal-memo-that-gets-onx-on-your-roadmap" data-track="brand" style="--pc:#b6e63a"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, #b6e63a 55%, #0a2230), #0a2230 92%)"><div class="pnum">onX</div></div><div class="pbody"><div class="ptrack">Brand Activation</div><h4>The 20-Minute Internal Memo That Gets onX on Your Roadmap</h4><p>A copy-paste template for making the business case to your VP of Ops and your CFO.</p><div class="pmeta"><span>5 min read</span><span>Read →</span></div></div></a><a class="post" href="/insights/how-to-ask-your-oms-vendor-for-onx-and-what-yes-looks-like" data-track="brand" style="--pc:#b6e63a"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, #b6e63a 55%, #0a2230), #0a2230 92%)"><div class="pnum">onX</div></div><div class="pbody"><div class="ptrack">Brand Activation</div><h4>How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like)</h4><p>Scripts, questions, and red flags for the conversation that starts your activation.</p><div class="pmeta"><span>6 min read</span><span>Read →</span></div></div></a></div>
+  <div class="center"><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">Browse all insights →</a></div>
+</section>
 <footer class="footer"><div class="wrap">
   <div class="foot-top">
-    <div><div class="logo" data-logo onclick="go('home')"></div><p class="foot-blurb">Stewarding onX — the open standard making fulfillment intelligent for the age of AI commerce.</p></div>
-    <div><h5>By Audience</h5><a onclick="go('brands')">For Brands</a><a onclick="go('tech')">For Tech Vendors</a><a onclick="go('si')">For SIs</a></div>
-    <div><h5>Resources</h5><a onclick="go('blog')">Insights</a><a onclick="window.open('https://github.com/commerce-operations-foundation','_blank')">GitHub ↗</a><a onclick="go('membership')">Membership</a></div>
-    <div><h5>Foundation</h5><a onclick="go('home')">About</a><a onclick="go('home')">Governance</a><a onclick="alert('Demo: contact')">Contact</a></div>
+    <div><a class="logo" href="/" data-logo aria-label="Commerce Operations Foundation — onX"></a><p class="foot-blurb">Stewarding onX — the open standard making fulfillment intelligent for the age of AI commerce.</p></div>
+    <div><h5>By Audience</h5><a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For SIs</a></div>
+    <div><h5>Resources</h5><a href="/insights">Insights</a><a href="https://github.com/commerce-operations-foundation" target="_blank" rel="noopener">GitHub ↗</a><a href="/membership">Membership</a></div>
+    <div><h5>Foundation</h5><a href="https://commerceopsfoundation.org/about/" target="_blank" rel="noopener">About</a><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">Governance</a><a href="/membership#join">Contact</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Commerce Operations Foundation. All rights reserved.</span><span class="mono">Built on the Model Context Protocol</span></div>
+  <div class="foot-bottom"><span>© <span data-year>2026</span> Commerce Operations Foundation. All rights reserved.</span><span class="mono">Built on the Model Context Protocol</span></div>
 </div></footer>
-
-<script>
-/* LOGO — SVG recreation of the COF mark (open "C" arc + lime spark).
-   Whole site sits on a dark blueprint base, so the wordmark is always light.
-   To use the REAL asset locally, replace logoSVG()'s return with:
-   <img src="Dark-COF-wordmark-horizontal-lime.png" height="30" alt="Commerce Operations Foundation"> */
-function logoSVG(){
-  return `<svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-label="Commerce Operations Foundation"><circle cx="24" cy="24" r="22" stroke="rgba(140,200,225,.3)" stroke-width="1.5"/><path d="M35 16.5A14 14 0 1 0 35 31.5" stroke="#5cc4e6" stroke-width="5" stroke-linecap="round"/><path d="M24 10 A14 14 0 0 1 35 16.5" stroke="#b6e63a" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="24" r="4.5" fill="#b6e63a"/></svg><span class="wordmark"><span class="wm-1">Commerce Operations</span><span class="wm-2">Foundation · onX</span></span>`;
-}
-document.querySelectorAll('[data-logo]').forEach(el=>{el.classList.add('cof-logo');el.innerHTML=logoSVG();});
-
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'instant'});resetParallax();observeAnims();}
-function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
-
-/* ===== BLUEPRINT DRAFTING MARKS (generated, parallax depth layers) ===== */
-const markSpecs=[
-  {t:'mark',x:'6%',y:'18%',s:0.5,txt:'onX // ORDER NETWORK eXCHANGE'},
-  {t:'mark',x:'72%',y:'12%',s:0.32,txt:'REV 2.0 — MCP'},
-  {t:'mark',x:'82%',y:'62%',s:0.7,txt:'SCALE 1:1'},
-  {t:'mark',x:'4%',y:'74%',s:0.22,txt:'14 TOOLS / 9 RESOURCES'},
-  {t:'mark',x:'40%',y:'88%',s:0.6,txt:'SEC. A-A'},
-  {t:'cross',x:'24%',y:'30%',s:0.8},
-  {t:'cross',x:'88%',y:'40%',s:0.45},
-  {t:'cross',x:'15%',y:'55%',s:0.3},
-  {t:'cross',x:'60%',y:'22%',s:0.65},
-  {t:'cross',x:'70%',y:'80%',s:0.5},
-  {t:'circle',x:'80%',y:'24%',s:0.4,d:90},
-  {t:'circle',x:'12%',y:'40%',s:0.6,d:150},
-  {t:'circle',x:'52%',y:'66%',s:0.28,d:60},
-  {t:'vline',x:'33%',y:'0',s:0.18,len:'40%'},
-  {t:'hline',x:'0',y:'48%',s:0.25,len:'22%'},
-  {t:'hline',x:'66%',y:'70%',s:0.4,len:'30%'},
-];
-const bpMarks=document.getElementById('bpMarks');
-bpMarks.innerHTML=markSpecs.map((m,i)=>{
-  if(m.t==='mark')return `<div class="bp-mark" data-par-fixed="${m.s}" style="left:${m.x};top:${m.y}">${m.txt}</div>`;
-  if(m.t==='cross')return `<div class="bp-cross" data-par-fixed="${m.s}" style="left:${m.x};top:${m.y};transform:scale(${1+m.s})"></div>`;
-  if(m.t==='circle')return `<div class="bp-circle" data-par-fixed="${m.s}" style="left:${m.x};top:${m.y};width:${m.d}px;height:${m.d}px"></div>`;
-  if(m.t==='vline')return `<div class="bp-line" data-par-fixed="${m.s}" style="left:${m.x};top:${m.y};width:1px;height:${m.len}"></div>`;
-  if(m.t==='hline')return `<div class="bp-line" data-par-fixed="${m.s}" style="left:${m.x};top:${m.y};height:1px;width:${m.len}"></div>`;
-  return '';
-}).join('');
-
-let parEls=[],parFixed=[];
-function refreshParEls(){
-  parEls=[...document.querySelectorAll('.page.active [data-par]')];
-  parFixed=[...document.querySelectorAll('[data-par-fixed]')];
-}
-function resetParallax(){refreshParEls();onScroll();}
-function onScroll(){
-  const y=window.scrollY;
-  for(const el of parEls){const speed=parseFloat(el.dataset.par);el.style.transform=`translate3d(${el._px||0}px, ${(-y*speed).toFixed(1)}px, 0)`;}
-  /* fixed substrate layers drift opposite + with pointer for depth */
-  for(const el of parFixed){const speed=parseFloat(el.dataset.parFixed);el.style.transform=`translate3d(${el._fx||0}px, ${(-y*speed).toFixed(1)}px, 0)`;}
-}
-window.addEventListener('scroll',onScroll,{passive:true});
-window.addEventListener('mousemove',e=>{
-  const cx=(e.clientX/window.innerWidth-.5),cy=(e.clientY/window.innerHeight-.5);
-  document.querySelectorAll('.page.active .hero [data-par]').forEach(el=>{const s=parseFloat(el.dataset.par);el._px=(cx*s*22).toFixed(1);});
-  for(const el of parFixed){const s=parseFloat(el.dataset.parFixed);el._fx=(cx*s*30).toFixed(1);el._fy=(cy*s*18).toFixed(1);}
-  onScroll();
-});
-
-const members=['Pipe17','Manhattan Associates','commercetools','IBM Sterling','SPS Commerce','Radial','Ryder','Allbirds','Fluent Commerce','Deck Commerce','Kibo','ShipHero','Logiwa','Cin7','Orium','Patchworks','OneStock','Nextuple','Shipwire','Elastic Path','Logitech','Vitamin Shoppe','IPSY','Shopware','Ordergroove','Barrett Distribution','Fulfillment IQ','MACH Alliance'];
-document.getElementById('mq').innerHTML=[...members,...members].map(m=>`<div class="chip">${m}</div>`).join('');
-
-/* ===== HOW IT WORKS — auto-playing sequence ===== */
-const hiwStages=[
-  { name:'Agentic discovery', dur:4200,
-    h:'A shopper asks their AI agent to buy something.',
-    b:'Agentic commerce starts the journey — the agent captures intent and is ready to transact.',
-    lit:[0,1], flow:['c0'], onx:false,
-    onxTxt:'Protocols like ACP &amp; AP2 handle intent and payment — but stop at the order.' },
-  { name:'The handoff gap', dur:4200,
-    h:'The agent places the order with your store. Now what?',
-    b:'Without a shared standard, this is where orders break — every system speaks a different dialect.',
-    lit:[1,2], flow:['c1'], onx:false, warn:true,
-    onxTxt:'This is the missing layer onX was built to fill.' },
-  { name:'onX kicks in', dur:4600,
-    h:'onX translates the order into one common language.',
-    b:'Your store emits a standard onX order — no custom integration per agent, per partner.',
-    lit:[2], flow:[], onx:true, onxNodes:[2],
-    onxTxt:'<b>onX activates.</b> One open contract your stack implements once.',
-    tools:'createOrder · getInventory · …' },
-  { name:'Intelligent routing', dur:4600,
-    h:'The order flows cleanly to your OMS and fulfillment.',
-    b:'OMS and WMS/3PL read the same onX order — routing, inventory, and promises just work.',
-    lit:[2,3,4], flow:['c2'], onx:true, onxNodes:[2,3,4],
-    onxTxt:'<b>onX in motion.</b> Every system reads the same order, in real time.',
-    tools:'allocateOrder · createShipment · trackShipment' },
-  { name:'Delivered & visible', dur:4600,
-    h:'The package ships — and the agent can track it the whole way.',
-    b:'Status flows back through onX, so the AI agent keeps the shopper updated. You got found, chosen, and delivered.',
-    lit:[4,3,2,1,0], flow:[], onx:true, onxNodes:[2,3,4], solidAll:true,
-    onxTxt:'<b>The loop closes.</b> Fulfillment data is legible end-to-end.',
-    tools:'getShipmentStatus · updateOrder' },
-];
-const hiwEls={
-  nodes:[...Array(5)].map((_,i)=>document.getElementById('n'+i)),
-  connects:['c0','c1','c2'].map(id=>document.getElementById(id)),
-  layer:document.getElementById('onxLayer'), onxTxt:document.getElementById('onxTxt'),
-  onxTools:document.getElementById('onxTools'), narrH:document.getElementById('narrH'),
-  narrB:document.getElementById('narrB'), stageNum:document.getElementById('stageNum'),
-  stageName:document.getElementById('stageName'), rail:document.getElementById('hiwRail'),
-  playBtn:document.getElementById('playBtn')
-};
-/* build rail */
-hiwEls.rail.innerHTML=hiwStages.map((s,i)=>`<button class="rail-step" data-i="${i}" onclick="gotoHiw(${i})"><div class="bar"><span style="--dur:${s.dur}ms"></span></div><span class="rl">0${i+1} ${s.name}</span></button>`).join('');
-const railSteps=[...hiwEls.rail.querySelectorAll('.rail-step')];
-
-let hiwIdx=0,hiwTimer=null,hiwPlaying=true;
-function renderHiw(i){
-  const s=hiwStages[i];
-  hiwEls.nodes.forEach((n,idx)=>{
-    n.classList.remove('lit','done','onxlit');
-    if(s.lit.includes(idx))n.classList.add('lit');
-    else if(i>0 && hiwStages.slice(0,i).some(p=>p.lit.includes(idx)))n.classList.add('done');
-    if(s.onxNodes&&s.onxNodes.includes(idx))n.classList.add('onxlit');
-  });
-  hiwEls.connects.forEach(c=>{c.classList.remove('flowing','solid');});
-  (s.flow||[]).forEach(id=>{const c=document.getElementById(id);if(c)c.classList.add('flowing');});
-  if(s.solidAll)hiwEls.connects.forEach(c=>c.classList.add('solid'));
-  hiwEls.layer.classList.toggle('active',!!s.onx);
-  hiwEls.onxTxt.innerHTML=s.onxTxt;
-  hiwEls.onxTools.textContent=s.tools||'14 MCP tools · 9 resources';
-  hiwEls.narrH.textContent=s.h; hiwEls.narrB.textContent=s.b;
-  hiwEls.stageNum.textContent=i+1; hiwEls.stageName.textContent=s.name;
-  railSteps.forEach((r,idx)=>{r.classList.remove('active','complete');if(idx<i)r.classList.add('complete');else if(idx===i)r.classList.add('active');
-    const span=r.querySelector('.bar span');span.style.animation='none';void span.offsetWidth;span.style.animation='';});
-}
-function scheduleHiw(){clearTimeout(hiwTimer);if(!hiwPlaying)return;hiwTimer=setTimeout(()=>{hiwIdx=(hiwIdx+1)%hiwStages.length;renderHiw(hiwIdx);scheduleHiw();},hiwStages[hiwIdx].dur);}
-function gotoHiw(i){hiwIdx=i;renderHiw(i);if(hiwPlaying)scheduleHiw();}
-function toggleHiw(){hiwPlaying=!hiwPlaying;hiwEls.playBtn.innerHTML=hiwPlaying?'⏸ Pause':'▶ Play';if(hiwPlaying)scheduleHiw();else clearTimeout(hiwTimer);}
-/* start only when the section scrolls into view; pause when out */
-const hiwIO=new IntersectionObserver(es=>{es.forEach(e=>{
-  if(e.isIntersecting){if(hiwPlaying){renderHiw(hiwIdx);scheduleHiw();}}
-  else{clearTimeout(hiwTimer);}
-});},{threshold:.3});
-hiwIO.observe(document.getElementById('hiw'));
-renderHiw(0);
-
-const posts=[
-  {track:'brand',label:'Brand Activation',title:'Get Found or Get Skipped: Why Brands Can\u2019t Sit Out Agentic Commerce',excerpt:'The discoverability stakes of agent-mediated shopping \u2014 and why legibility to agents is now table stakes.',read:'8 min',c:'#b6e63a'},
-  {track:'brand',label:'Brand Activation',title:'The 20-Minute Internal Memo That Gets onX on Your Roadmap',excerpt:'A copy-paste template for making the business case to your VP of Ops and your CFO.',read:'5 min',c:'#b6e63a'},
-  {track:'brand',label:'Brand Activation',title:'How to Ask Your OMS Vendor for onX (and What \u201CYes\u201D Looks Like)',excerpt:'Scripts, questions, and red flags for the conversation that starts your activation.',read:'6 min',c:'#b6e63a'},
-  {track:'tech',label:'Vendor Engineering',title:'Mapping Your Existing APIs to the 14 onX MCP Tools',excerpt:'A technical walkthrough of aligning your order surface to the spec \u2014 with the common gaps.',read:'11 min',c:'#5cc4e6'},
-  {track:'tech',label:'Vendor Engineering',title:'From Clone to Conformant in a Sprint: Using the Reference Server',excerpt:'How early implementers stood up a compliant endpoint faster than expected.',read:'9 min',c:'#5cc4e6'},
-  {track:'tech',label:'Vendor Engineering',title:'Inside the Technical Steering Committee: How the Spec Evolves',excerpt:'What it means to shape onX from the inside, and how decisions get made in the open.',read:'7 min',c:'#5cc4e6'},
-  {track:'si',label:'Integrator Playbook',title:'Productizing onX: Turning a Standard into a Service Line',excerpt:'How to package assessment, activation, and migration into named, estimable offerings.',read:'8 min',c:'#f0a94e'},
-  {track:'si',label:'Integrator Playbook',title:'The Anatomy of a Repeatable onX Rollout',excerpt:'A reference delivery plan you can adapt across clients \u2014 scopes, milestones, gotchas.',read:'10 min',c:'#f0a94e'},
-  {track:'vision',label:'The Big Picture',title:'The EDI Moment: What 40 Years of Interoperability Teaches Us',excerpt:'Why the agentic-commerce era needs its own common language \u2014 and what history predicts.',read:'9 min',c:'#a78bfa'},
-  {track:'vision',label:'The Big Picture',title:'Foundation Launch: A New Era for Commerce Operations',excerpt:'Introducing onX, the founding members, and the road ahead for the Foundation.',read:'6 min',c:'#a78bfa'},
-];
-function postCard(p){return `<div class="post" data-track="${p.track}" style="--pc:${p.c}" onclick="openArticle('${p.label.toUpperCase()}','${p.title.replace(/'/g,"\\'")}','${p.c}')"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, ${p.c} 55%, #0a2230), #0a2230 92%)"><div class="pnum">onX</div></div><div class="pbody"><div class="ptrack">${p.label}</div><h4>${p.title}</h4><p>${p.excerpt}</p><div class="pmeta"><span>${p.read} read</span><span>Read →</span></div></div></div>`;}
-document.getElementById('blogPosts').innerHTML=posts.map(postCard).join('');
-document.getElementById('homePosts').innerHTML=posts.filter(p=>['brand','vision','tech'].includes(p.track)).slice(0,3).map(postCard).join('');
-function filterPosts(track,el){document.querySelectorAll('#trackFilter .tf').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.querySelectorAll('#blogPosts .post').forEach(p=>{p.style.display=(track==='all'||p.dataset.track===track)?'flex':'none';});}
-function openArticle(track,title,c){document.getElementById('artTrack').textContent=track+' SERIES';document.getElementById('artTrack').style.color=c;document.getElementById('artTitle').textContent=title;go('article');}
-
-const vendorData={'Order Management (OMS)':[{n:'Manhattan',s:'live'},{n:'IBM Sterling',s:'build'},{n:'Fluent Commerce',s:'live'},{n:'Deck Commerce',s:'build'},{n:'Kibo',s:'live'},{n:'OneStock',s:'build'},{n:'Nextuple',s:'live'}],'Warehouse & 3PL (WMS/3PL)':[{n:'ShipHero',s:'live'},{n:'Ryder',s:'build'},{n:'Radial',s:'live'},{n:'Logiwa',s:'build'},{n:'Quiet Platforms',s:'build'},{n:'Barrett Distribution',s:'build'}],'Commerce Platforms':[{n:'commercetools',s:'live'},{n:'Elastic Path',s:'build'},{n:'Shopware',s:'build'},{n:'Pipe17',s:'live'}],'Integration Partners (SIs)':[{n:'Orium',s:'live'},{n:'Fulfillment IQ',s:'live'},{n:'Patchworks',s:'build'},{n:'Order Management Gurus',s:'build'}]};
-const contactsDB={'Manhattan':{name:'Priya Raman',role:'VP, Partner Ecosystem',email:'partnerships@manh.com'},'IBM Sterling':{name:'Marcus Webb',role:'Director, Order Management',email:'sterling-partners@ibm.com'},'Fluent Commerce':{name:'Sofia Almeida',role:'Head of Solutions',email:'solutions@fluentcommerce.com'},'Deck Commerce':{name:'Tyler Brooks',role:'Product Lead',email:'product@deckcommerce.com'},'Kibo':{name:'Hannah Cole',role:'Platform Partnerships',email:'partners@kibocommerce.com'},'OneStock':{name:'Luc Moreau',role:'Solutions Director',email:'hello@onestock.com'},'Nextuple':{name:'Arun Patel',role:'Co-Founder',email:'connect@nextuple.com'},'ShipHero':{name:'Danielle Pierce',role:'Director, Integrations',email:'integrations@shiphero.com'},'Ryder':{name:'Greg Olsen',role:'E-comm Fulfillment Lead',email:'ecommerce@ryder.com'},'Radial':{name:'Tom Schmitt',role:'CEO',email:'partnerships@radial.com'},'Logiwa':{name:'Ece Yilmaz',role:'Product Partnerships',email:'partners@logiwa.com'},'Quiet Platforms':{name:'Nina Walsh',role:'Network Solutions',email:'hello@quietplatforms.com'},'Barrett Distribution':{name:'Joe Barrett',role:'VP Client Services',email:'info@barrettdistribution.com'},'commercetools':{name:'Felix Bauer',role:'Director, Tech Alliances',email:'alliances@commercetools.com'},'Elastic Path':{name:'Rachel Kim',role:'Partner Solutions',email:'partners@elasticpath.com'},'Shopware':{name:'Jonas Vogel',role:'Ecosystem Lead',email:'partner@shopware.com'},'Pipe17':{name:'Kelly Goetsch',role:'President',email:'hello@pipe17.com'},'Orium':{name:'Sara Devlin',role:'Commerce Practice Lead',email:'hello@orium.com'},'Fulfillment IQ':{name:'Omar Hassan',role:'Managing Partner',email:'connect@fulfillmentiq.com'},'Patchworks':{name:'Lewis Grant',role:'Head of Partnerships',email:'partners@wearepatchworks.com'},'Order Management Gurus':{name:'Dana Lee',role:'Principal Consultant',email:'hello@omgurus.com'}};
-let selected=new Set();
-let vh='';
-for(const cat in vendorData){vh+=`<div class="cat-label">${cat}</div><div class="vendor-grid">`;vendorData[cat].forEach(v=>{vh+=`<div class="vendor" data-name="${v.n}" onclick="toggleVendor(this)"><div class="vdot"></div><div><div class="vname">${v.n}</div><div class="vtype">${v.s==='live'?'onX live':'building'}</div></div></div>`;});vh+='</div>';}
-document.getElementById('vendorGroups').innerHTML=vh;
-function toggleVendor(el){const n=el.dataset.name;if(selected.has(n)){selected.delete(n);el.classList.remove('sel');}else{selected.add(n);el.classList.add('sel');}document.getElementById('selNum').textContent=selected.size;const btn=document.getElementById('genBtn');btn.disabled=selected.size===0;btn.style.opacity=selected.size===0?'.4':'1';}
-function statusOf(name){for(const cat in vendorData){const m=vendorData[cat].find(v=>v.n===name);if(m)return m.s;}return 'build';}
-function buildPacket(){if(selected.size===0)return;document.getElementById('ts1').classList.remove('on');document.getElementById('ts2').classList.add('on');document.getElementById('ts3').classList.add('on');let cards='';selected.forEach(n=>{const c=contactsDB[n]||{name:'Partner Team',role:'Partnerships',email:'partners@example.com'};const st=statusOf(n);const initials=c.name.split(' ').map(x=>x[0]).join('');cards+=`<div class="contact-card"><div class="ci"><div class="av">${initials}</div><div><div class="cn">${c.name} <span style="color:var(--muted-2);font-weight:400">· ${n}</span></div><div class="cr">${c.role}</div><div class="cv">${c.email}</div></div></div><div class="statusbadge ${st}">${st==='live'?'onX LIVE':'BUILDING onX'}</div></div>`;});document.getElementById('contactList').innerHTML=cards;const names=[...selected].join(', ');
-document.getElementById('draftNote').innerHTML=`<span class="hl">Subject:</span> Enabling onX (Order Network eXchange) for our account\n\nHi team,\n\nWe're prioritizing readiness for AI-driven commerce and want to make sure our\norder &amp; fulfillment data is exchanged via the <span class="hl">onX open standard</span> across our stack.\n\nWe work with you (${names}) and would like to understand your onX\nsupport timeline and how we enable it for our account.\n\nSpecifically:\n  • Is an onX-compliant endpoint available or on your roadmap?\n  • What's required on our side to turn it on?\n  • Who is the right technical contact to coordinate the rollout?\n\nWe're working with the Commerce Operations Foundation on this and are happy\nto loop them in to support. Look forward to making fulfillment intelligent together.\n\nBest,\n[Your name]`;
-document.getElementById('selectStage').style.display='none';document.getElementById('packetStage').classList.add('show');document.getElementById('activationTool').scrollIntoView({behavior:'smooth',block:'start'});}
-function resetTool(){document.getElementById('ts1').classList.add('on');document.getElementById('ts2').classList.remove('on');document.getElementById('ts3').classList.remove('on');document.getElementById('selectStage').style.display='block';document.getElementById('packetStage').classList.remove('show');}
-
-function observeAnims(){const els=document.querySelectorAll('.page.active .card, .page.active .step, .page.active .ba .col, .page.active .tier, .page.active .door, .page.active .post');els.forEach(e=>e.classList.add('scrollanim'));const io=new IntersectionObserver(en=>{en.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});els.forEach(e=>io.observe(e));}
-resetParallax();observeAnims();
-</script>
+<script src="/assets/app.js"></script>
+<script src="/assets/home.js"></script>
 </body>
 </html>

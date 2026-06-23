@@ -1,10 +1,10 @@
 # Netlify configuration for ordernetworkexchange.io
-# Plain static site for now; update [build] when a framework is added.
+# Static multi-page site. Netlify auto-detects the forms (data-netlify="true").
 
 [build]
 publish = "."
 
-# 301 redirect legacy domain to the primary domain
+# ----- Legacy domain -> primary domain (301) -----
 [[redirects]]
 from = "https://orderexchangenetwork.com/*"
 to = "https://ordernetworkexchange.io/:splat"
@@ -16,3 +16,51 @@ from = "https://www.orderexchangenetwork.com/*"
 to = "https://ordernetworkexchange.io/:splat"
 status = 301
 force = true
+
+# ----- Clean URLs (rewrite, keeps the pretty path in the address bar) -----
+[[redirects]]
+from = "/brands"
+to = "/brands.html"
+status = 200
+
+[[redirects]]
+from = "/tech"
+to = "/tech.html"
+status = 200
+
+[[redirects]]
+from = "/integrators"
+to = "/integrators.html"
+status = 200
+
+[[redirects]]
+from = "/insights"
+to = "/insights.html"
+status = 200
+
+[[redirects]]
+from = "/insights/:slug"
+to = "/insights/:slug.html"
+status = 200
+
+[[redirects]]
+from = "/membership"
+to = "/membership.html"
+status = 200
+
+# ----- Legacy SPA anchors -> new pages (for any old shared links) -----
+[[redirects]]
+from = "/si"
+to = "/integrators"
+status = 301
+
+[[redirects]]
+from = "/blog"
+to = "/insights"
+status = 301
+
+# ----- Long-cache static assets -----
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=604800"

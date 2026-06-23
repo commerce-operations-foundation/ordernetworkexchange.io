@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Join the foundation shaping AI-era commerce. Activate as a brand, build & steer as a vendor, or certify as an integrator.">
+<link rel="canonical" href="https://ordernetworkexchange.io/membership">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ordernetworkexchange.io/membership">
+<meta property="og:site_name" content="Commerce Operations Foundation">
+<meta property="og:title" content="Membership — Commerce Operations Foundation">
+<meta property="og:description" content="Join the foundation shaping AI-era commerce. Activate as a brand, build & steer as a vendor, or certify as an integrator.">
+<meta property="og:image" content="https://ordernetworkexchange.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Membership — Commerce Operations Foundation">
+<meta name="twitter:description" content="Join the foundation shaping AI-era commerce. Activate as a brand, build & steer as a vendor, or certify as an integrator.">
+<meta name="twitter:image" content="https://ordernetworkexchange.io/og-image.png">
+<title>Membership — Commerce Operations Foundation</title>
+<link rel="icon" type="image/svg+xml" href="/assets/onx-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="blueprint-bg"></div>
+<div class="blueprint-grid" id="bpGrid" data-par-fixed="0.12"></div>
+<div class="blueprint-marks" id="bpMarks"></div>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="/" data-logo aria-label="Commerce Operations Foundation — onX home"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For SIs</a><a href="/insights">Insights</a><a href="/membership" class="active" aria-current="page">Membership</a>
+    <a class="nav-cta-mobile" href="/brands">Activate onX →</a>
+  </div>
+  <a class="nav-cta" href="/brands">Activate onX →</a>
+</div></nav>
+
+<div style="--accent:var(--lime);--pg:rgba(159,212,32,.3)">
+  <section class="phero"><div class="pglow" data-par="0.4"></div><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Membership</div><div class="phero-inner"><h1>Join the foundation shaping<br>AI-era commerce.</h1><p>62+ founding members and $1T+ in GMV are already in. Pick the path that matches how you'll move the standard forward.</p></div></div></section>
+  <section class="section wrap"><div class="tier-grid">
+    <div class="tier"><div class="tname">Brands &amp; Retailers</div><h3>Activate</h3><p class="tdesc">For merchants pushing their stack to adopt onX.</p><ul><li>Brand activation toolkit</li><li>Rollout support from the Foundation</li><li>Listed as an adopting brand</li><li>Early access to brand playbooks</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Brand / Retailer')">Start activating</a></div>
+    <div class="tier feature"><div class="tname">Technology Vendors</div><h3>Build &amp; Steer</h3><p class="tdesc">For OMS / WMS / platform vendors implementing onX.</p><ul><li>Seat on the Technical Steering Committee</li><li>Listed as a compliant vendor</li><li>Inbound demand from the activation tool</li><li>Influence over the spec roadmap</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Technology Vendor')">Join the TSC</a></div>
+    <div class="tier"><div class="tname">Systems Integrators</div><h3>Certify</h3><p class="tdesc">For SIs building an onX delivery practice.</p><ul><li>Certified implementation partner status</li><li>Referral flow from brands</li><li>Implementation enablement &amp; toolkits</li><li>Co-marketing with the Foundation</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Systems Integrator')">Get certified</a></div>
+  </div>
+  <section class="qblock" id="join" style="border-bottom:none;padding-top:64px"><div class="qhead"><div class="qn">→</div><div><h2>Tell us where you fit.</h2><p class="qlede">One short form. It reaches the COF/onX team directly and we'll point you to the fastest path in.</p></div></div>
+    <div class="tool" style="--accent:var(--lime)">
+      <form name="onx-membership" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="memberForm">
+        <div id="memberFormInner">
+          <input type="hidden" name="form-name" value="onx-membership">
+          <p class="honey"><label>Don't fill this in: <input name="bot-field"></label></p>
+          <div class="form-grid">
+            <div class="field"><label for="m-track">I'm a…</label><select id="m-track" name="track"><option>Brand / Retailer</option><option>Technology Vendor</option><option>Systems Integrator</option><option>Something else</option></select></div>
+            <div class="field"><label for="m-name">Your name</label><input id="m-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="m-email">Work email</label><input id="m-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="m-company">Company</label><input id="m-company" name="company" required autocomplete="organization"></div>
+            <div class="field full"><label for="m-msg">Anything you want us to know? <span class="opt">(optional)</span></label><textarea id="m-msg" name="message"></textarea></div>
+          </div>
+          <div class="check-row"><input type="checkbox" id="m-cc" name="copy_me" value="yes" checked><label for="m-cc">Send me a copy</label></div>
+          <div class="tool-foot"><span class="form-note" style="margin:0">We'll reply to the email you provide.</span><button type="submit" class="btn btn-primary">Talk to the Foundation →</button></div>
+        </div>
+      </form>
+      <div class="form-success" id="memberSuccess"><h4>Got it ✓</h4><p>Thanks for reaching out — the COF/onX team will follow up at your email with the right next step.</p></div>
+    </div>
+  </section>
+  </section>
+</div>
+<script>
+function setTrack(t){var s=document.getElementById('m-track');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===t||s.options[i].text===t)s.selectedIndex=i;}}}
+(function(){var f=document.getElementById('memberForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(){document.getElementById('memberFormInner').style.display='none';document.getElementById('memberSuccess').classList.add('show');document.getElementById('memberSuccess').scrollIntoView({behavior:'smooth',block:'center'});}).catch(function(){});});})();
+</script>
+<footer class="footer"><div class="wrap">
+  <div class="foot-top">
+    <div><a class="logo" href="/" data-logo aria-label="Commerce Operations Foundation — onX"></a><p class="foot-blurb">Stewarding onX — the open standard making fulfillment intelligent for the age of AI commerce.</p></div>
+    <div><h5>By Audience</h5><a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For SIs</a></div>
+    <div><h5>Resources</h5><a href="/insights">Insights</a><a href="https://github.com/commerce-operations-foundation" target="_blank" rel="noopener">GitHub ↗</a><a href="/membership">Membership</a></div>
+    <div><h5>Foundation</h5><a href="https://commerceopsfoundation.org/about/" target="_blank" rel="noopener">About</a><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">Governance</a><a href="/membership#join">Contact</a></div>
+  </div>
+  <div class="foot-bottom"><span>© <span data-year>2026</span> Commerce Operations Foundation. All rights reserved.</span><span class="mono">Built on the Model Context Protocol</span></div>
+</div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>
