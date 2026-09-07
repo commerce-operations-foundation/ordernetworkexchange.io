@@ -47,7 +47,7 @@ function head(o){
 const NAVITEMS=[
   {href:'/brands',label:'For Brands',key:'brands'},
   {href:'/tech',label:'For Tech Vendors',key:'tech'},
-  {href:'/integrators',label:'For SIs',key:'integrators'},
+  {href:'/integrators',label:'For Systems Integrators',key:'integrators'},
   {href:'/insights',label:'Insights',key:'insights'},
   {href:'/membership',label:'Membership',key:'membership'},
 ];
@@ -58,9 +58,9 @@ function nav(active){
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
   <div class="nav-links" id="navLinks">
     ${links}
-    <a class="nav-cta-mobile" href="/brands">Activate onX →</a>
+    <a class="nav-cta-mobile" href="/brands">Start your journey with onX →</a>
   </div>
-  <a class="nav-cta" href="/brands">Activate onX →</a>
+  <a class="nav-cta" href="/brands">Start your journey with onX →</a>
 </div></nav>`;
 }
 
@@ -68,7 +68,7 @@ function footer(){
   return `<footer class="footer"><div class="wrap">
   <div class="foot-top">
     <div><a class="logo" href="/" data-logo aria-label="Commerce Operations Foundation — onX"></a><p class="foot-blurb">Stewarding onX — the open standard making fulfillment intelligent for the age of AI commerce.</p></div>
-    <div><h5>By Audience</h5><a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For SIs</a></div>
+    <div><h5>By Audience</h5><a href="/brands">For Brands</a><a href="/tech">For Tech Vendors</a><a href="/integrators">For Systems Integrators</a></div>
     <div><h5>Resources</h5><a href="/insights">Insights</a><a href="https://github.com/commerce-operations-foundation" target="_blank" rel="noopener">GitHub ↗</a><a href="/membership">Membership</a></div>
     <div><h5>Foundation</h5><a href="https://commerceopsfoundation.org/about/" target="_blank" rel="noopener">About</a><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">Governance</a><a href="/membership#join">Contact</a></div>
   </div>
@@ -104,8 +104,9 @@ const posts=[
 ];
 function slugify(t){return t.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
 posts.forEach(p=>p.slug=slugify(p.title));
+const TRACK_ICON={brand:'📋',tech:'⚙️',si:'🧩',vision:'🔭'};
 function postCard(p){
-  return `<a class="post" href="/insights/${p.slug}" data-track="${p.track}" style="--pc:${p.c}"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, ${p.c} 55%, #0a2230), #0a2230 92%)"><div class="pnum">onX</div></div><div class="pbody"><div class="ptrack">${p.label}</div><h4>${p.title}</h4><p>${p.excerpt}</p><div class="pmeta"><span>${p.read} read</span><span>Read →</span></div></div></a>`;
+  return `<a class="post" href="/insights/${p.slug}" data-track="${p.track}" style="--pc:${p.c}"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, ${p.c} 55%, #0a2230), #0a2230 92%)"><div class="pnum">${TRACK_ICON[p.track]||'onX'}</div></div><div class="pbody"><div class="ptrack">${p.label}</div><h4>${p.title}</h4><p>${p.excerpt}</p><div class="pmeta"><span>${p.read} read</span><span>Read →</span></div></div></a>`;
 }
 
 module.exports = { page, head, nav, footer, posts, postCard, slugify, SITE, ROOT, fs, path };

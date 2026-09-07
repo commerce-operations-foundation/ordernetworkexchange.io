@@ -5,7 +5,7 @@ const { page, posts, postCard, slugify, fs, path, ROOT } = b;
 const GH = 'https://github.com/commerce-operations-foundation';
 
 /* ============================ HOME ============================ */
-const homeTeaser = posts.filter(p=>['brand','vision','tech'].includes(p.track)).slice(0,3).map(postCard).join('');
+const homeTeaser = ['brand','tech','vision'].map(t=>posts.find(p=>p.track===t)).filter(Boolean).map(postCard).join('');
 page({
   file:'index.html', path:'/', active:'home',
   title:'Commerce Operations Foundation — onX',
@@ -30,7 +30,7 @@ page({
     <div class="doors">
       <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
       <a class="door tech" href="/tech"><div class="ico">⚙️</div><div class="who">Technology Vendors</div><h3>I build OMS / WMS / platforms</h3><p>Ship a compliant onX endpoint, join the Technical Steering Committee, and become the default your customers ask for.</p><span class="go">Enter the Tech track <span class="arr">→</span></span></a>
-      <a class="door si" href="/integrators"><div class="ico">🔧</div><div class="who">Systems Integrators</div><h3>I implement &amp; integrate</h3><p>Lead onX rollouts for your clients, get certified, and turn the standard into a repeatable services practice.</p><span class="go">Enter the SI track <span class="arr">→</span></span></a>
+      <a class="door si" href="/integrators"><div class="ico">🔧</div><div class="who">Systems Integrators</div><h3>I implement &amp; integrate</h3><p>Lead onX rollouts for your clients, get certified, and turn the standard into a repeatable services practice.</p><span class="go">Enter the Systems Integrator track <span class="arr">→</span></span></a>
     </div>
   </div>
 </section>
@@ -43,6 +43,13 @@ page({
   </div>
   <div class="marquee"><div class="marquee-track" id="mq"></div></div>
 </div></div>
+
+<section class="section wrap pullquote-wrap" style="--accent:var(--lime);padding-bottom:0">
+  <figure class="pullquote">
+    <blockquote>&ldquo;Agentic commerce requires real-time order, inventory, fulfillment, and returns information &mdash; capabilities that most legacy commerce systems were not designed to provide. There is a movement in this space, something to watch for, and it&rsquo;s called the onX protocol.&rdquo;</blockquote>
+    <figcaption><span class="pq-name">Deepa Shekhar</span><span class="pq-org">Logitech</span></figcaption>
+  </figure>
+</section>
 
 <section class="hiw" id="hiw">
   <div class="wrap">
@@ -110,7 +117,7 @@ page({
 /* ============================ BRANDS ============================ */
 page({
   file:'brands.html', path:'/brands', active:'brands',
-  title:'For Brands & Retailers — Activate onX',
+  title:'For Brands & Retailers — Start your journey with onX',
   desc:'Your customers are already shopping with agents. Activate onX with the OMS, WMS, and integration partners you already use.',
   scripts:['<script src="/assets/brands.js"></script>'],
   body:`
@@ -228,7 +235,7 @@ page({
   <section class="qblock wrap" id="s-how" style="border-bottom:none"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">Build the capability, prove it, then get listed as a go-to onX partner.</p></div></div>
     <div class="steps"><div class="step"><div class="sn"></div><div><h4>Skill up your team</h4><p>Get your architects through the onX technical docs and reference implementation.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">Open the docs &amp; repo ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Run a reference implementation</h4><p>Deliver an onX activation with a willing client or vendor partner to build a proof point.</p></div></div><div class="step"><div class="sn"></div><div><h4>Productize your offering</h4><p>Package assessment, activation, and migration into named services with fixed scopes.</p></div></div><div class="step"><div class="sn"></div><div><h4>Get certified</h4><p>Validate your capability with the Foundation and earn the certified implementation partner credential.</p><a class="scta" href="/membership#join">Apply for certification →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get referred</h4><p>Certified partners are surfaced to brands in the activation flow — inbound demand, not cold outreach.</p></div></div></div>
   </section>
-  <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--amber)"></div><h2>Be the partner the activation wave runs through.</h2><p>Certified onX integrators don't chase the work. The work comes to them.</p><div class="btn-row"><a class="btn btn-primary" href="/membership#join">Become a certified partner</a><a class="btn btn-ghost" href="/insights">Read the SI playbook</a></div></div></section>
+  <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--amber)"></div><h2>Be the partner the activation wave runs through.</h2><p>Certified onX integrators don't chase the work. The work comes to them.</p><div class="btn-row"><a class="btn btn-primary" href="/membership#join">Become a certified partner</a><a class="btn btn-ghost" href="/insights">Read the Systems Integrator playbook</a></div></div></section>
 </div>`
 });
 
@@ -260,7 +267,7 @@ page({
   <section class="section wrap"><div class="tier-grid">
     <div class="tier"><div class="tname">Brands &amp; Retailers</div><h3>Activate</h3><p class="tdesc">For merchants pushing their stack to adopt onX.</p><ul><li>Brand activation toolkit</li><li>Rollout support from the Foundation</li><li>Listed as an adopting brand</li><li>Early access to brand playbooks</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Brand / Retailer')">Start activating</a></div>
     <div class="tier feature"><div class="tname">Technology Vendors</div><h3>Build &amp; Steer</h3><p class="tdesc">For OMS / WMS / platform vendors implementing onX.</p><ul><li>Seat on the Technical Steering Committee</li><li>Listed as a compliant vendor</li><li>Inbound demand from the activation tool</li><li>Influence over the spec roadmap</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Technology Vendor')">Join the TSC</a></div>
-    <div class="tier"><div class="tname">Systems Integrators</div><h3>Certify</h3><p class="tdesc">For SIs building an onX delivery practice.</p><ul><li>Certified implementation partner status</li><li>Referral flow from brands</li><li>Implementation enablement &amp; toolkits</li><li>Co-marketing with the Foundation</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Systems Integrator')">Get certified</a></div>
+    <div class="tier"><div class="tname">Systems Integrators</div><h3>Certify</h3><p class="tdesc">For Systems Integrators building an onX delivery practice.</p><ul><li>Certified implementation partner status</li><li>Referral flow from brands</li><li>Implementation enablement &amp; toolkits</li><li>Co-marketing with the Foundation</li></ul><a class="btn btn-primary" href="#join" onclick="setTrack('Systems Integrator')">Get certified</a></div>
   </div>
   <section class="qblock" id="join" style="border-bottom:none;padding-top:64px"><div class="qhead"><div class="qn">→</div><div><h2>Tell us where you fit.</h2><p class="qlede">One short form. It reaches the COF/onX team directly and we'll point you to the fastest path in.</p></div></div>
     <div class="tool" style="--accent:var(--lime)">

@@ -17,7 +17,7 @@ const vendorData={
   'Order Management (OMS)':[{n:'Manhattan',s:'live'},{n:'IBM Sterling',s:'build'},{n:'Fluent Commerce',s:'live'},{n:'Deck Commerce',s:'build'},{n:'Kibo',s:'live'},{n:'OneStock',s:'build'},{n:'Nextuple',s:'live'}],
   'Warehouse & 3PL (WMS/3PL)':[{n:'ShipHero',s:'live'},{n:'Ryder',s:'build'},{n:'Radial',s:'live'},{n:'Logiwa',s:'build'},{n:'Quiet Platforms',s:'build'},{n:'Barrett Distribution',s:'build'}],
   'Commerce Platforms':[{n:'commercetools',s:'live'},{n:'Elastic Path',s:'build'},{n:'Shopware',s:'build'},{n:'Pipe17',s:'live'}],
-  'Integration Partners (SIs)':[{n:'Orium',s:'live'},{n:'Fulfillment IQ',s:'live'},{n:'Patchworks',s:'build'},{n:'Order Management Gurus',s:'build'}]
+  'Integration Partners (Systems Integrators)':[{n:'Orium',s:'live'},{n:'Fulfillment IQ',s:'live'},{n:'Patchworks',s:'live'},{n:'Order Management Gurus',s:'build'}]
 };
 
 let selected=new Set();
