@@ -47,7 +47,7 @@ page({
 <section class="section wrap pullquote-wrap" style="--accent:var(--lime);padding-bottom:0">
   <figure class="pullquote">
     <blockquote>&ldquo;Agentic commerce requires real-time order, inventory, fulfillment, and returns information &mdash; capabilities that most legacy commerce systems were not designed to provide. There is a movement in this space, something to watch for, and it&rsquo;s called the onX protocol.&rdquo;</blockquote>
-    <figcaption><span class="pq-name">Deepa Shekhar</span><span class="pq-org">Logitech</span></figcaption>
+    <figcaption><span class="pq-name">Deepa Shekhar</span>, <span class="pq-org">Logitech</span></figcaption>
   </figure>
 </section>
 
