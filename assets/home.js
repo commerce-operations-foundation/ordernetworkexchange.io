@@ -31,6 +31,7 @@ const hiwStages=[
     onxTxt:'<b>The loop closes.</b> Fulfillment data is legible end-to-end.',
     tools:'getShipmentStatus · updateOrder' },
 ];
+const HIW_DURATION_MULTIPLIER=4; // 75% slower playback: 25% of the original speed.
 const hiwEls={
   nodes:[...Array(5)].map((_,i)=>document.getElementById('n'+i)),
   connects:['c0','c1','c2'].map(id=>document.getElementById(id)),
@@ -40,7 +41,7 @@ const hiwEls={
   stageName:document.getElementById('stageName'), rail:document.getElementById('hiwRail'),
   playBtn:document.getElementById('playBtn')
 };
-hiwEls.rail.innerHTML=hiwStages.map((s,i)=>`<button class="rail-step" data-i="${i}" onclick="gotoHiw(${i})"><div class="bar"><span style="--dur:${s.dur}ms"></span></div><span class="rl">0${i+1} ${s.name}</span></button>`).join('');
+hiwEls.rail.innerHTML=hiwStages.map((s,i)=>`<button class="rail-step" data-i="${i}" onclick="gotoHiw(${i})"><div class="bar"><span style="--dur:${s.dur*HIW_DURATION_MULTIPLIER}ms"></span></div><span class="rl">0${i+1} ${s.name}</span></button>`).join('');
 const railSteps=[...hiwEls.rail.querySelectorAll('.rail-step')];
 
 let hiwIdx=0,hiwTimer=null,hiwPlaying=true;
@@ -63,7 +64,7 @@ function renderHiw(i){
   railSteps.forEach((r,idx)=>{r.classList.remove('active','complete');if(idx<i)r.classList.add('complete');else if(idx===i)r.classList.add('active');
     const span=r.querySelector('.bar span');span.style.animation='none';void span.offsetWidth;span.style.animation='';});
 }
-function scheduleHiw(){clearTimeout(hiwTimer);if(!hiwPlaying)return;hiwTimer=setTimeout(()=>{hiwIdx=(hiwIdx+1)%hiwStages.length;renderHiw(hiwIdx);scheduleHiw();},hiwStages[hiwIdx].dur);}
+function scheduleHiw(){clearTimeout(hiwTimer);if(!hiwPlaying)return;hiwTimer=setTimeout(()=>{hiwIdx=(hiwIdx+1)%hiwStages.length;renderHiw(hiwIdx);scheduleHiw();},hiwStages[hiwIdx].dur*HIW_DURATION_MULTIPLIER);}
 function gotoHiw(i){hiwIdx=i;renderHiw(i);if(hiwPlaying)scheduleHiw();}
 function toggleHiw(){hiwPlaying=!hiwPlaying;hiwEls.playBtn.innerHTML=hiwPlaying?'⏸ Pause':'▶ Play';if(hiwPlaying)scheduleHiw();else clearTimeout(hiwTimer);}
 const hiwIO=new IntersectionObserver(es=>{es.forEach(e=>{
