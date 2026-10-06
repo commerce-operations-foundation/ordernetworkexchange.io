@@ -249,7 +249,7 @@ page({
   <section class="blog-hero"><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Insights</div><div class="eyebrow" style="--accent:var(--violet)">Insights</div><h2 style="font-size:clamp(32px,4.6vw,52px)">Three series. One mission:<br>turn the standard into action.</h2>
     <div class="track-filter" id="trackFilter"><div class="tf active" data-track="all" onclick="filterPosts('all',this)">All insights</div><div class="tf" data-track="brand" onclick="filterPosts('brand',this)">Brand Activation</div><div class="tf" data-track="tech" onclick="filterPosts('tech',this)">Vendor Engineering</div><div class="tf" data-track="si" onclick="filterPosts('si',this)">Integrator Playbook</div><div class="tf" data-track="vision" onclick="filterPosts('vision',this)">The Big Picture</div></div>
   </div></section>
-  <div class="wrap"><div class="posts" id="blogPosts">${posts.map(postCard).join('')}</div><p class="center mono" style="color:var(--muted-2);padding-bottom:60px">Article bodies are illustrative placeholders — titles &amp; framing only.</p></div>
+  <div class="wrap"><div class="posts" id="blogPosts">${posts.map(postCard).join('')}</div><p class="center mono" style="color:var(--muted-2);padding-bottom:60px">More onX insights are in development.</p></div>
 </div>
 <script>
 function filterPosts(track,el){document.querySelectorAll('#trackFilter .tf').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.querySelectorAll('#blogPosts .post').forEach(p=>{p.style.display=(track==='all'||p.dataset.track===track)?'flex':'none';});}
@@ -305,9 +305,51 @@ const TRACK_CTA = {
   si:{href:'/integrators',label:'Build your onX practice →'},
   vision:{href:'/membership',label:'Join the Foundation →'},
 };
+const ARTICLE_BODIES = {
+  'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
+
+  <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>
+
+  <p>The problem is a simple one to state and a hard one to ignore. Especially as AI has made buying effortless, as Kelly Goetsch, the foundation's founding president and president of Pipe17, explained it during the launch. Now we need to make fulfillment intelligent. An AI agent can already help someone choose and purchase a product in seconds through their favorite LLM. What happens after that purchase — whether the order gets confirmed accurately, whether the agent can answer "where is it now?" honestly, whether a return actually gets processed — all these questions are still answered via infrastructure that was never built with an AI agent as a caller.</p>
+
+  <p>Here is a good way to think about the problem. Every vendor helping merchants sell and fulfill goods uses the same terminology: orders, products, shipments, returns, etc. However, every brand's fulfillment stack has an API that speaks in its own dialect. Every integration between selling channel and fulfillment system is unique (or even custom-built). And frequently a merchant will have 2, 3, 6 or even 10 different systems connected together to support their processes from posting and selling products through last mile delivery. If those systems do not inherently “understand” each other, none of that scales to an agentic world.</p>
+
+  <p>As users become more acquainted with the speed of agents getting to and answering tough questions, the involved parties will need to ask order-related questions that are often answered by not just one, but various systems. And users will expect to receive answers very rapidly. For this to be possible all these systems and their associated agents will be required to “speak” the same language. In the same dialect. A standard amongst all the systems and their agents.</p>
+
+  <h2>Who actually showed up</h2>
+
+  <p>What's notable about the founding roster isn't just its size. It's its shape. The vendors and brands who backed onX at launch span nearly every seat at the table this problem actually touches: inventory management, order management and fulfillment platforms like Manhattan Associates, IBM Sterling, Cin7 and SPS Commerce; logistics and fulfillment operators like Radial, Ryder, and Barrett Distribution; commerce platforms including commercetools and Commerce (the parent of BigCommerce and Feedonomics); EDI integration platforms such as CRSTL and OsaCommerce; and brands themselves, among them Allbirds, Logitech, VitaminShoppe and Ipsy, who have as much at stake in getting this right as anyone building the plumbing underneath them.</p>
+
+  <p>That breadth wasn't incidental. A standard built by fulfillment vendors alone risks solving the problem in a way that's convenient for fulfillment vendors and awkward for everyone downstream of them. One built only by brands risks the opposite, a wish list with no realistic path to implementation. Getting all of these seats filled at launch, rather than adding them one at a time after the fact, was the foundation's first real test of whether "vendor-neutral" was a genuine design principle or just a phrase in the mission statement. The roster at launch is the evidence that it held.</p>
+
+  <p>The people speaking for that roster made the stakes plain from day one. Sudhir Balebail, IBM's program director for OMS product management, framed it as giving commerce systems a shared language for agentic AI. Tom Schmitt, CEO of Radial, put the emphasis on the second half of the transaction that AI hasn't fixed yet: AI is transforming how orders start, but fulfillment is what delivers on that promise. And Sanjeev Siotia, Manhattan Associates' CTO, tied it back to the practical outcome all of this is actually for, that aligning merchants, logistics providers, and fulfillment leaders around a shared framework helps commerce move faster for everyone building on top of it.</p>
+
+  <h2>Why a foundation, and not a product</h2>
+
+  <p>Because the onX standard solution was structured by the Commerce Operations Foundation (COF), rather than being shipped as any single company's product, we feel confident in the persistence of the solution.</p>
+
+  <p>A specification owned by one vendor changes on that vendor's timeline, for that vendor's reasons, and everyone else building against it is one strategic pivot away from a broken integration. A foundation with a board drawn from across the ecosystem, working groups organized by who's actually affected by a given change, and a public, versioned process for deciding what happens next doesn't have that failure mode built into it. It has other challenges instead, mainly the slower pace that comes with needing real consensus rather than one executive's sign-off, but it's the structure that gives a standard a chance to still matter in ten years rather than only in the press cycle around its launch.</p>
+
+  <p>That's also why the founding member count matters more than it might first appear to. Sixty-two organizations agreeing to build toward the same specification, with governance seats and working group tracks split across brands, third-party logistics providers, and platforms, is a genuinely different starting position than a spec with a handful of contributors and a hope that adoption follows. The trillion dollars in GMV behind that roster isn't a vanity statistic. It's a rough measure of how much real commerce infrastructure already has a reason to keep this standard alive.</p>
+
+  <h2>What comes next</h2>
+
+  <p>The spec itself is now public and versioned, with a reference server anyone can build an adapter against rather than reverse-engineer from documentation alone. The governance process that decides what changes next runs in the open, through working groups organized around who's actually affected by a given decision. And the path-in looks different depending on where you sit: brands are starting to ask their vendors the right questions before their next contract renewal, vendors are mapping their existing systems against the standard tool set, and systems integrators are turning the implementation work into a real, repeatable practice rather than one-off consulting engagements. Each of those threads has its own deeper coverage elsewhere in this series, and each one is evidence of the same thing, that the work of actually building this out has already started rather than waiting for permission.</p>
+
+  <p>Standards like this one tend to get written about twice. Once at launch, when everything is still a promise and a founding roster, and again decades later, when someone explains to a newer generation of engineers that the infrastructure they've never thought twice about had an origin story at all. Most people only get to read the second version. This is the first one, written while the outcome is still being decided by the people choosing to show up and do the work, which is, in the end, the only way any standard like this has ever actually succeeded.</p>`,
+};
+const PLACEHOLDER_ARTICLE_BODY = `<div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
+  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
+  <h2>The shift is already underway</h2>
+  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
+  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
+  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
+  <h2>What to do this quarter</h2>
+  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>`;
 fs.mkdirSync(path.join(ROOT,'insights'),{recursive:true});
 posts.forEach(p=>{
   const cta=TRACK_CTA[p.track];
+  const articleBody=ARTICLE_BODIES[p.slug] || PLACEHOLDER_ARTICLE_BODY;
   page({
     file:path.join('insights',p.slug+'.html'),
     path:'/insights/'+p.slug, active:'insights',
@@ -320,14 +362,7 @@ posts.forEach(p=>{
   <h1>${p.title}</h1>
   <div class="abyline"><div class="aav"></div><div><b style="color:var(--ink)">Commerce Operations Foundation</b><br>${p.read} read · ${p.label}</div></div>
   <p class="lead">${p.excerpt}</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>
+  ${articleBody}
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="${cta.href}">${cta.label}</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>
 </article></div>`
   });
