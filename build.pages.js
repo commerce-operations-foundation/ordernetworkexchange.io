@@ -10,7 +10,7 @@ page({
   file:'index.html', path:'/', active:'home',
   title:'Commerce Operations Foundation — onX',
   desc:'onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.',
-  scripts:['<script src="/assets/home.js?v=20261006-slower-walkthrough"></script>'],
+  scripts:['<script src="/assets/home.js?v=20261006-walkthrough-speed-2"></script>'],
   body:`
 <section class="hero" id="hero">
   <div class="hero-bg">

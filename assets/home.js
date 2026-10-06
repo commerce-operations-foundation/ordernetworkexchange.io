@@ -31,7 +31,7 @@ const hiwStages=[
     onxTxt:'<b>The loop closes.</b> Fulfillment data is legible end-to-end.',
     tools:'getShipmentStatus · updateOrder' },
 ];
-const HIW_DURATION_MULTIPLIER=4; // 75% slower playback: 25% of the original speed.
+const HIW_DURATION_MULTIPLIER=3.2; // 25% faster than the previous slowed playback.
 const hiwEls={
   nodes:[...Array(5)].map((_,i)=>document.getElementById('n'+i)),
   connects:['c0','c1','c2'].map(id=>document.getElementById(id)),
