@@ -47,14 +47,44 @@
   <div class="atrack" style="color:#a78bfa">THE BIG PICTURE SERIES</div>
   <h1>The EDI Moment: What 40 Years of Interoperability Teaches Us</h1>
   <p class="lead">Why the agentic-commerce era needs its own common language — and what history predicts.</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>
+  <p>In the late 1940s, a U.S. Army logistics officer named Edward Guilbert was trying to solve a problem that had nothing to do with computers, because computers as we'd recognize them barely existed yet. During the Berlin Airlift, cargo manifests moving between different military branches and different countries kept arriving in incompatible formats, and someone on the receiving end had to manually reconcile what one system called a shipment against what another system meant by the same word. Guilbert's fix was a standardized way to describe a shipment so that everyone handling it, regardless of which branch or country they belonged to, was reading the same thing. That idea, refined over the following decades, became the seed of what we now call EDI.</p>
+
+  <p>It's a strange place for a commerce standard to start, and that's exactly why it's worth starting the story there. EDI wasn't invented by a standards committee trying to be tidy. It was invented because a real bottleneck made the old way of doing things break down, and someone had to fix it before the fixing could wait for a formal process to catch up.</p>
+
+  <h2>How it actually unfolded</h2>
+
+  <p>The pattern repeated for decades after that. Trucking, rail, ocean, and air carriers spent the 1960s testing electronic manifests to replace paper ones, and by 1968 the Transportation Data Coordinating Committee had formed specifically to standardize formats across carriers, because freight was the industry where the point-to-point paperwork problem hurt the most and the earliest. In 1979, the American National Standards Institute chartered what became ASC X12 to generalize that work beyond transportation into a real inter-industry standard. By the late 1980s, the United Nations had adopted EDIFACT as an international counterpart, so the standard could cross borders as well as industries.</p>
+
+  <p>None of that made EDI ubiquitous on its own. What actually drove the second wave of adoption in the 1990s, when retail, automotive, healthcare, and finance all picked it up in earnest, was leverage more than enthusiasm. Large retailers and manufacturers made EDI compliance a condition of doing business with them, and suppliers who wanted the relationship had to get on board whether or not they were excited about it. That's an uncomfortable detail if you want the story to be purely about the virtue of open standards, and it's also true, and it matters for what comes next.</p>
+
+  <p>By the 2000s, EDI had moved off expensive, single-purpose value-added networks and onto the internet, and by the 2010s it had absorbed cloud and API-based delivery models without losing the underlying format discipline that made it work in the first place. Today it's still there, running a genuinely enormous share of B2B commerce, and almost nobody thinks about it. That last part is the whole point.</p>
+
+  <h2>What actually holds up as a lesson</h2>
+
+  <p>A few things about this history are worth taking seriously rather than treating as background color.</p>
+
+  <p>The first is that standards get built to solve a bottleneck, not to satisfy an ideal. EDI succeeded because manually reconciling shipment paperwork between every shipper and every carrier had become genuinely unworkable at scale, not because interoperability sounded like a nice thing to have. Standards that get built ahead of a real bottleneck tend to sit unused. Standards that get built because everyone involved is already in pain tend to get adopted whether or not the pitch is compelling.</p>
+
+  <p>The second is that adoption speed and adoption durability come from different places. Leverage got EDI adopted fast, particularly once the biggest buyers in retail and automotive started requiring it. But leverage alone doesn't explain why it's still running four decades later, long after any single retailer's specific mandate stopped being the reason anyone cared. What kept it alive is that it became genuinely shared infrastructure rather than one company's proprietary requirement, so it kept being useful to everyone in the network even as the original enforcers' influence faded. A standard that only survives because one powerful player insists on it is fragile in exactly the way that player's leverage is fragile. A standard that survives because it's genuinely useful to every party using it doesn't have that problem.</p>
+
+  <p>The third lesson is less flattering, and worth sitting with precisely because it's less flattering. EDI never fully delivered on the clean interoperability promise it seemed to offer on paper. In practice, it fragmented into different dialects depending on the trading partner, the industry vertical, and the value-added network in the middle, and "EDI compliant" often still meant a custom mapping exercise for every new partner relationship, which is a strange thing to have to say about something called a standard. Publishing a spec and getting genuine interoperability out of it turned out to be two different achievements, and the gap between them was closed only by continuous, unglamorous work: reference implementations, conformance testing, and governance that kept implementers honest about actually building the same thing rather than their own version of it.</p>
+
+  <p>The fourth lesson is the quietest one and maybe the truest. A standard wins by disappearing. The infrastructure everyone still depends on and nobody talks about anymore is the infrastructure that actually worked. The ones still generating conference talks and think pieces after forty years are usually either failing or still fighting for the adoption EDI has long since finished winning.</p>
+
+  <h2>Why this is the moment for a new one</h2>
+
+  <p>Commerce is hitting a version of the same bottleneck again, just at a different seam. Every brand's order and fulfillment system now needs to be understood not only by its own storefront and its own OMS, but by AI agents acting on behalf of customers, agents that weren't built with any particular brand's API in mind and have no patience for a custom integration project before they can help a shopper. Building that bridge one bespoke connection at a time, brand by brand and platform by platform, is exactly the point-to-point paperwork problem EDI existed to solve, just running on a newer kind of pipe.</p>
+
+  <p>History doesn't predict that this happens smoothly or all at once. It predicts unevenness: the largest platforms and brands will likely move first and pull their vendors along the way large retailers once did, not because every participant arrives independently convinced. It predicts that publishing the spec is the easy part and that real interoperability will only hold if implementers keep building against a shared reference rather than their own convenient interpretation of it, the exact failure mode EDI never fully escaped. And it predicts that if this works, the eventual sign of success won't be more people talking about onX. It'll be the opposite: a layer of commerce infrastructure that's simply assumed, unremarked on, doing its job quietly enough that nobody has to write about it anymore.</p>
+
+  <p>That's not a small ambition dressed down. It's the actual shape success has taken every other time this exact problem got solved. We just don't usually get to watch it happen from this early in the story, and right now, we do.</p>
+
+  <h2>Sources</h2>
+
+  <ul class="article-sources">
+    <li><a href="https://www.orderease.com/community/history-of-edi-innovations-business-guide" target="_blank" rel="noopener">Complete History of EDI: How Electronic Data Interchange Transformed Business</a> — TDCC (1968), ANSI X12 (1979), UN/EDIFACT (1988), and the 1990s adoption wave across retail, automotive, and healthcare</li>
+    <li><a href="https://crackerjack-it.com/the-history-and-evolution-of-electronic-data-interchange-edi/" target="_blank" rel="noopener">The History and Evolution of Electronic Data Interchange (EDI)</a> — Edward Guilbert and the Berlin Airlift origin, ANSI X12 (1979), EDIFACT (1987), the VAN-to-internet transition, and the 2010s cloud/API era</li>
+  </ul>
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="/membership">Join the Foundation →</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>
 </article></div>
 <footer class="footer"><div class="wrap">

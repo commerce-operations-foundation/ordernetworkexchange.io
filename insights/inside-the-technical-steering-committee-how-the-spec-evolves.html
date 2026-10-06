@@ -47,14 +47,41 @@
   <div class="atrack" style="color:#5cc4e6">VENDOR ENGINEERING SERIES</div>
   <h1>Inside the Technical Steering Committee: How the Spec Evolves</h1>
   <p class="lead">What it means to shape onX from the inside, and how decisions get made in the open.</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>
+  <p>Every engineering team that's built against a "standard" owned by a single vendor has a version of the same story. The API changes on someone else's timeline. A feature you depend on gets deprecated because it no longer serves the vendor's roadmap. The people making the decision aren't in the room when you find out, and you weren't in the room when they decided. That experience is why "open governance" tends to get waved off as a compliance talking point rather than something an engineer should actually care about. It's worth caring about here, because the alternative to open governance isn't neutrality. It's just governance you can't see.</p>
+
+  <p>onX runs on a public, versioned process. Proposals are discussed openly, reviewed by working groups, and approved through member votes rather than decided behind closed doors by whichever company happens to be steering that quarter. Meeting notes, the roadmap, and the changelog are all published. That's not a promise about tone. It's a specific claim about where a change to the spec has to pass through before it lands, and it's worth walking through what that path actually looks like.</p>
+
+  <h2>Where a change starts</h2>
+
+  <p>Most proposals don't begin as a formal document. They begin as a GitHub Issue flagging a bug or a gap, or a Slack conversation where someone lays out a design idea before committing to a specific implementation. That's a deliberately low bar to clear. You don't need a seat on any committee to open one of either, and you don't need permission to point out that a schema doesn't handle a case your system runs into every day.</p>
+
+  <p>From there, proposals that touch anything structural get picked up by the technical steering committee (TSC). Rather than organizing around feature areas, the TSC focuses on who's affected: there are people who watch out for brands, others focus on third-party logistics providers, and others who track for platforms. The TSC has its own charter and a public backlog, which matters more than it might sound like it does. A change that's convenient for a platform vendor can be a real problem for a 3PL trying to reconcile it against carrier systems that don't move as fast, and organizing review by stakeholder type means that tension surfaces before a change ships, not after someone's already built against it. Over time, as onX continues to grow, the TSC may break down into several working groups representing each of these types of participants. But for now, we are one group leading the charge.</p>
+
+  <p>Once a proposal is ready to become an actual spec change, it moves through the same mechanics as any open source contribution: a fork, a branch, a pull request, at least one reviewer approval before it merges. Larger or more structural changes go further, through the working group review and a member vote before they're adopted. Either way, the record of how it got there stays visible. Nothing lands because one company pushed it through.</p>
+
+  <h2>Who's actually in the room</h2>
+
+  <p>The people with a seat here aren't drawn from one company's roadmap meeting. The foundation's board includes leadership from across the commerce and logistics stack, not a single vendor's org chart, among them Kelly Goetsch of Pipe17, Sanjeev Siotia of Manhattan Associates, and Dirk Hoerig of commercetools. Technology vendors who join at the Build &amp; Steer or Certify membership level get a seat on the Technical Steering Committee and real influence over the spec roadmap, not a ceremonial title. The committee currently draws on 62 and counting founding members across the ecosystem, which is a meaningful check against any single participant, even a large one, quietly bending the spec toward its own product decisions.</p>
+
+  <p>That structure is also why a seat isn't the same thing as a veto. Influence here runs through the same public process everyone else's proposals run through. What a seat actually buys you is being in the room earlier, and having standing in the working group conversations where the shape of a change gets worked out before it's a pull request.</p>
+
+  <h2>The filter every proposal runs through</h2>
+
+  <p>Four principles govern what actually gets adopted, and they're worth knowing because they predict what the spec will and won't do to you over time. Neutral and transparent, meaning no participant gets a side channel the rest of the community doesn't have. Simple before complex, which is the mechanism that keeps the spec from accumulating the kind of scope creep that makes standards unusable a few years in. Backwards compatible, which is the one that matters most day-to-day if you're the engineer maintaining an adapter against this spec, because it means the standard is designed not to break what you've already built without real warning. And secure by design, which shows up less in any single proposal and more in how the review process treats anything touching authentication, data exposure, or transaction integrity.</p>
+
+  <h2>What this actually means for your team</h2>
+
+  <p>You don't need a seat on the committee to watch where the spec is heading. The backlog is public, the discussions are public, and a proposal that's going to affect your integration is visible well before it ships, not announced after the fact the way a vendor-controlled API change usually is. If something in the spec doesn't fit how your system actually works, the path to raising it is the same path everyone else uses: open a discussion, make the case, let the working group that represents your side of the ecosystem weigh in.</p>
+
+  <p>That's a different relationship to a standard than most engineering teams are used to having. You're not just building against onX. You're in a position to shape where it goes next, and the backwards compatibility principle means what you build today is designed to still be standing when it does.</p>
+
+  <h2>Sources</h2>
+
+  <ul class="article-sources">
+    <li><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">commerceopsfoundation.org/governance</a> — decision process, guiding principles, working group structure, and Board of Directors</li>
+    <li><a href="https://ordernetworkexchange.io/membership" target="_blank" rel="noopener">ordernetworkexchange.io/membership</a> — Technical Steering Committee seat tied to Build &amp; Steer/Certify membership and 62+ founding members</li>
+    <li><a href="https://github.com/commerce-operations-foundation/onx-spec" target="_blank" rel="noopener">commerce-operations-foundation/onx-spec CONTRIBUTING.md</a> — fork/PR/review workflow and GitHub Issues versus Discussions</li>
+  </ul>
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="/tech">Get on the vendor track →</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>
 </article></div>
 <footer class="footer"><div class="wrap">
