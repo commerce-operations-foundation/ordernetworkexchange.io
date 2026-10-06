@@ -306,6 +306,110 @@ const TRACK_CTA = {
   vision:{href:'/membership',label:'Join the Foundation →'},
 };
 const ARTICLE_BODIES = {
+  'get-found-or-get-skipped-why-brands-cant-sit-out-agentic-com': `<p>For twenty-five years, "discoverability" meant one thing for a commerce brand: can a human find you? Get indexed by Google, rank on the right search terms, show up in the right marketplace, buy the right ad. The playbook was built entirely around the assumption that a person was doing the looking, the comparing, and the clicking.</p>
+
+  <p>That assumption is starting to break.</p>
+
+  <p>AI agents inside ChatGPT, Perplexity, Google's shopping surfaces, and a growing list of purpose-built shopping assistants are now doing meaningful parts of that work on a shopper's behalf. These agents are comparing options, checking availability, initiating purchases, and increasingly, following up afterward to see if the order actually shipped. When an agent is the one doing the looking, "discoverability" stops being a question of whether your content ranks well and becomes a question of whether your systems can be understood by a machine at all.</p>
+
+  <p>That's a much bigger ask than it sounds like, and most brands aren't set up to answer it.</p>
+
+  <h2>Discoverability didn't used to end at checkout. Now it doesn't get to</h2>
+
+  <p>Most brand teams are being caught off guard in agent-mediated commerce. Discoverability isn't a top-of-funnel problem you solve once and move on from. An agent that helps a customer buy from you today is very likely to be asked, tomorrow, "when is my order arriving," "can I return this item," or "is this product back in stock." If the agent can't get a clean, structured answer from your systems, it doesn't just fail that one query. It learns something about you as a source for purchasing. It learns that you're not yet reliable to transact with in this new modern age. The next time it's asked to compare options for that same shopper, that “this brand isn’t yet ready” information is going to be part of its memory.</p>
+
+  <p>Our industry has known for years that post-purchase experiences are just as important (if not more important) than the buying experience. But it’s often taken the back seat to conversion optimization. However, in this new modern age brands can’t afford to continue ignoring this very important aspect of doing business online. Not because it’s as important as discoverability and conversion.</p>
+
+  <p>In other words, the thing that used to be a purely post-purchase, operational concern (order status, fulfillment accuracy, return handling, etc) is now part of your discoverability surface. A beautifully optimized product feed sitting on top of an order and fulfillment stack that no agent can query is a brand that gets found once and skipped in the future.</p>
+
+  <h2>What "legible to agents" actually means</h2>
+
+  <p>What exactly does it mean to be "legible to agents"? That word, “Legible” is doing a lot of work in that sentence. It doesn't mean simply having an API. That’s not enough. Almost every brand's OMS, IMS, or storefront platform already has one. It means having order, inventory, and fulfillment data exposed in a <strong>common, predictable format that any agent can interact with without a brand-specific integration project first</strong>.</p>
+
+  <p>The current default in the industry is the opposite of legible. Every brand's order status endpoint looks a little different, uses different field names, returns different values for the same underlying state, and requires its own custom mapping to work with any given AI system. That's fine when a human developer is writing a one-time integration. It's not fine when the "integrator" is an AI agent trying to serve a shopper in real time across thousands of brands it has never seen before. Agents have the power and understanding to build a temporary bespoke integration with the solution, but there are a lot of assumptions in expecting an agent to do that level of work. Agents don't have the patience and they don’t perceive the ROI to build such an integration for every retailer they might need to talk to. Instead, they are going to route to, recommend, and re-engage with the brands they can already understand. That just makes common sense.</p>
+
+  <p>But what does that mean for you? It means that if agents find your brand easily and find you work with, you are going to be one of the brands that the agents give the most attention to.</p>
+
+  <h2>What’s the alternative? Getting skipped over?</h2>
+
+  <p>Yes. Essentially you’ll get skipped over. The thing is, getting skipped over rarely shows up as a dramatic failure. It’s not a metric you’re going to track. Instead, it’ll show up as quiet omission:</p>
+
+  <ul>
+    <li>An agent asked to compare where a product is in stock and ready to ship. Your site doesn't surface because it can't get a reliable inventory answer fast enough from you.</li>
+    <li>A customer asks their assistant to track a package and the agent has to tell them "I can't check that. You'll need to visit the site directly or contact the brand," which is a worse experience than the agent simply not existing.</li>
+    <li>When a shopper's agent is deciding where to route a repeat purchase between two functionally similar brands it will pick the one it already knows it can transact with cleanly.</li>
+  </ul>
+
+  <p>None of these are outages. They're a brand slowly becoming invisible to the layer of software that's increasing in popularity. This lack of an information layer is standing between your brand and the customer’s agent. Meaning, it’s blocking you from the customer.</p>
+
+  <p>Today, you not only need to think about the user experience.</p>
+
+  <p><strong>You must think about the agent experience.</strong></p>
+
+  <h2>Why this is a standards problem, not a brand-by-brand one</h2>
+
+  <p>The instinct here is often to solve this the way brands have always solved integration problems: hire developers, build a custom connector for whichever AI platform matters most this quarter, repeat as new platforms emerge. If you are thinking about this new world using “old world” patterns, that’s exactly what you’re planning to do. But, that's a trap. It recreates, for the agentic era, the same brittle point-to-point integration sprawl that commerce has been trying to escape for decades. A new bespoke build for every agent, every platform, every partner, with none of it reusable and all of it fragile the moment any party changes their API. You do not want to live like this!</p>
+
+  <p>This is the same problem EDI solved for B2B commerce forty years ago. Instead of every trading partner building custom integrations with every other trading partner, everyone conforms to one shared format and gets interoperability for free.</p>
+
+  <p>onX (Order Network eXchange) is a very similar idea applied to agentic commerce. It’s an open, vendor-neutral standard, built on the Model Context Protocol (MCP), that gives selling channels, fulfillment systems, and AI agents a common language for order and fulfillment data. A brand whose OMS or IMS vendor conforms to onX isn't legible to one agent. It's legible to <strong><em>any agent built to understand the standard</em></strong>, without a project plan attached.</p>
+
+  <p>That's the practical difference between "get found" and "get skipped". Not “who has the best product content?” but “whose backend can actually answer an agent's question when it's asked?”</p>
+
+  <h2>So, what do you do about it?</h2>
+
+  <p>You don't need to become a protocol expert to act on this, and you shouldn't wait until an AI platform's shopping feature is driving meaningful revenue to start caring. The useful first move is a conversation. Ask your OMS, IMS, or fulfillment vendor whether onX conformance is on their roadmap. Treat the answer as a real evaluation criterion the way you'd treat any other integration capability. Because onX is open and vendor-neutral (not owned or controlled by any single platform) supporting it doesn't lock you into anyone's roadmap but your own. This is the kind of infrastructure decision that pays off regardless of which AI shopping surfaces end up mattering most.</p>
+
+  <p>Remember — The brands that get found in agentic commerce won't necessarily be the ones with the flashiest product pages. They'll be the ones who have systems an agent can actually understand reliably, consistently and without a custom integration standing in the way.</p>
+
+  <p>That's a decision worth making before the agents start deciding it for you.</p>`,
+  'the-20-minute-internal-memo-that-gets-onx-on-your-roadmap': `<p>You don't need a slide deck to get onX on your company's radar. You need one memo, sent to the two people who actually control whether your ops stack changes: whoever owns fulfillment operations and whoever signs off on vendor spend. Most of these conversations stall not because the case is weak, but because nobody wrote it down in a way that a busy VP could read and easily understand why onX is important, in the time it takes to get coffee.</p>
+
+  <p>Below is that memo. Copy it. Fill in your specifics. Then send it.</p>
+
+  <p>The goal isn't to get a "yes" on the spot. It's to get onX conformance added as a line item the next time you're evaluating your OMS, IMS, or fulfillment vendor, which is a much smaller ask and a much easier one to grant.</p>
+
+  <h2>The template</h2>
+
+  <div class="memo-template">
+    <p><strong>To:</strong> [VP of Operations], [CFO]<br>
+    <strong>From:</strong> [Your name]<br>
+    <strong>Subject:</strong> Adding onX to our next vendor evaluation</p>
+
+    <p><strong>TL;DR:</strong> AI agents are starting to shop, track orders, and handle post-purchase questions on behalf of our customers. Right now, agents can only do that well when the brand’s order and fulfillment systems speak a common, standardized language. <strong>onX is that standard</strong>: it’s open source, vendor-neutral and it’s governed by a foundation rather than any single company. I'd like us to ask [CURRENT OR PROSPECTIVE OMS/IMS/FULFILLMENT VENDOR] whether they support it and/or intend to support it in the near future. And, I recommend we treat the answer as evaluation criteria.</p>
+
+    <p><strong>Why now</strong></p>
+
+    <p>AI shopping assistants are increasingly initiating purchases and answering "where's my order" questions without a human ever opening our website. When the agent can't get a reliable answer from our systems, they don't just fail. They learn that we're a source they can't rely on, which affects whether we get recommended or re-engaged the next time. This is starting to matter the way search visibility mattered fifteen years ago, and the systems that make us legible to agents are the operational ones, not the marketing ones.</p>
+
+    <p><strong>What we're asking for</strong></p>
+
+    <p>Not a build. Not a budget line (at least not yet). Simply a question to add to our next conversation with [VENDOR NAME] or any vendor we evaluate going forward: "Do you support onX?" If the answer is yes, we get this largely for free through infrastructure we already pay for. If the answer is no, we now know it, and can factor it into the decision the way we'd factor in any other integration gap.</p>
+
+    <p><strong>What this doesn't require</strong></p>
+
+    <ul>
+      <li>No new vendor relationship or platform switch</li>
+      <li>No dedicated engineering sprint on our side</li>
+      <li>No lock-in: onX is an open standard overseen by the Commerce Operations Foundation, not owned by any single vendor or AI platform, so supporting it doesn't tie us to anyone's roadmap but our own</li>
+    </ul>
+
+    <p><strong>The risk of doing nothing</strong></p>
+
+    <p>Every quarter we don't ask this question is a quarter our competitors might. Vendors are more likely to prioritize a capability when multiple customers are asking for it, and being early to ask costs us nothing. Being late means catching up on infrastructure that our peers already have in place.</p>
+
+    <p><strong>Next step</strong></p>
+
+    <p>I'd like ten minutes to walk through this before our next call with [VENDOR NAME], or to add it to the agenda for our next quarterly vendor review.</p>
+  </div>
+
+  <h2>A few notes on using it</h2>
+
+  <p>Send this to both people at once if you can. The VP of Ops needs the operational framing, the CFO needs to see there's no ask for new spend attached, and neither of them wants to be the one who has to translate the memo for the other. Keeping it together also keeps you from getting a "sounds good, check with Finance" reply that quietly ends the conversation.</p>
+
+  <p>Resist the urge to pad it out with more technical detail than the memo above already has. The people you're sending this to don't need to understand MCP tools or JSON schemas to approve the ask, and adding that detail is more likely to make the memo look like a bigger project than it is. Save the technical depth for the conversation with your OMS or IMS vendor once you've got the green light to have it. That's a different conversation, for a different audience, and we've got a separate post in this series built for exactly that one.</p>
+
+  <p>The honest version of this pitch is that you're not asking your company to build anything. You're asking it to ask a question the next time it's already at the table with a vendor. That's a small enough ask that there's rarely a good reason to say no to it, and it's the kind of low-cost, high-optionality move that tends to look smart in hindsight once agentic commerce stops being a trend and starts being how a meaningful share of your customers actually shop.</p>`,
   'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
 
   <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>
@@ -347,20 +451,29 @@ const PLACEHOLDER_ARTICLE_BODY = `<div class="placeholder-note">📝 Placeholder
   <h2>What to do this quarter</h2>
   <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>`;
 fs.mkdirSync(path.join(ROOT,'insights'),{recursive:true});
+function formatPublicationDate(date){
+  return new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(date+'T00:00:00Z'));
+}
 posts.forEach(p=>{
   const cta=TRACK_CTA[p.track];
   const articleBody=ARTICLE_BODIES[p.slug] || PLACEHOLDER_ARTICLE_BODY;
+  const byline=p.published ? `
+  <div class="abyline"><time datetime="${p.published}">${formatPublicationDate(p.published)}</time></div>` : '';
   page({
     file:path.join('insights',p.slug+'.html'),
     path:'/insights/'+p.slug, active:'insights',
     title:p.title+' — onX Insights',
+    articleTitle:p.title,
     desc:p.excerpt,
+    type:'article',
+    published:p.published,
+    modified:p.modified || p.published,
+    section:p.label,
     body:`
 <div class="wrap"><article class="article">
   <div class="crumbs" style="margin-bottom:30px"><a href="/">Home</a><span>/</span><a href="/insights">Insights</a><span>/</span>${p.label}</div>
   <div class="atrack" style="color:${p.c}">${p.label.toUpperCase()} SERIES</div>
-  <h1>${p.title}</h1>
-  <div class="abyline"><div class="aav"></div><div><b style="color:var(--ink)">Commerce Operations Foundation</b><br>${p.read} read · ${p.label}</div></div>
+  <h1>${p.title}</h1>${byline}
   <p class="lead">${p.excerpt}</p>
   ${articleBody}
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="${cta.href}">${cta.label}</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>

@@ -12,6 +12,25 @@ const SITE = 'https://ordernetworkexchange.io';
 /* ---------- shared partials ---------- */
 function head(o){
   const url = SITE + (o.path === '/' ? '/' : o.path);
+  const type = o.type || 'website';
+  const articleMeta = type === 'article' ? `
+${o.published ? `<meta property="article:published_time" content="${o.published}">` : ''}
+${o.modified ? `<meta property="article:modified_time" content="${o.modified}">` : ''}
+${o.section ? `<meta property="article:section" content="${o.section}">` : ''}
+<meta name="author" content="Commerce Operations Foundation">` : '';
+  const structuredData = type === 'article' && o.published ? `
+<script type="application/ld+json">${JSON.stringify({
+    '@context':'https://schema.org',
+    '@type':'BlogPosting',
+    headline:o.articleTitle || o.title,
+    description:o.desc,
+    image:[SITE+'/og-image.png'],
+    datePublished:o.published,
+    dateModified:o.modified || o.published,
+    author:{'@type':'Organization',name:'Commerce Operations Foundation',url:'https://commerceopsfoundation.org/'},
+    publisher:{'@type':'Organization',name:'Commerce Operations Foundation',url:'https://commerceopsfoundation.org/'},
+    mainEntityOfPage:{'@type':'WebPage','@id':url},
+  })}</script>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +38,18 @@ function head(o){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="${o.desc}">
 <link rel="canonical" href="${url}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${type}">
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="Commerce Operations Foundation">
 <meta property="og:title" content="${o.ogTitle || o.title}">
 <meta property="og:description" content="${o.desc}">
 <meta property="og:image" content="${SITE}/og-image.png">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="630">${articleMeta}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${o.ogTitle || o.title}">
 <meta name="twitter:description" content="${o.desc}">
-<meta name="twitter:image" content="${SITE}/og-image.png">
+<meta name="twitter:image" content="${SITE}/og-image.png">${structuredData}
 <title>${o.title}</title>
 <link rel="icon" type="image/svg+xml" href="/assets/onx-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,7 +119,7 @@ const posts=[
   {track:'si',label:'Integrator Playbook',title:'Productizing onX: Turning a Standard into a Service Line',excerpt:'How to package assessment, activation, and migration into named, estimable offerings.',read:'8 min',c:'#f0a94e'},
   {track:'si',label:'Integrator Playbook',title:'The Anatomy of a Repeatable onX Rollout',excerpt:'A reference delivery plan you can adapt across clients — scopes, milestones, gotchas.',read:'10 min',c:'#f0a94e'},
   {track:'vision',label:'The Big Picture',title:'The EDI Moment: What 40 Years of Interoperability Teaches Us',excerpt:'Why the agentic-commerce era needs its own common language — and what history predicts.',read:'9 min',c:'#a78bfa'},
-  {track:'vision',label:'The Big Picture',title:'Foundation Launch: A New Era for Commerce Operations',excerpt:'Introducing onX, the founding members, and the road ahead for the Foundation.',read:'6 min',c:'#a78bfa'},
+  {track:'vision',label:'The Big Picture',title:'Foundation Launch: A New Era for Commerce Operations',excerpt:'Introducing onX, the founding members, and the road ahead for the Foundation.',read:'6 min',published:'2025-12-09',c:'#a78bfa'},
 ];
 function slugify(t){return t.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
 posts.forEach(p=>p.slug=slugify(p.title));
