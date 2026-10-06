@@ -27,7 +27,7 @@ page({
     <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
     <p class="foundation-credit">Brought to you by the <a href="https://commerceopsfoundation.org/" target="_blank" rel="noopener noreferrer">Commerce Operations Foundation</a>.</p>
     <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 12 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
-    <div class="router-label">Start with what you are →</div>
+    <div class="router-label section-label">Start with what you are →</div>
     <div class="doors">
       <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
       <a class="door tech" href="/tech"><div class="ico">⚙️</div><div class="who">Technology Vendors</div><h3>I build OMS / WMS / platforms</h3><p>Ship a compliant onX endpoint, join the Technical Steering Committee, and become the default your customers ask for.</p><span class="go">Enter the Tech track <span class="arr">→</span></span></a>
@@ -55,7 +55,7 @@ page({
 <section class="hiw" id="hiw">
   <div class="wrap">
     <div class="hiw-head">
-      <div class="eyebrow center" style="--accent:var(--blue)">How it works</div>
+      <div class="eyebrow section-label center" style="--accent:var(--blue)">How it works</div>
       <h2>Watch onX kick in.</h2>
       <p>Follow one order from a shopper's AI agent all the way to their doorstep — and see where the standard does its work.</p>
     </div>
@@ -91,7 +91,7 @@ page({
 </section>
 
 <section class="section wrap" style="--accent:var(--blue)">
-  <div class="eyebrow">The shift nobody can opt out of</div>
+  <div class="eyebrow section-label">The shift nobody can opt out of</div>
   <h2>Commerce is being rebuilt around agents. The plumbing isn't ready.</h2>
   <p class="sub">AI agents now start the buying journey — but every brand, platform, and 3PL still speaks a different dialect for orders, inventory, and fulfillment. onX is the shared language that closes the gap.</p>
   <div class="ba">
@@ -102,13 +102,13 @@ page({
 </section>
 <section class="section wrap" style="--accent:var(--lime);padding-top:0"><div class="band">
   <div class="bglow" data-par="0.3"></div>
-  <div class="eyebrow center">The EDI moment for AI commerce</div>
+  <div class="eyebrow section-label center">The EDI moment for AI commerce</div>
   <h2>EDI standardized how businesses traded for 40 years.<br>onX does it for the age of agents.</h2>
   <p>When the industry agreed on a common format, an entire economy of interoperability followed. onX is that agreement — purpose-built for AI-native, post-purchase order data.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/brands">See how brands activate it</a><a class="btn btn-ghost" href="${GH}" target="_blank" rel="noopener">View the spec on GitHub ↗</a></div>
 </div></section>
 <section class="section wrap" style="--accent:var(--violet);padding-top:0">
-  <div class="eyebrow">From the Foundation</div><h2>Insights &amp; field notes</h2>
+  <div class="eyebrow section-label">From the Foundation</div><h2>Insights &amp; field notes</h2>
   <p class="sub">Three running series — one for each audience — that turn the standard into action.</p>
   <div class="posts">${homeTeaser}</div>
   <div class="center"><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">Browse all insights →</a></div>
