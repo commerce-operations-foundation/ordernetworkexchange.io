@@ -9,7 +9,7 @@ const homeTeaser = ['brand','tech','vision'].map(t=>posts.find(p=>p.track===t)).
 page({
   file:'index.html', path:'/', active:'home',
   title:'Commerce Operations Foundation — onX',
-  desc:'onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents speak the same language.',
+  desc:'onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.',
   scripts:['<script src="/assets/home.js?v=20261006-12-tools"></script>'],
   body:`
 <section class="hero" id="hero">
@@ -25,6 +25,7 @@ page({
     <div class="kicker"><span class="dot"></span> The open standard for agentic commerce</div>
     <h1>AI made buying effortless.<br>Now we make fulfillment <span class="hl">intelligent.</span></h1>
     <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
+    <p class="foundation-credit">Brought to you by the <a href="https://commerceopsfoundation.org/" target="_blank" rel="noopener noreferrer">Commerce Operations Foundation</a>.</p>
     <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 12 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
     <div class="router-label">Start with what you are →</div>
     <div class="doors">

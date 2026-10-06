@@ -55,7 +55,7 @@ ${o.section ? `<meta property="article:section" content="${o.section}">` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css?v=20261006-article-code">
+<link rel="stylesheet" href="/assets/styles.css?v=20261006-home-foundation">
 </head>
 <body>
 <div class="blueprint-bg"></div>
