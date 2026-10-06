@@ -410,6 +410,56 @@ const ARTICLE_BODIES = {
   <p>Resist the urge to pad it out with more technical detail than the memo above already has. The people you're sending this to don't need to understand MCP tools or JSON schemas to approve the ask, and adding that detail is more likely to make the memo look like a bigger project than it is. Save the technical depth for the conversation with your OMS or IMS vendor once you've got the green light to have it. That's a different conversation, for a different audience, and we've got a separate post in this series built for exactly that one.</p>
 
   <p>The honest version of this pitch is that you're not asking your company to build anything. You're asking it to ask a question the next time it's already at the table with a vendor. That's a small enough ask that there's rarely a good reason to say no to it, and it's the kind of low-cost, high-optionality move that tends to look smart in hindsight once agentic commerce stops being a trend and starts being how a meaningful share of your customers actually shop.</p>`,
+  'how-to-ask-your-oms-vendor-for-onx-and-what-yes-looks-like': `<p>If the memo did its job, you've got permission to have this conversation. That's the easy part. The harder part is that most vendors, when asked "do you support onX?" will say yes to something. The question is whether it's the same thing you mean.</p>
+
+  <p>There's no badge to look for here, no certification logo you can ask a vendor to point to on their website. onX doesn't have a formal certification program yet, which sounds like a gap but is actually the reason this conversation matters more than it would for a standard with a tidy checkbox. Real conformance right now comes down to whether a vendor has actually built against the open spec and the open reference server, or whether they've built a proprietary layer they're calling "onX-compatible." Those two things can sound identical in a sales call and mean completely different things for you six months from now.</p>
+
+  <h2>Opening the conversation</h2>
+
+  <p>You don't need to lead with jargon. Something like this works:</p>
+
+  <blockquote>"We're evaluating our order and fulfillment stack against onX, the open standard for exposing order data to AI agents. It's built on the Model Context Protocol and governed by the Commerce Operations Foundation. It’s not owned by any single vendor. Where does that sit on your roadmap, and can you walk me through what you currently support?"</blockquote>
+
+  <p>That framing does two things. It signals you know enough to ask a real follow-up question, and it puts "vendor-neutral, open governance" on the table before they've had a chance to pitch you a proprietary alternative dressed up in similar language.</p>
+
+  <h2>The questions that actually tell you something</h2>
+
+  <p>A vague "yes, we support that" isn't an answer. Instead, go deeper, here are questions that will help you get a real answer.</p>
+
+  <p><strong>"Which of the standard tools do you support?"</strong></p>
+
+  <p>onX defines a specific, shared set of operations covering order creation and updates, cancellation, fulfillment, and returns, plus queries for orders, customers, products, inventory, and fulfillment status. A vendor who's actually implemented this can name what they've covered. A vendor who can't get more specific than "yes, orders and fulfillment" probably has a partial build, which matters because an agent that can query your order status but can't process a return is only half legible.</p>
+
+  <p><strong>"Did you build this against the public reference server, or is this your own implementation?"</strong></p>
+
+  <p>The reference implementation and the spec are both public. A vendor building toward them is building something you or anyone else can independently check. A vendor who says "we built our own onX-compatible layer" is often describing exactly the kind of custom, single-purpose integration onX exists to replace, just with the standard's name attached to it for marketing purposes.</p>
+
+  <p><strong>"Are you involved with the Technical Steering Committee, or do you track its updates?"</strong></p>
+
+  <p>The spec is still evolving, with real people deciding what changes next. A vendor with no connection to that process is a vendor whose "support" can quietly drift out of date the next time the standard moves. This doesn't have to mean a seat on the committee. It just needs to mean they're watching.</p>
+
+  <p><strong>"Can we get this in writing, with a date?"</strong></p>
+
+  <p>Roadmap items that live only in a sales call tend to stay there. Ask for it in the SOW or contract renewal, even as a single line.</p>
+
+  <h2>What a real yes sounds like</h2>
+
+  <p>A vendor who's actually there will answer in specifics without you having to pull them out. They'll name which tools and resources they cover, and be upfront about the ones they don't yet. They'll point you to something public, whether that's their own documentation referencing the spec or a demo you can inspect, rather than asking you to take their word for it. They'll have an actual date attached to any gaps, not "on the roadmap" with nothing behind it. And they won't seem thrown by the question, because a vendor who's serious about this has fielded it before.</p>
+
+  <h2>Red flags worth pausing on</h2>
+
+  <ul>
+    <li>Watch for the vendor who answers "yes" immediately and then can't go one layer deeper.</li>
+    <li>Watch for "we have our own commerce AI integration that does something similar," which is usually a polite way of saying no while sounding like a yes.</li>
+    <li>Watch for enthusiasm about the idea paired with nothing concrete when you ask what's actually shipped today.</li>
+    <li>And watch for a vendor who frames this as something only relevant to a future release, months or quarters out, with no interim plan for how you'd get partial support in the meantime.</li>
+  </ul>
+
+  <p>None of these are disqualifying on their own. A vendor early in their onX build who's honest about it is a better partner than one that is overselling. What you're really listening for is whether they understand the difference between those two things. The vendor who doesn't understand the difference will end up building you the wrong solution.</p>
+
+  <h2>After the conversation</h2>
+
+  <p>If you get a real yes, or a real "not yet, but here's the date," you've done what this conversation needed to do. The next step from here moves out of your hands and into your vendor's technical team, who'll be the ones actually mapping their APIs to the standard. If it's useful, you can point them to the next post in this series, written for exactly that audience. Your job was never to build this. It was to make sure the right question got asked before the contract got signed, and now it has.</p>`,
   'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
 
   <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>
