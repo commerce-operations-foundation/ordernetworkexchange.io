@@ -499,6 +499,78 @@ const ARTICLE_BODIES = {
   <p>Almost every gap above has the same shape. Your system usually has more data than the spec asks for, which is fine and expected. The friction comes from that data being organized differently: split across services where the spec expects one object, or combined into one record where the spec expects two. That's not a sign anything is wrong with your system. It's just the actual work of mapping, and it's worth treating each tool as its own small design exercise rather than assuming the twelfth one will go as smoothly as the first.</p>
 
   <p>Once you think you've got a tool mapped correctly, don't just review it against the documentation. Run it against the reference server's test suite and see what breaks. Document review tells you what you meant to build. The tests tell you what you actually built, and those two things diverge more often than anyone expects going in.</p>`,
+  'from-clone-to-conformant-in-a-sprint-using-the-reference-ser': `<p>"Conformant in a sprint" sounds like the kind of claim that gets walked back the first time someone actually tries it. It holds up here for a boring reason: the reference server already does most of the work that would normally eat your first two weeks of effort. You're not implementing the Model Context Protocol layer, you're not designing a schema for orders and fulfillments from scratch, and you're not guessing at what an AI agent expects back from a query tool. All of that already exists and already runs. It’s done for you.</p>
+
+  <p>What's left is the part that's actually yours: mapping your system's data onto it.</p>
+
+  <p>That's a smaller job than most teams assume going in, which is the whole reason the timeline holds.</p>
+
+  <h2>What you're actually starting from</h2>
+
+  <p>Clone the reference server and you get a working MCP server out of the box, backed by a mock adapter so you can run it and see traffic flow through all 12 tools before you've written a line of your own code.</p>
+
+  <pre><code>git clone https://github.com/commerce-operations-foundation/mcp-reference-server.git
+cd mcp-reference-server/server
+npm install
+cp .env.example .env
+npm run build
+npm start</code></pre>
+
+  <p>That gets you a server answering the standard onX tool set: five action tools that write (<code>create-sales-order</code>, <code>update-order</code>, <code>cancel-order</code>, <code>fulfill-order</code>, <code>create-return</code>) and seven query tools that read (<code>get-orders</code>, <code>get-customers</code>, <code>get-products</code>, <code>get-product-variants</code>, <code>get-inventory</code>, <code>get-fulfillments</code>, <code>get-returns</code>).</p>
+
+  <p>Point an MCP client at it and it behaves like a real onX endpoint, because it is one. It just happens to be talking to a mock backend instead of your back-end.</p>
+
+  <p>The adapter is where your actual work starts, and the repo hands you a starting point for that too.</p>
+
+  <pre><code>cp -r adapter-template your-fulfillment-adapter
+cd your-fulfillment-adapter
+npm install
+npm run dev</code></pre>
+
+  <p>From here the job is translation, not invention. Each of those 12 tools has a defined shape it expects in and a defined shape it returns. Your adapter's job is to take that call, turn it into whatever your OMS or IMS actually does under the hood, and shape the response back into the standard schema. You're not deciding what an order object looks like. That decision's already made. You're deciding how your order object becomes that one.</p>
+
+  <h2>Where the sprint actually goes</h2>
+
+  <p>Start with the query tools before the action tools, even though the action tools tend to feel more urgent. Reading your own data out in the right shape surfaces every awkward mismatch between your internal model and the standard one, and it's a much cheaper place to find those mismatches than in the middle of implementing <code>create-sales-order</code> and discovering your order states don't map cleanly onto what the spec expects.</p>
+
+  <ul>
+    <li>Most teams find <code>get-products</code> and <code>get-inventory</code> straightforward, since those tend to be close to whatever their existing API already exposes.</li>
+    <li><code>get-fulfillments</code> and <code>get-returns</code> are usually where the real modeling work shows up. Fulfillment and return states vary more from system to system than order states do, and getting the mapping right matters more here than anywhere else in the surface. This is the exact data an agent needs to answer a shopper's "where's my order" question honestly. Give this attention to ensure shoppers are getting accurate responses.</li>
+  </ul>
+
+  <p>The action tools go faster once the query side is solid, mostly because you've already done the hard thinking about how your domain model lines up with the standard one.</p>
+
+  <ul>
+    <li><code>create-sales-order</code> and <code>update-order</code> are usually a matter of routing into whatever create/update logic you already have.</li>
+    <li><code>cancel-order</code> and <code>create-return</code> are where edge cases live: partial cancellations, partial returns, orders that are mid-fulfillment when a cancellation request comes in. Budget real time for those, not because the tool interface is complicated, but because your own business logic around them probably has more branches than you remember until you're staring at all of them at once.</li>
+  </ul>
+
+  <p>None of this requires new infrastructure. It requires sitting down with your existing order and fulfillment logic and writing the translation layer between it and a schema someone else already designed well.</p>
+
+  <h2>Testing as you go, not at the end</h2>
+
+  <p>The repo ships with test tooling at every level, and the teams that move fastest through this use it continuously instead of saving it for the end.</p>
+
+  <pre><code>npm test
+npm run test:unit
+npm run test:integration
+npm run test:coverage</code></pre>
+
+  <p>Run these against your adapter as you build each tool, not after you've built all twelve. Catching a schema mismatch on <code>get-fulfillments</code> the day you write it costs you an hour. Catching the same mismatch after you've built the other eleven tools on top of an assumption that turned out to be wrong costs you a lot more than an hour, and it tends to show up right when you thought you were done.</p>
+
+  <p>This also happens to be the answer to a question brands are increasingly asking their vendors directly: not "do you support onX," but "can you show me how onX works with your solution." A build that ran against this test suite and this reference implementation is a very different claim than a proprietary layer that says the right words on a spec sheet. If your sales team is fielding that question already, this is the paper trail that backs up a real “yes” instead of a hopeful one.</p>
+
+  <h2>After conformance</h2>
+
+  <p>Standing up a compliant endpoint is the technical milestone. It's worth pairing with the non-technical one: getting someone on your team connected to the Commerce Operations Foundation Technical Steering Committee, or at least tracking its updates. The spec isn't frozen, and the adapter you ship this sprint should be built with the expectation that it'll need small updates as the standard evolves, the same way any API client needs occasional maintenance against a service that's still actively developed. Teams that treat this as a one-time build tend to be the ones surprised by a schema change eighteen months from now. Teams that treat it as an ongoing relationship with the standard aren't.</p>
+
+  <p>Either way, the hard part isn't the sprint. It's remembering that a sprint was ever all it took.</p>
+
+  <h2>Sources</h2>
+
+  <ul class="article-sources">
+    <li><a href="https://github.com/commerce-operations-foundation/mcp-reference-server" target="_blank" rel="noopener">commerce-operations-foundation/mcp-reference-server</a> — setup commands, adapter template workflow, full tool list, test scripts, and environment configuration</li>
+  </ul>`,
   'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
 
   <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>
