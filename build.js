@@ -110,15 +110,15 @@ ${scripts}
 
 /* ---------- insights data ---------- */
 const posts=[
-  {track:'brand',label:'Brand Activation',title:'Get Found or Get Skipped: Why Brands Can’t Sit Out Agentic Commerce',excerpt:'The discoverability stakes of agent-mediated shopping — and why legibility to agents is now table stakes.',read:'8 min',c:'#b6e63a'},
-  {track:'brand',label:'Brand Activation',title:'The 20-Minute Internal Memo That Gets onX on Your Roadmap',excerpt:'A copy-paste template for making the business case to your VP of Ops and your CFO.',read:'5 min',c:'#b6e63a'},
-  {track:'brand',label:'Brand Activation',title:'How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like)',excerpt:'Scripts, questions, and red flags for the conversation that starts your activation.',read:'6 min',c:'#b6e63a'},
-  {track:'tech',label:'Vendor Engineering',title:'Mapping Your Existing APIs to the 12 onX MCP Tools',slug:'mapping-your-existing-apis-to-the-14-onx-mcp-tools',excerpt:'A technical walkthrough of aligning your order surface to the spec — with the common gaps.',read:'11 min',c:'#5cc4e6'},
-  {track:'tech',label:'Vendor Engineering',title:'From Clone to Conformant in a Sprint: Using the Reference Server',excerpt:'How early implementers stood up a compliant endpoint faster than expected.',read:'9 min',c:'#5cc4e6'},
-  {track:'tech',label:'Vendor Engineering',title:'Inside the Technical Steering Committee: How the Spec Evolves',excerpt:'What it means to shape onX from the inside, and how decisions get made in the open.',read:'7 min',c:'#5cc4e6'},
+  {track:'brand',label:'Brand Activation',title:'Get Found or Get Skipped: Why Brands Can’t Sit Out Agentic Commerce',excerpt:'The discoverability stakes of agent-mediated shopping — and why legibility to agents is now table stakes.',read:'8 min',published:'2026-03-10',c:'#b6e63a'},
+  {track:'brand',label:'Brand Activation',title:'The 20-Minute Internal Memo That Gets onX on Your Roadmap',excerpt:'A copy-paste template for making the business case to your VP of Ops and your CFO.',read:'5 min',published:'2026-03-17',c:'#b6e63a'},
+  {track:'brand',label:'Brand Activation',title:'How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like)',excerpt:'Scripts, questions, and red flags for the conversation that starts your activation.',read:'6 min',published:'2026-04-21',c:'#b6e63a'},
+  {track:'tech',label:'Vendor Engineering',title:'Mapping Your Existing APIs to the 12 onX MCP Tools',slug:'mapping-your-existing-apis-to-the-14-onx-mcp-tools',excerpt:'A technical walkthrough of aligning your order surface to the spec — with the common gaps.',read:'11 min',published:'2026-05-19',c:'#5cc4e6'},
+  {track:'tech',label:'Vendor Engineering',title:'From Clone to Conformant in a Sprint: Using the Reference Server',excerpt:'How early implementers stood up a compliant endpoint faster than expected.',read:'9 min',published:'2026-02-17',c:'#5cc4e6'},
+  {track:'tech',label:'Vendor Engineering',title:'Inside the Technical Steering Committee: How the Spec Evolves',excerpt:'What it means to shape onX from the inside, and how decisions get made in the open.',read:'7 min',published:'2026-02-03',c:'#5cc4e6'},
   {track:'si',label:'Integrator Playbook',title:'Productizing onX: Turning a Standard into a Service Line',excerpt:'How to package assessment, activation, and migration into named, estimable offerings.',read:'8 min',c:'#f0a94e'},
   {track:'si',label:'Integrator Playbook',title:'The Anatomy of a Repeatable onX Rollout',excerpt:'A reference delivery plan you can adapt across clients — scopes, milestones, gotchas.',read:'10 min',c:'#f0a94e'},
-  {track:'vision',label:'The Big Picture',title:'The EDI Moment: What 40 Years of Interoperability Teaches Us',excerpt:'Why the agentic-commerce era needs its own common language — and what history predicts.',read:'9 min',c:'#a78bfa'},
+  {track:'vision',label:'The Big Picture',title:'The EDI Moment: What 40 Years of Interoperability Teaches Us',excerpt:'Why the agentic-commerce era needs its own common language — and what history predicts.',read:'9 min',published:'2026-01-20',c:'#a78bfa'},
   {track:'vision',label:'The Big Picture',title:'Foundation Launch: A New Era for Commerce Operations',excerpt:'Introducing onX, the founding members, and the road ahead for the Foundation.',read:'6 min',published:'2025-12-09',c:'#a78bfa'},
 ];
 function slugify(t){return t.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
