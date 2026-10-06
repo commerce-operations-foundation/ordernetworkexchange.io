@@ -10,7 +10,7 @@ page({
   file:'index.html', path:'/', active:'home',
   title:'Commerce Operations Foundation — onX',
   desc:'onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents speak the same language.',
-  scripts:['<script src="/assets/home.js"></script>'],
+  scripts:['<script src="/assets/home.js?v=20261006-12-tools"></script>'],
   body:`
 <section class="hero" id="hero">
   <div class="hero-bg">
@@ -25,7 +25,7 @@ page({
     <div class="kicker"><span class="dot"></span> The open standard for agentic commerce</div>
     <h1>AI made buying effortless.<br>Now we make fulfillment <span class="hl">intelligent.</span></h1>
     <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
-    <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 14 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
+    <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 12 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
     <div class="router-label">Start with what you are →</div>
     <div class="doors">
       <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
@@ -38,7 +38,7 @@ page({
   <div class="stat-row">
     <div class="stat"><div class="num">62+</div><div class="lbl">Founding Members</div></div>
     <div class="stat"><div class="num">$1T+</div><div class="lbl">GMV Represented</div></div>
-    <div class="stat"><div class="num">14</div><div class="lbl">MCP Tools Defined</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">MCP Tools Defined</div></div>
     <div class="stat"><div class="num">100%</div><div class="lbl">Open &amp; Vendor-Neutral</div></div>
   </div>
   <div class="marquee"><div class="marquee-track" id="mq"></div></div>
@@ -74,7 +74,7 @@ page({
       <div class="onx-layer" id="onxLayer">
         <span class="ox-badge">onX</span>
         <span class="ox-txt" id="onxTxt">The open standard that lets these systems speak one language.</span>
-        <span class="ox-tools mono" id="onxTools">14 MCP tools · 9 resources</span>
+        <span class="ox-tools mono" id="onxTools">12 MCP tools · 9 resources</span>
       </div>
     </div>
     <div class="hiw-narr" id="hiwNarr">
@@ -178,14 +178,14 @@ page({
       <div class="phero-inner"><div class="ptag">⚙️ Technology Vendors</div><h1>The spec is live and your peers are already <span class="hl">building.</span></h1><p>OMS, WMS, platforms and integration tools are shipping onX endpoints now. Be the vendor your customers find compliant when they come asking — because they will.</p>
         <div class="qnav"><a href="#t-what"><span class="n">01</span>What is it?</a><a href="#t-why"><span class="n">02</span>Why do I need it?</a><a href="#t-how"><span class="n">03</span>How do I get started?</a><a href="#t-join"><span class="n">→</span>Get on the vendor track</a></div>
       </div></div></section>
-  <section class="qblock wrap" id="t-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, technically?</h2><p class="qlede">An open MCP-based specification — 14 tools and 9 shared resources — defining how order and fulfillment systems expose capabilities to agents and to each other.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🛠️</div><h4>14 MCP tools</h4><p>A defined surface area covering order capture through shipment tracking — the full post-purchase lifecycle.</p></div><div class="card"><div class="cico">📚</div><h4>9 shared resources</h4><p>Common schemas so an order means the same thing across every compliant system.</p></div><div class="card"><div class="cico">🐙</div><h4>Open reference server</h4><p>A public GitHub reference implementation to build and validate against — not a paper standard.</p></div></div>
+  <section class="qblock wrap" id="t-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, technically?</h2><p class="qlede">An open MCP-based specification — 12 tools and 9 shared resources — defining how order and fulfillment systems expose capabilities to agents and to each other.</p></div></div>
+    <div class="cards"><div class="card"><div class="cico">🛠️</div><h4>12 MCP tools</h4><p>A defined surface area covering order capture through shipment tracking — the full post-purchase lifecycle.</p></div><div class="card"><div class="cico">📚</div><h4>9 shared resources</h4><p>Common schemas so an order means the same thing across every compliant system.</p></div><div class="card"><div class="cico">🐙</div><h4>Open reference server</h4><p>A public GitHub reference implementation to build and validate against — not a paper standard.</p></div></div>
   </section>
   <section class="qblock wrap" id="t-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because brands are about to start asking "are you onX-compliant?" the way they once asked about API availability. The answer is a deal-maker or deal-breaker.</p></div></div>
     <div class="cards"><div class="card"><div class="cico">🎯</div><h4>Demand is coming to you</h4><p>Our Brand Activation flow routes interested brands directly to their vendors. Be ready to say yes.</p></div><div class="card"><div class="cico">🚪</div><h4>Stop building one-offs</h4><p>Implement the contract once instead of maintaining a custom integration per customer and partner.</p></div><div class="card"><div class="cico">🏛️</div><h4>Shape the standard</h4><p>Early implementers sit on the Technical Steering Committee and influence where the spec goes next.</p></div></div>
   </section>
   <section class="qblock wrap" id="t-how"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">A clear path from clone to compliant. Most of your peers are already somewhere on it.</p></div></div>
-    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Clone the reference server</h4><p>Pull the public onX MCP reference implementation and run it locally to see the tools and resources in action.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">github.com/commerce-operations-foundation ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Map your APIs to the 14 tools</h4><p>Align your existing order/fulfillment surface to the onX tool definitions. Most vendors already cover the majority.</p></div></div><div class="step"><div class="sn"></div><div><h4>Implement &amp; self-validate</h4><p>Build your endpoint and test it against the conformance suite in the reference repo.</p></div></div><div class="step"><div class="sn"></div><div><h4>Join the Technical Steering Committee</h4><p>Bring your implementation learnings to the group steering the spec — and get listed as a compliant vendor.</p><a class="scta" href="#t-join">Apply to the TSC →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get listed &amp; get found</h4><p>Compliant vendors appear in the Brand Activation tool — so demand flows to you automatically.</p></div></div></div>
+    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Clone the reference server</h4><p>Pull the public onX MCP reference implementation and run it locally to see the tools and resources in action.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">github.com/commerce-operations-foundation ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Map your APIs to the 12 tools</h4><p>Align your existing order/fulfillment surface to the onX tool definitions. Most vendors already cover the majority.</p></div></div><div class="step"><div class="sn"></div><div><h4>Implement &amp; self-validate</h4><p>Build your endpoint and test it against the conformance suite in the reference repo.</p></div></div><div class="step"><div class="sn"></div><div><h4>Join the Technical Steering Committee</h4><p>Bring your implementation learnings to the group steering the spec — and get listed as a compliant vendor.</p><a class="scta" href="#t-join">Apply to the TSC →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get listed &amp; get found</h4><p>Compliant vendors appear in the Brand Activation tool — so demand flows to you automatically.</p></div></div></div>
   </section>
   <section class="qblock wrap" id="t-join" style="border-bottom:none"><div class="qhead"><div class="qn">→</div><div><h2>Get on the onX vendor track.</h2><p class="qlede">Tell us about your platform and we'll get you the spec, the reference server, and a seat in the conversation. Goes straight to the COF/onX team.</p></div></div>
     <div class="tool" style="--accent:var(--blue)">
@@ -460,6 +460,45 @@ const ARTICLE_BODIES = {
   <h2>After the conversation</h2>
 
   <p>If you get a real yes, or a real "not yet, but here's the date," you've done what this conversation needed to do. The next step from here moves out of your hands and into your vendor's technical team, who'll be the ones actually mapping their APIs to the standard. If it's useful, you can point them to the next post in this series, written for exactly that audience. Your job was never to build this. It was to make sure the right question got asked before the contract got signed, and now it has.</p>`,
+  'mapping-your-existing-apis-to-the-14-onx-mcp-tools': `<p>Mapping your system to onX is not a rewrite. Almost everything the spec asks for already exists somewhere in your data model. The work is figuring out where it lives, what shape it needs to change into, and which of your internal assumptions don't survive contact with a schema someone else designed. That last part is where teams actually lose time, more than the mechanical work of writing adapter code, so it's worth walking through tool by tool rather than treating this as one undifferentiated integration project.</p>
+
+  <p>Start with your data, not your endpoints. Before touching any tool signature, inventory your core objects: order, customer, product, variant, inventory record, fulfillment, return. Most legacy APIs don't draw these boundaries the same way the spec does, and finding that out early is cheaper than finding it out mid-build.</p>
+
+  <h2>The query tools</h2>
+
+  <p>These come first for a reason. Reading your own data out correctly surfaces every mismatch between your model and the spec's while it's still cheap to fix.</p>
+
+  <p><strong>get-orders.</strong> Usually the most straightforward of the seven, and also where a subtle gap tends to hide. Your order status values almost certainly don't map one-to-one onto the spec's expected states. Systems that split order data across a header table and a separate line-item service will also need to do real work reassembling a single coherent order object here rather than just passing through what already exists.</p>
+
+  <p><strong>get-customers.</strong> The recurring gap is identity, not schema. Guest checkouts, loyalty accounts, and cross-channel customer records rarely resolve to one clean customer object in most commerce systems, and deciding how to represent an unauthenticated or one-time buyer is a product decision as much as an engineering one.</p>
+
+  <p><strong>get-products</strong> and <strong>get-product-variants.</strong> The spec treats these as two distinct concepts, product and variant, and a lot of legacy catalogs conflate them, storing variant-level data as flags or attributes on a single product record instead of as its own object. Untangling that split is usually the biggest lift in this pair, more than the API work itself.</p>
+
+  <p><strong>get-inventory.</strong> The perennial mismatch here is which inventory you mean. On-hand, available-to-promise, and reserved are three different numbers, and many systems only expose one of them cleanly through their existing API. If your inventory is split across multiple warehouses or fulfillment locations, this tool also usually needs aggregation logic that doesn't already exist as a single query, since most internal systems were never asked to answer "how many do we have, everywhere, right now" as one clean question.</p>
+
+  <p><strong>get-fulfillments.</strong> This is the tool most likely to expose an integration gap rather than just a mapping one. Carrier and tracking data frequently lives in a transportation management system or a 3PL's own portal, not your OMS, which means this tool sometimes requires connecting a system you don't currently have wired to your API layer at all, not just reshaping data you already expose.</p>
+
+  <p><strong>get-returns.</strong> Return status and reason taxonomies tend to be more bespoke per retailer than almost anything else in the order lifecycle. Expect to spend real time deciding how your internal reason codes collapse into the spec's shape without losing information your operations team actually relies on.</p>
+
+  <h2>The action tools</h2>
+
+  <p>These go faster once the query side is solid, because by then you've already done the hard thinking about how your domain model lines up with the standard one.</p>
+
+  <p><strong>create-sales-order.</strong> The gap here is usually validation, not schema: address verification, payment authorization, fraud checks. A checkout flow handles these interactively with a human on the other end. An agent calling this tool synchronously needs a clear answer for what happens when one of those checks needs more time or fails partway through, and that's an architecture decision your team needs to make deliberately rather than backing into.</p>
+
+  <p><strong>update-order.</strong> The real question is what your system considers mutable after an order is placed. Many platforms lock down wide parts of an order once it's created, and reconciling that against what the spec allows an agent to update is worth resolving explicitly rather than discovering by accident.</p>
+
+  <p><strong>cancel-order.</strong> Full cancellations are simple. Partial cancellations and cancellations requested mid-fulfillment are where the actual complexity lives, and they show up in nearly every implementation regardless of how mature the underlying OMS is.</p>
+
+  <p><strong>fulfill-order.</strong> This one is often an architecture decision disguised as an API mapping task. Wiring it to real-time carrier and warehouse events, rather than having an agent poll for status, is usually the right call, and it's worth deciding that upfront instead of retrofitting it later.</p>
+
+  <p><strong>create-return.</strong> The spec defines the shape of a return request and response. It doesn't decide your eligibility rules, so return windows, restocking fees, and final-sale exclusions all need to live somewhere in your implementation, expressed as logic the tool can actually enforce rather than left as a policy page nobody's code reads.</p>
+
+  <h2>The pattern underneath all twelve</h2>
+
+  <p>Almost every gap above has the same shape. Your system usually has more data than the spec asks for, which is fine and expected. The friction comes from that data being organized differently: split across services where the spec expects one object, or combined into one record where the spec expects two. That's not a sign anything is wrong with your system. It's just the actual work of mapping, and it's worth treating each tool as its own small design exercise rather than assuming the twelfth one will go as smoothly as the first.</p>
+
+  <p>Once you think you've got a tool mapped correctly, don't just review it against the documentation. Run it against the reference server's test suite and see what breaks. Document review tells you what you meant to build. The tests tell you what you actually built, and those two things diverge more often than anyone expects going in.</p>`,
   'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
 
   <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>

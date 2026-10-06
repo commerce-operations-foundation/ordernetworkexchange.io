@@ -57,7 +57,7 @@ function renderHiw(i){
   if(s.solidAll)hiwEls.connects.forEach(c=>c.classList.add('solid'));
   hiwEls.layer.classList.toggle('active',!!s.onx);
   hiwEls.onxTxt.innerHTML=s.onxTxt;
-  hiwEls.onxTools.textContent=s.tools||'14 MCP tools · 9 resources';
+  hiwEls.onxTools.textContent=s.tools||'12 MCP tools · 9 resources';
   hiwEls.narrH.textContent=s.h; hiwEls.narrB.textContent=s.b;
   hiwEls.stageNum.textContent=i+1; hiwEls.stageName.textContent=s.name;
   railSteps.forEach((r,idx)=>{r.classList.remove('active','complete');if(idx<i)r.classList.add('complete');else if(idx===i)r.classList.add('active');

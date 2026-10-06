@@ -8,7 +8,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ordernetworkexchange.io/insights/mapping-your-existing-apis-to-the-14-onx-mcp-tools">
 <meta property="og:site_name" content="Commerce Operations Foundation">
-<meta property="og:title" content="Mapping Your Existing APIs to the 14 onX MCP Tools — onX Insights">
+<meta property="og:title" content="Mapping Your Existing APIs to the 12 onX MCP Tools — onX Insights">
 <meta property="og:description" content="A technical walkthrough of aligning your order surface to the spec — with the common gaps.">
 <meta property="og:image" content="https://ordernetworkexchange.io/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="article:section" content="Vendor Engineering">
 <meta name="author" content="Commerce Operations Foundation">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mapping Your Existing APIs to the 14 onX MCP Tools — onX Insights">
+<meta name="twitter:title" content="Mapping Your Existing APIs to the 12 onX MCP Tools — onX Insights">
 <meta name="twitter:description" content="A technical walkthrough of aligning your order surface to the spec — with the common gaps.">
 <meta name="twitter:image" content="https://ordernetworkexchange.io/og-image.png">
-<title>Mapping Your Existing APIs to the 14 onX MCP Tools — onX Insights</title>
+<title>Mapping Your Existing APIs to the 12 onX MCP Tools — onX Insights</title>
 <link rel="icon" type="image/svg+xml" href="/assets/onx-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,16 +45,47 @@
 <div class="wrap"><article class="article">
   <div class="crumbs" style="margin-bottom:30px"><a href="/">Home</a><span>/</span><a href="/insights">Insights</a><span>/</span>Vendor Engineering</div>
   <div class="atrack" style="color:#5cc4e6">VENDOR ENGINEERING SERIES</div>
-  <h1>Mapping Your Existing APIs to the 14 onX MCP Tools</h1>
+  <h1>Mapping Your Existing APIs to the 12 onX MCP Tools</h1>
   <p class="lead">A technical walkthrough of aligning your order surface to the spec — with the common gaps.</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>
+  <p>Mapping your system to onX is not a rewrite. Almost everything the spec asks for already exists somewhere in your data model. The work is figuring out where it lives, what shape it needs to change into, and which of your internal assumptions don't survive contact with a schema someone else designed. That last part is where teams actually lose time, more than the mechanical work of writing adapter code, so it's worth walking through tool by tool rather than treating this as one undifferentiated integration project.</p>
+
+  <p>Start with your data, not your endpoints. Before touching any tool signature, inventory your core objects: order, customer, product, variant, inventory record, fulfillment, return. Most legacy APIs don't draw these boundaries the same way the spec does, and finding that out early is cheaper than finding it out mid-build.</p>
+
+  <h2>The query tools</h2>
+
+  <p>These come first for a reason. Reading your own data out correctly surfaces every mismatch between your model and the spec's while it's still cheap to fix.</p>
+
+  <p><strong>get-orders.</strong> Usually the most straightforward of the seven, and also where a subtle gap tends to hide. Your order status values almost certainly don't map one-to-one onto the spec's expected states. Systems that split order data across a header table and a separate line-item service will also need to do real work reassembling a single coherent order object here rather than just passing through what already exists.</p>
+
+  <p><strong>get-customers.</strong> The recurring gap is identity, not schema. Guest checkouts, loyalty accounts, and cross-channel customer records rarely resolve to one clean customer object in most commerce systems, and deciding how to represent an unauthenticated or one-time buyer is a product decision as much as an engineering one.</p>
+
+  <p><strong>get-products</strong> and <strong>get-product-variants.</strong> The spec treats these as two distinct concepts, product and variant, and a lot of legacy catalogs conflate them, storing variant-level data as flags or attributes on a single product record instead of as its own object. Untangling that split is usually the biggest lift in this pair, more than the API work itself.</p>
+
+  <p><strong>get-inventory.</strong> The perennial mismatch here is which inventory you mean. On-hand, available-to-promise, and reserved are three different numbers, and many systems only expose one of them cleanly through their existing API. If your inventory is split across multiple warehouses or fulfillment locations, this tool also usually needs aggregation logic that doesn't already exist as a single query, since most internal systems were never asked to answer "how many do we have, everywhere, right now" as one clean question.</p>
+
+  <p><strong>get-fulfillments.</strong> This is the tool most likely to expose an integration gap rather than just a mapping one. Carrier and tracking data frequently lives in a transportation management system or a 3PL's own portal, not your OMS, which means this tool sometimes requires connecting a system you don't currently have wired to your API layer at all, not just reshaping data you already expose.</p>
+
+  <p><strong>get-returns.</strong> Return status and reason taxonomies tend to be more bespoke per retailer than almost anything else in the order lifecycle. Expect to spend real time deciding how your internal reason codes collapse into the spec's shape without losing information your operations team actually relies on.</p>
+
+  <h2>The action tools</h2>
+
+  <p>These go faster once the query side is solid, because by then you've already done the hard thinking about how your domain model lines up with the standard one.</p>
+
+  <p><strong>create-sales-order.</strong> The gap here is usually validation, not schema: address verification, payment authorization, fraud checks. A checkout flow handles these interactively with a human on the other end. An agent calling this tool synchronously needs a clear answer for what happens when one of those checks needs more time or fails partway through, and that's an architecture decision your team needs to make deliberately rather than backing into.</p>
+
+  <p><strong>update-order.</strong> The real question is what your system considers mutable after an order is placed. Many platforms lock down wide parts of an order once it's created, and reconciling that against what the spec allows an agent to update is worth resolving explicitly rather than discovering by accident.</p>
+
+  <p><strong>cancel-order.</strong> Full cancellations are simple. Partial cancellations and cancellations requested mid-fulfillment are where the actual complexity lives, and they show up in nearly every implementation regardless of how mature the underlying OMS is.</p>
+
+  <p><strong>fulfill-order.</strong> This one is often an architecture decision disguised as an API mapping task. Wiring it to real-time carrier and warehouse events, rather than having an agent poll for status, is usually the right call, and it's worth deciding that upfront instead of retrofitting it later.</p>
+
+  <p><strong>create-return.</strong> The spec defines the shape of a return request and response. It doesn't decide your eligibility rules, so return windows, restocking fees, and final-sale exclusions all need to live somewhere in your implementation, expressed as logic the tool can actually enforce rather than left as a policy page nobody's code reads.</p>
+
+  <h2>The pattern underneath all twelve</h2>
+
+  <p>Almost every gap above has the same shape. Your system usually has more data than the spec asks for, which is fine and expected. The friction comes from that data being organized differently: split across services where the spec expects one object, or combined into one record where the spec expects two. That's not a sign anything is wrong with your system. It's just the actual work of mapping, and it's worth treating each tool as its own small design exercise rather than assuming the twelfth one will go as smoothly as the first.</p>
+
+  <p>Once you think you've got a tool mapped correctly, don't just review it against the documentation. Run it against the reference server's test suite and see what breaks. Document review tells you what you meant to build. The tests tell you what you actually built, and those two things diverge more often than anyone expects going in.</p>
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="/tech">Get on the vendor track →</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>
 </article></div>
 <footer class="footer"><div class="wrap">
@@ -66,6 +97,6 @@
   </div>
   <div class="foot-bottom"><span>© <span data-year>2026</span> Commerce Operations Foundation. All rights reserved.</span><span class="mono">Built on the Model Context Protocol</span></div>
 </div></footer>
-<script src="/assets/app.js"></script>
+<script src="/assets/app.js?v=20261006-12-tools"></script>
 </body>
 </html>
