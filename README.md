@@ -37,7 +37,7 @@ consistent. To change shared chrome or content, edit `build.js` /
 node build.js
 ```
 
-…and commit the regenerated `.html` files. **No build step runs on Netlify** —
+…and commit the regenerated `.html` files. **No build step runs on Netlify**;
 the committed HTML is what deploys. (If you'd rather Netlify build, set
 `command = "node build.js"` under `[build]` in `netlify.toml`.)
 
@@ -63,14 +63,14 @@ Three forms post to Netlify and are auto-detected (`data-netlify="true"`):
    when COF replies it reaches the submitter directly. (Item 4 reply-to.)
 3. **Submitter copy / CC (item 4):** every form has a "Send me a copy" checkbox
    and captures the submitter's `email`. Netlify notifications go to fixed
-   recipients only — to auto-send the submitter a copy you need either:
+   recipients only. To auto-send the submitter a copy, you need either:
    - a Zapier/Make automation on "new form submission" that emails `{{email}}`, or
    - a `netlify/functions/submission-created.js` function using your email
      provider (SendGrid/Postmark/etc.) keyed off the `copy_me` field.
    Until one of those is wired, COF sees the "copy_me = yes" flag and can CC
    manually.
 
-## Item 3 — real vendor contacts (action for COF)
+## Item 3: real vendor contacts (action for COF)
 
 The old tool drafted outreach to **fabricated** contacts (made-up names/emails).
 That's been removed. The activation request now routes to the COF/onX inbox and
