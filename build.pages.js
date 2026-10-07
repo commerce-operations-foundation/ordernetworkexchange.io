@@ -1,4 +1,4 @@
-/* Page bodies — required by build.js */
+/* Page bodies required by build.js */
 const b = require('./build.js');
 const { page, posts, postCard, slugify, fs, path, ROOT } = b;
 
@@ -8,9 +8,9 @@ const GH = 'https://github.com/commerce-operations-foundation';
 const homeTeaser = ['brand','tech','vision'].map(t=>posts.find(p=>p.track===t)).filter(Boolean).map(postCard).join('');
 page({
   file:'index.html', path:'/', active:'home',
-  title:'Commerce Operations Foundation — onX',
-  desc:'onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.',
-  scripts:['<script src="/assets/home.js?v=20261006-walkthrough-speed-2"></script>'],
+  title:'Commerce Operations Foundation | onX',
+  desc:'onX, the Order Network eXchange, is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.',
+  scripts:['<script src="/assets/home.js?v=20261007-no-em-dashes"></script>'],
   body:`
 <section class="hero" id="hero">
   <div class="hero-bg">
@@ -24,12 +24,12 @@ page({
   <div class="wrap hero-inner" data-par="-0.12">
     <div class="kicker"><span class="dot"></span> The open standard for agentic commerce</div>
     <h1>AI made buying effortless.<br>Now we make fulfillment <span class="hl">intelligent.</span></h1>
-    <p class="lede">onX — the Order Network eXchange — is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
+    <p class="lede">onX, the Order Network eXchange, is the open standard that lets selling channels, fulfillment systems, and AI agents finally speak the same language.</p>
     <p class="foundation-credit">Brought to you by the <a href="https://commerceopsfoundation.org/" target="_blank" rel="noopener noreferrer">Commerce Operations Foundation</a>.</p>
     <p class="micro mono">Built on the Model Context Protocol &nbsp;·&nbsp; 12 MCP tools &nbsp;·&nbsp; 9 shared resources &nbsp;·&nbsp; Open governance</p>
     <div class="router-label section-label">Start with what you are →</div>
     <div class="doors">
-      <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent — by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
+      <a class="door brand" href="/brands"><div class="ico">🏷️</div><div class="who">Brands &amp; Retailers</div><h3>I sell products</h3><p>Get found by AI shopping agents and make fulfillment intelligent by activating onX with the vendors you already use.</p><span class="go">Enter the Brand track <span class="arr">→</span></span></a>
       <a class="door tech" href="/tech"><div class="ico">⚙️</div><div class="who">Technology Vendors</div><h3>I build OMS / WMS / platforms</h3><p>Ship a compliant onX endpoint, join the Technical Steering Committee, and become the default your customers ask for.</p><span class="go">Enter the Tech track <span class="arr">→</span></span></a>
       <a class="door si" href="/integrators"><div class="ico">🔧</div><div class="who">Systems Integrators</div><h3>I implement &amp; integrate</h3><p>Lead onX rollouts for your clients, get certified, and turn the standard into a repeatable services practice.</p><span class="go">Enter the Systems Integrator track <span class="arr">→</span></span></a>
     </div>
@@ -47,7 +47,7 @@ page({
 
 <section class="section wrap pullquote-wrap" style="--accent:var(--lime);padding-bottom:0">
   <figure class="pullquote">
-    <blockquote>&ldquo;Agentic commerce requires real-time order, inventory, fulfillment, and returns information &mdash; capabilities that most legacy commerce systems were not designed to provide. There is a movement in this space, something to watch for, and it&rsquo;s called the onX protocol.&rdquo;</blockquote>
+    <blockquote>&ldquo;Agentic commerce requires real-time order, inventory, fulfillment, and returns information (capabilities that most legacy commerce systems were not designed to provide). There is a movement in this space, something to watch for, and it&rsquo;s called the onX protocol.&rdquo;</blockquote>
     <figcaption><span class="pq-name">Deepa Shekhar</span>, <span class="pq-org">Logitech</span></figcaption>
   </figure>
 </section>
@@ -57,7 +57,7 @@ page({
     <div class="hiw-head">
       <div class="eyebrow section-label center" style="--accent:var(--blue)">How it works</div>
       <h2>Watch onX kick in.</h2>
-      <p>Follow one order from a shopper's AI agent all the way to their doorstep — and see where the standard does its work.</p>
+      <p>Follow one order from a shopper's AI agent all the way to their doorstep, and see where the standard does its work.</p>
     </div>
     <div class="hiw-stage-cap">STAGE <b id="stageNum">1</b> / 5 &nbsp;·&nbsp; <span id="stageName">Agentic discovery</span></div>
     <div class="schema">
@@ -80,7 +80,7 @@ page({
     </div>
     <div class="hiw-narr" id="hiwNarr">
       <div class="nh" id="narrH">A shopper asks their AI agent to buy something.</div>
-      <div class="nb" id="narrB">Agentic commerce starts the journey — the agent captures intent and is ready to transact.</div>
+      <div class="nb" id="narrB">Agentic commerce starts the journey; the agent captures intent and is ready to transact.</div>
     </div>
     <div class="hiw-rail" id="hiwRail"></div>
     <div class="hiw-controls">
@@ -93,23 +93,23 @@ page({
 <section class="section wrap" style="--accent:var(--blue)">
   <div class="eyebrow section-label">The shift nobody can opt out of</div>
   <h2>Commerce is being rebuilt around agents. The plumbing isn't ready.</h2>
-  <p class="sub">AI agents now start the buying journey — but every brand, platform, and 3PL still speaks a different dialect for orders, inventory, and fulfillment. onX is the shared language that closes the gap.</p>
+  <p class="sub">AI agents now start the buying journey, but every brand, platform, and 3PL still speaks a different dialect for orders, inventory, and fulfillment. onX is the shared language that closes the gap.</p>
   <div class="ba">
-    <div class="col before"><span class="tag">Without a standard</span><ul><li>Brittle point-to-point integrations between every system</li><li>Each new partner = another custom build</li><li>Invisible to AI shopping agents — get skipped</li><li>Manual fixes that never scale</li></ul></div>
+    <div class="col before"><span class="tag">Without a standard</span><ul><li>Brittle point-to-point integrations between every system</li><li>Each new partner = another custom build</li><li>Invisible to AI shopping agents, so you get skipped</li><li>Manual fixes that never scale</li></ul></div>
     <div class="arrow-mid">→</div>
-    <div class="col after"><span class="tag">With onX</span><ul><li>One open contract every system implements once</li><li>New partners connect in days, not quarters</li><li>Agent-readable — get found, get chosen</li><li>Governed in the open, owned by no one</li></ul></div>
+    <div class="col after"><span class="tag">With onX</span><ul><li>One open contract every system implements once</li><li>New partners connect in days, not quarters</li><li>Agent-readable: get found, get chosen</li><li>Governed in the open, owned by no one</li></ul></div>
   </div>
 </section>
 <section class="section wrap" style="--accent:var(--lime);padding-top:0"><div class="band">
   <div class="bglow" data-par="0.3"></div>
   <div class="eyebrow section-label center">The EDI moment for AI commerce</div>
   <h2>EDI standardized how businesses traded for 40 years.<br>onX does it for the age of agents.</h2>
-  <p>When the industry agreed on a common format, an entire economy of interoperability followed. onX is that agreement — purpose-built for AI-native, post-purchase order data.</p>
+  <p>When the industry agreed on a common format, an entire economy of interoperability followed. onX is that agreement, purpose-built for AI-native, post-purchase order data.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/brands">See how brands activate it</a><a class="btn btn-ghost" href="${GH}" target="_blank" rel="noopener">View the spec on GitHub ↗</a></div>
 </div></section>
 <section class="section wrap" style="--accent:var(--violet);padding-top:0">
   <div class="eyebrow section-label">From the Foundation</div><h2>Insights &amp; field notes</h2>
-  <p class="sub">Three running series — one for each audience — that turn the standard into action.</p>
+  <p class="sub">Three running series, one for each audience, that turn the standard into action.</p>
   <div class="posts">${homeTeaser}</div>
   <div class="center"><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">Browse all insights →</a></div>
 </section>`
@@ -118,20 +118,20 @@ page({
 /* ============================ BRANDS ============================ */
 page({
   file:'brands.html', path:'/brands', active:'brands',
-  title:'For Brands & Retailers — Start your journey with onX',
+  title:'For Brands & Retailers | Start your journey with onX',
   desc:'Your customers are already shopping with agents. Activate onX with the OMS, WMS, and integration partners you already use.',
-  scripts:['<script src="/assets/brands.js"></script>'],
+  scripts:['<script src="/assets/brands.js?v=20261007-no-em-dashes"></script>'],
   body:`
 <div style="--accent:var(--lime);--pg:rgba(159,212,32,.4)">
   <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%"></div>
     <div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>For Brands &amp; Retailers</div>
       <div class="phero-inner"><div class="ptag">🏷️ Brands &amp; Retailers</div>
         <h1>Your customers are already shopping with agents.<br>Make sure they can <span class="hl">buy &amp; receive</span> from you.</h1>
-        <p>You don't have to build onX yourself. You activate it — by asking the OMS, WMS, and integration partners you already work with to turn it on.</p>
+        <p>You don't have to build onX yourself. You activate it by asking the OMS, WMS, and integration partners you already work with to turn it on.</p>
         <div class="qnav"><a href="#b-what"><span class="n">01</span>What is it?</a><a href="#b-why"><span class="n">02</span>Why do I need it?</a><a href="#b-how"><span class="n">03</span>How do I get started?</a></div>
       </div></div></section>
-  <section class="qblock wrap" id="b-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, in your terms?</h2><p class="qlede">A free, open standard that lets every system in your commerce stack — and the AI agents now shopping on your customers' behalf — exchange order and fulfillment data the same way.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🤖</div><h4>Agent-readable orders</h4><p>When an AI agent places or tracks an order, onX gives it a structured, predictable way to talk to your fulfillment systems.</p></div><div class="card"><div class="cico">🔗</div><h4>One language, every partner</h4><p>Your OMS, WMS, 3PL, and platform all speak onX — so handoffs stop breaking and data stops getting lost in translation.</p></div><div class="card"><div class="cico">🆓</div><h4>Open &amp; free to adopt</h4><p>No license, no lock-in. Stewarded by a vendor-neutral foundation and built on the Model Context Protocol.</p></div></div>
+  <section class="qblock wrap" id="b-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, in your terms?</h2><p class="qlede">A free, open standard that lets every system in your commerce stack (and the AI agents now shopping on your customers' behalf) exchange order and fulfillment data the same way.</p></div></div>
+    <div class="cards"><div class="card"><div class="cico">🤖</div><h4>Agent-readable orders</h4><p>When an AI agent places or tracks an order, onX gives it a structured, predictable way to talk to your fulfillment systems.</p></div><div class="card"><div class="cico">🔗</div><h4>One language, every partner</h4><p>Your OMS, WMS, 3PL, and platform all speak onX, so handoffs stop breaking and data stops getting lost in translation.</p></div><div class="card"><div class="cico">🆓</div><h4>Open &amp; free to adopt</h4><p>No license, no lock-in. Stewarded by a vendor-neutral foundation and built on the Model Context Protocol.</p></div></div>
   </section>
   <section class="qblock wrap" id="b-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because in agentic commerce, if your fulfillment data isn't legible to agents, your products effectively don't exist to them. Get found, or get skipped.</p></div></div>
     <div class="cards"><div class="card"><div class="cico">👁️</div><h4>Get found by AI agents</h4><p>Agents route shoppers to merchants they can transact with cleanly. onX makes you one of them.</p></div><div class="card"><div class="cico">⚡</div><h4>Cut integration drag</h4><p>Stop paying for one-off connections between every system and partner. Standardize once.</p></div><div class="card"><div class="cico">📦</div><h4>Fewer broken handoffs</h4><p>Consistent order data means fewer manual fixes, fewer WISMO tickets, faster delivery promises.</p></div></div>
@@ -158,10 +158,10 @@ page({
             <p class="form-note">Your request goes to the monitored COF/onX inbox. The Foundation coordinates with each partner and follows up with you directly.</p>
           </div>
         </form>
-        <div class="form-success" id="actSuccess"><h4>Request sent ✓</h4><p>Thanks — your activation request is in. The Commerce Operations Foundation will coordinate with your selected partners and follow up at the email you provided.</p></div>
+        <div class="form-success" id="actSuccess"><h4>Request sent ✓</h4><p>Thanks, your activation request is in. The Commerce Operations Foundation will coordinate with your selected partners and follow up at the email you provided.</p></div>
       </div>
     </div>
-    <div class="cards two" style="margin-top:36px"><div class="card"><div class="cico">📋</div><h4>Not sure who to ask?</h4><p>Talk to the Foundation — we'll help you map your stack and identify the fastest path to a live onX connection.</p><a class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" href="/membership#join">Get rollout support</a></div><div class="card"><div class="cico">📖</div><h4>Want the brand playbook?</h4><p>Read the Brand Activation series — practical guides for making the internal case and running a pilot.</p><a class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" href="/insights">Read the series</a></div></div>
+    <div class="cards two" style="margin-top:36px"><div class="card"><div class="cico">📋</div><h4>Not sure who to ask?</h4><p>Talk to the Foundation. We'll help you map your stack and identify the fastest path to a live onX connection.</p><a class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" href="/membership#join">Get rollout support</a></div><div class="card"><div class="cico">📖</div><h4>Want the brand playbook?</h4><p>Read the Brand Activation series for practical guides to making the internal case and running a pilot.</p><a class="btn btn-ghost" style="margin-top:14px;font-size:14px;padding:10px 18px;border-color:var(--line-strong)" href="/insights">Read the series</a></div></div>
   </section>
   <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3"></div><h2>The brands that ask first, win first.</h2><p>Activation is a conversation you start with partners you already trust. We'll help you have it.</p><div class="btn-row"><a class="btn btn-primary" href="#b-how">Build my activation packet</a><a class="btn btn-ghost" href="/membership">Become a member</a></div></div></section>
 </div>`
@@ -170,23 +170,23 @@ page({
 /* ============================ TECH ============================ */
 page({
   file:'tech.html', path:'/tech', active:'tech',
-  title:'For Technology Vendors — Implement onX',
+  title:'For Technology Vendors | Implement onX',
   desc:'OMS, WMS, platform and integration vendors are shipping onX endpoints now. Implement the spec and join the Technical Steering Committee.',
   body:`
 <div style="--accent:var(--blue);--pg:rgba(110,206,235,.4)">
   <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%;background:rgba(110,206,235,.12)"></div>
     <div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>For Technology Vendors</div>
-      <div class="phero-inner"><div class="ptag">⚙️ Technology Vendors</div><h1>The spec is live and your peers are already <span class="hl">building.</span></h1><p>OMS, WMS, platforms and integration tools are shipping onX endpoints now. Be the vendor your customers find compliant when they come asking — because they will.</p>
+      <div class="phero-inner"><div class="ptag">⚙️ Technology Vendors</div><h1>The spec is live and your peers are already <span class="hl">building.</span></h1><p>OMS, WMS, platforms and integration tools are shipping onX endpoints now. Be the vendor your customers find compliant when they come asking, because they will.</p>
         <div class="qnav"><a href="#t-what"><span class="n">01</span>What is it?</a><a href="#t-why"><span class="n">02</span>Why do I need it?</a><a href="#t-how"><span class="n">03</span>How do I get started?</a><a href="#t-join"><span class="n">→</span>Get on the vendor track</a></div>
       </div></div></section>
-  <section class="qblock wrap" id="t-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, technically?</h2><p class="qlede">An open MCP-based specification — 12 tools and 9 shared resources — defining how order and fulfillment systems expose capabilities to agents and to each other.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🛠️</div><h4>12 MCP tools</h4><p>A defined surface area covering order capture through shipment tracking — the full post-purchase lifecycle.</p></div><div class="card"><div class="cico">📚</div><h4>9 shared resources</h4><p>Common schemas so an order means the same thing across every compliant system.</p></div><div class="card"><div class="cico">🐙</div><h4>Open reference server</h4><p>A public GitHub reference implementation to build and validate against — not a paper standard.</p></div></div>
+  <section class="qblock wrap" id="t-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, technically?</h2><p class="qlede">An open MCP-based specification with 12 tools and 9 shared resources, defining how order and fulfillment systems expose capabilities to agents and to each other.</p></div></div>
+    <div class="cards"><div class="card"><div class="cico">🛠️</div><h4>12 MCP tools</h4><p>A defined surface area covering the full post-purchase lifecycle, from order capture through shipment tracking.</p></div><div class="card"><div class="cico">📚</div><h4>9 shared resources</h4><p>Common schemas so an order means the same thing across every compliant system.</p></div><div class="card"><div class="cico">🐙</div><h4>Open reference server</h4><p>A public GitHub reference implementation to build and validate against, not a paper standard.</p></div></div>
   </section>
   <section class="qblock wrap" id="t-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because brands are about to start asking "are you onX-compliant?" the way they once asked about API availability. The answer is a deal-maker or deal-breaker.</p></div></div>
     <div class="cards"><div class="card"><div class="cico">🎯</div><h4>Demand is coming to you</h4><p>Our Brand Activation flow routes interested brands directly to their vendors. Be ready to say yes.</p></div><div class="card"><div class="cico">🚪</div><h4>Stop building one-offs</h4><p>Implement the contract once instead of maintaining a custom integration per customer and partner.</p></div><div class="card"><div class="cico">🏛️</div><h4>Shape the standard</h4><p>Early implementers sit on the Technical Steering Committee and influence where the spec goes next.</p></div></div>
   </section>
   <section class="qblock wrap" id="t-how"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">A clear path from clone to compliant. Most of your peers are already somewhere on it.</p></div></div>
-    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Clone the reference server</h4><p>Pull the public onX MCP reference implementation and run it locally to see the tools and resources in action.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">github.com/commerce-operations-foundation ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Map your APIs to the 12 tools</h4><p>Align your existing order/fulfillment surface to the onX tool definitions. Most vendors already cover the majority.</p></div></div><div class="step"><div class="sn"></div><div><h4>Implement &amp; self-validate</h4><p>Build your endpoint and test it against the conformance suite in the reference repo.</p></div></div><div class="step"><div class="sn"></div><div><h4>Join the Technical Steering Committee</h4><p>Bring your implementation learnings to the group steering the spec — and get listed as a compliant vendor.</p><a class="scta" href="#t-join">Apply to the TSC →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get listed &amp; get found</h4><p>Compliant vendors appear in the Brand Activation tool — so demand flows to you automatically.</p></div></div></div>
+    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Clone the reference server</h4><p>Pull the public onX MCP reference implementation and run it locally to see the tools and resources in action.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">github.com/commerce-operations-foundation ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Map your APIs to the 12 tools</h4><p>Align your existing order/fulfillment surface to the onX tool definitions. Most vendors already cover the majority.</p></div></div><div class="step"><div class="sn"></div><div><h4>Implement &amp; self-validate</h4><p>Build your endpoint and test it against the conformance suite in the reference repo.</p></div></div><div class="step"><div class="sn"></div><div><h4>Join the Technical Steering Committee</h4><p>Bring your implementation learnings to the group steering the spec, and get listed as a compliant vendor.</p><a class="scta" href="#t-join">Apply to the TSC →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get listed &amp; get found</h4><p>Compliant vendors appear in the Brand Activation tool, so demand flows to you automatically.</p></div></div></div>
   </section>
   <section class="qblock wrap" id="t-join" style="border-bottom:none"><div class="qhead"><div class="qn">→</div><div><h2>Get on the onX vendor track.</h2><p class="qlede">Tell us about your platform and we'll get you the spec, the reference server, and a seat in the conversation. Goes straight to the COF/onX team.</p></div></div>
     <div class="tool" style="--accent:var(--blue)">
@@ -205,7 +205,7 @@ page({
           <div class="tool-foot"><span class="form-note" style="margin:0">We'll reply to the email you provide.</span><button type="submit" class="btn btn-primary">Request the vendor kit →</button></div>
         </div>
       </form>
-      <div class="form-success" id="vendorSuccess"><h4>Thanks — you're on the list ✓</h4><p>The COF/onX team will follow up at your email with the spec, the reference server, and next steps for the Technical Steering Committee.</p></div>
+      <div class="form-success" id="vendorSuccess"><h4>Thanks, you're on the list ✓</h4><p>The COF/onX team will follow up at your email with the spec, the reference server, and next steps for the Technical Steering Committee.</p></div>
     </div>
   </section>
   <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--blue-bright)"></div><h2>Your customers will ask. Be the easy yes.</h2><p>Join the vendors already building onX into their roadmap and shaping the standard from the inside.</p><div class="btn-row"><a class="btn btn-primary" href="${GH}" target="_blank" rel="noopener">Start on GitHub ↗</a><a class="btn btn-ghost" href="#t-join">Join the TSC</a></div></div></section>
@@ -218,23 +218,23 @@ page({
 /* ============================ INTEGRATORS ============================ */
 page({
   file:'integrators.html', path:'/integrators', active:'integrators',
-  title:'For Systems Integrators — Build an onX practice',
+  title:'For Systems Integrators | Build an onX practice',
   desc:'Every brand activating onX needs someone to make it real. Turn the standard into a repeatable, certified services practice.',
   body:`
 <div style="--accent:var(--amber);--pg:rgba(232,146,58,.36)">
   <section class="phero"><div class="pglow" data-par="0.4"></div><div class="orb o2" data-par="-0.3" style="top:80px;right:14%;background:rgba(232,146,58,.12)"></div>
     <div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>For Systems Integrators</div>
-      <div class="phero-inner"><div class="ptag">🔧 Systems Integrators</div><h1>Every brand activating onX needs someone to <span class="hl">make it real.</span></h1><p>That someone is you. Turn the standard into a repeatable, high-margin services practice — and become the partner brands and vendors call first.</p>
+      <div class="phero-inner"><div class="ptag">🔧 Systems Integrators</div><h1>Every brand activating onX needs someone to <span class="hl">make it real.</span></h1><p>That someone is you. Turn the standard into a repeatable, high-margin services practice and become the partner brands and vendors call first.</p>
         <div class="qnav"><a href="#s-what"><span class="n">01</span>What is it?</a><a href="#s-why"><span class="n">02</span>Why do I need it?</a><a href="#s-how"><span class="n">03</span>How do I get started?</a></div>
       </div></div></section>
   <section class="qblock wrap" id="s-what"><div class="qhead"><div class="qn">01</div><div><h2>What is onX, for your practice?</h2><p class="qlede">A standard implementation pattern. Instead of bespoke integration work per client, onX gives you a repeatable blueprint you can productize.</p></div></div>
-    <div class="cards"><div class="card"><div class="cico">🧩</div><h4>A repeatable pattern</h4><p>One well-defined contract to implement across clients — estimable scopes, predictable delivery.</p></div><div class="card"><div class="cico">📈</div><h4>A new service line</h4><p>onX assessments, activations, and migrations become packaged offerings with clear deliverables.</p></div><div class="card"><div class="cico">🤝</div><h4>A trusted credential</h4><p>Certification signals to brands and vendors that you can execute onX rollouts reliably.</p></div></div>
+    <div class="cards"><div class="card"><div class="cico">🧩</div><h4>A repeatable pattern</h4><p>One well-defined contract to implement across clients, with estimable scopes and predictable delivery.</p></div><div class="card"><div class="cico">📈</div><h4>A new service line</h4><p>onX assessments, activations, and migrations become packaged offerings with clear deliverables.</p></div><div class="card"><div class="cico">🤝</div><h4>A trusted credential</h4><p>Certification signals to brands and vendors that you can execute onX rollouts reliably.</p></div></div>
   </section>
   <section class="qblock wrap" id="s-why"><div class="qhead"><div class="qn">02</div><div><h2>Why do you need it?</h2><p class="qlede">Because a wave of activation is forming, and the integrators who are ready will capture the implementation demand the standard creates.</p></div></div>
     <div class="cards"><div class="card"><div class="cico">🌊</div><h4>Ride the activation wave</h4><p>As brands push vendors to enable onX, someone has to integrate, test, and operationalize it.</p></div><div class="card"><div class="cico">💼</div><h4>Higher-margin work</h4><p>Standardized scopes mean less discovery, faster delivery, and better margins than custom integration.</p></div><div class="card"><div class="cico">⭐</div><h4>Referral flow</h4><p>Certified partners get surfaced to brands seeking implementation help directly from the Foundation.</p></div></div>
   </section>
   <section class="qblock wrap" id="s-how" style="border-bottom:none"><div class="qhead"><div class="qn">03</div><div><h2>How do you get started?</h2><p class="qlede">Build the capability, prove it, then get listed as a go-to onX partner.</p></div></div>
-    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Skill up your team</h4><p>Get your architects through the onX technical docs and reference implementation.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">Open the docs &amp; repo ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Run a reference implementation</h4><p>Deliver an onX activation with a willing client or vendor partner to build a proof point.</p></div></div><div class="step"><div class="sn"></div><div><h4>Productize your offering</h4><p>Package assessment, activation, and migration into named services with fixed scopes.</p></div></div><div class="step"><div class="sn"></div><div><h4>Get certified</h4><p>Validate your capability with the Foundation and earn the certified implementation partner credential.</p><a class="scta" href="/membership#join">Apply for certification →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get referred</h4><p>Certified partners are surfaced to brands in the activation flow — inbound demand, not cold outreach.</p></div></div></div>
+    <div class="steps"><div class="step"><div class="sn"></div><div><h4>Skill up your team</h4><p>Get your architects through the onX technical docs and reference implementation.</p><a class="scta" href="${GH}" target="_blank" rel="noopener">Open the docs &amp; repo ↗</a></div></div><div class="step"><div class="sn"></div><div><h4>Run a reference implementation</h4><p>Deliver an onX activation with a willing client or vendor partner to build a proof point.</p></div></div><div class="step"><div class="sn"></div><div><h4>Productize your offering</h4><p>Package assessment, activation, and migration into named services with fixed scopes.</p></div></div><div class="step"><div class="sn"></div><div><h4>Get certified</h4><p>Validate your capability with the Foundation and earn the certified implementation partner credential.</p><a class="scta" href="/membership#join">Apply for certification →</a></div></div><div class="step"><div class="sn"></div><div><h4>Get referred</h4><p>Certified partners are surfaced to brands in the activation flow, creating inbound demand instead of cold outreach.</p></div></div></div>
   </section>
   <section class="section wrap"><div class="band"><div class="bglow" data-par="0.3" style="background:var(--amber)"></div><h2>Be the partner the activation wave runs through.</h2><p>Certified onX integrators don't chase the work. The work comes to them.</p><div class="btn-row"><a class="btn btn-primary" href="/membership#join">Become a certified partner</a><a class="btn btn-ghost" href="/insights">Read the Systems Integrator playbook</a></div></div></section>
 </div>`
@@ -243,7 +243,7 @@ page({
 /* ============================ INSIGHTS ============================ */
 page({
   file:'insights.html', path:'/insights', active:'insights',
-  title:'Insights — Commerce Operations Foundation',
+  title:'Insights | Commerce Operations Foundation',
   desc:'Three running series turning the onX standard into action: Brand Activation, Vendor Engineering, the Integrator Playbook, and the Big Picture.',
   body:`
 <div style="--accent:var(--violet)">
@@ -260,7 +260,7 @@ function filterPosts(track,el){document.querySelectorAll('#trackFilter .tf').for
 /* ============================ MEMBERSHIP ============================ */
 page({
   file:'membership.html', path:'/membership', active:'membership',
-  title:'Membership — Commerce Operations Foundation',
+  title:'Membership | Commerce Operations Foundation',
   desc:'Join the foundation shaping AI-era commerce. Activate as a brand, build & steer as a vendor, or certify as an integrator.',
   body:`
 <div style="--accent:var(--lime);--pg:rgba(159,212,32,.3)">
@@ -287,7 +287,7 @@ page({
           <div class="tool-foot"><span class="form-note" style="margin:0">We'll reply to the email you provide.</span><button type="submit" class="btn btn-primary">Talk to the Foundation →</button></div>
         </div>
       </form>
-      <div class="form-success" id="memberSuccess"><h4>Got it ✓</h4><p>Thanks for reaching out — the COF/onX team will follow up at your email with the right next step.</p></div>
+      <div class="form-success" id="memberSuccess"><h4>Got it ✓</h4><p>Thanks for reaching out. The COF/onX team will follow up at your email with the right next step.</p></div>
     </div>
   </section>
   </section>
@@ -361,7 +361,7 @@ const ARTICLE_BODIES = {
 
   <p>You don't need to become a protocol expert to act on this, and you shouldn't wait until an AI platform's shopping feature is driving meaningful revenue to start caring. The useful first move is a conversation. Ask your OMS, IMS, or fulfillment vendor whether onX conformance is on their roadmap. Treat the answer as a real evaluation criterion the way you'd treat any other integration capability. Because onX is open and vendor-neutral (not owned or controlled by any single platform) supporting it doesn't lock you into anyone's roadmap but your own. This is the kind of infrastructure decision that pays off regardless of which AI shopping surfaces end up mattering most.</p>
 
-  <p>Remember — The brands that get found in agentic commerce won't necessarily be the ones with the flashiest product pages. They'll be the ones who have systems an agent can actually understand reliably, consistently and without a custom integration standing in the way.</p>
+  <p>Remember: The brands that get found in agentic commerce won't necessarily be the ones with the flashiest product pages. They'll be the ones who have systems an agent can actually understand reliably, consistently and without a custom integration standing in the way.</p>
 
   <p>That's a decision worth making before the agents start deciding it for you.</p>`,
   'the-20-minute-internal-memo-that-gets-onx-on-your-roadmap': `<p>You don't need a slide deck to get onX on your company's radar. You need one memo, sent to the two people who actually control whether your ops stack changes: whoever owns fulfillment operations and whoever signs off on vendor spend. Most of these conversations stall not because the case is weak, but because nobody wrote it down in a way that a busy VP could read and easily understand why onX is important, in the time it takes to get coffee.</p>
@@ -570,7 +570,7 @@ npm run test:coverage</code></pre>
   <h2>Sources</h2>
 
   <ul class="article-sources">
-    <li><a href="https://github.com/commerce-operations-foundation/mcp-reference-server" target="_blank" rel="noopener">commerce-operations-foundation/mcp-reference-server</a> — setup commands, adapter template workflow, full tool list, test scripts, and environment configuration</li>
+    <li><a href="https://github.com/commerce-operations-foundation/mcp-reference-server" target="_blank" rel="noopener">commerce-operations-foundation/mcp-reference-server</a>: setup commands, adapter template workflow, full tool list, test scripts, and environment configuration</li>
   </ul>`,
   'inside-the-technical-steering-committee-how-the-spec-evolves': `<p>Every engineering team that's built against a "standard" owned by a single vendor has a version of the same story. The API changes on someone else's timeline. A feature you depend on gets deprecated because it no longer serves the vendor's roadmap. The people making the decision aren't in the room when you find out, and you weren't in the room when they decided. That experience is why "open governance" tends to get waved off as a compliance talking point rather than something an engineer should actually care about. It's worth caring about here, because the alternative to open governance isn't neutrality. It's just governance you can't see.</p>
 
@@ -603,9 +603,9 @@ npm run test:coverage</code></pre>
   <h2>Sources</h2>
 
   <ul class="article-sources">
-    <li><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">commerceopsfoundation.org/governance</a> — decision process, guiding principles, working group structure, and Board of Directors</li>
-    <li><a href="https://ordernetworkexchange.io/membership" target="_blank" rel="noopener">ordernetworkexchange.io/membership</a> — Technical Steering Committee seat tied to Build &amp; Steer/Certify membership and 62+ founding members</li>
-    <li><a href="https://github.com/commerce-operations-foundation/onx-spec" target="_blank" rel="noopener">commerce-operations-foundation/onx-spec CONTRIBUTING.md</a> — fork/PR/review workflow and GitHub Issues versus Discussions</li>
+    <li><a href="https://commerceopsfoundation.org/governance/" target="_blank" rel="noopener">commerceopsfoundation.org/governance</a>: decision process, guiding principles, working group structure, and Board of Directors</li>
+    <li><a href="https://ordernetworkexchange.io/membership" target="_blank" rel="noopener">ordernetworkexchange.io/membership</a>: Technical Steering Committee seat tied to Build &amp; Steer/Certify membership and 62+ founding members</li>
+    <li><a href="https://github.com/commerce-operations-foundation/onx-spec" target="_blank" rel="noopener">commerce-operations-foundation/onx-spec CONTRIBUTING.md</a>: fork/PR/review workflow and GitHub Issues versus Discussions</li>
   </ul>`,
   'the-edi-moment-what-40-years-of-interoperability-teaches-us': `<p>In the late 1940s, a U.S. Army logistics officer named Edward Guilbert was trying to solve a problem that had nothing to do with computers, because computers as we'd recognize them barely existed yet. During the Berlin Airlift, cargo manifests moving between different military branches and different countries kept arriving in incompatible formats, and someone on the receiving end had to manually reconcile what one system called a shipment against what another system meant by the same word. Guilbert's fix was a standardized way to describe a shipment so that everyone handling it, regardless of which branch or country they belonged to, was reading the same thing. That idea, refined over the following decades, became the seed of what we now call EDI.</p>
 
@@ -642,14 +642,14 @@ npm run test:coverage</code></pre>
   <h2>Sources</h2>
 
   <ul class="article-sources">
-    <li><a href="https://www.orderease.com/community/history-of-edi-innovations-business-guide" target="_blank" rel="noopener">Complete History of EDI: How Electronic Data Interchange Transformed Business</a> — TDCC (1968), ANSI X12 (1979), UN/EDIFACT (1988), and the 1990s adoption wave across retail, automotive, and healthcare</li>
-    <li><a href="https://crackerjack-it.com/the-history-and-evolution-of-electronic-data-interchange-edi/" target="_blank" rel="noopener">The History and Evolution of Electronic Data Interchange (EDI)</a> — Edward Guilbert and the Berlin Airlift origin, ANSI X12 (1979), EDIFACT (1987), the VAN-to-internet transition, and the 2010s cloud/API era</li>
+    <li><a href="https://www.orderease.com/community/history-of-edi-innovations-business-guide" target="_blank" rel="noopener">Complete History of EDI: How Electronic Data Interchange Transformed Business</a>: TDCC (1968), ANSI X12 (1979), UN/EDIFACT (1988), and the 1990s adoption wave across retail, automotive, and healthcare</li>
+    <li><a href="https://crackerjack-it.com/the-history-and-evolution-of-electronic-data-interchange-edi/" target="_blank" rel="noopener">The History and Evolution of Electronic Data Interchange (EDI)</a>: Edward Guilbert and the Berlin Airlift origin, ANSI X12 (1979), EDIFACT (1987), the VAN-to-internet transition, and the 2010s cloud/API era</li>
   </ul>`,
   'foundation-launch-a-new-era-for-commerce-operations': `<p>On November 18, 2025, the Commerce Operations Foundation introduced Order Network eXchange (onX) to the world, backed at launch by 62 vendors and brands representing more than a trillion dollars in annual gross merchandise value moving through their combined systems. That's an unusual way for a technical standard to arrive. Most specifications start small and quiet. Built by a handful of engineers solving their own problem, and typically a new standard will only pick up broader backing once the idea has already proven itself somewhere.</p>
 
   <p>However, onX started with a (virtual) room full of people who often compete with each other. The group agreed that this particular problem was bigger than any one of them, and that solving it alone wasn't actually an option. Additionally, we all agreed that solving this challenge would position the industry well, ultimately helping our customers and their customers have a better post-purchase experience with those utilizing onX. That win was very important to everyone and we’ve been working together ever since.</p>
 
-  <p>The problem is a simple one to state and a hard one to ignore. Especially as AI has made buying effortless, as Kelly Goetsch, the foundation's founding president and president of Pipe17, explained it during the launch. Now we need to make fulfillment intelligent. An AI agent can already help someone choose and purchase a product in seconds through their favorite LLM. What happens after that purchase — whether the order gets confirmed accurately, whether the agent can answer "where is it now?" honestly, whether a return actually gets processed — all these questions are still answered via infrastructure that was never built with an AI agent as a caller.</p>
+  <p>The problem is a simple one to state and a hard one to ignore. Especially as AI has made buying effortless, as Kelly Goetsch, the foundation's founding president and president of Pipe17, explained it during the launch. Now we need to make fulfillment intelligent. An AI agent can already help someone choose and purchase a product in seconds through their favorite LLM. What happens after that purchase is still answered via infrastructure that was never built with an AI agent as a caller. This includes whether the order gets confirmed accurately, whether the agent can answer "where is it now?" honestly, and whether a return actually gets processed.</p>
 
   <p>Here is a good way to think about the problem. Every vendor helping merchants sell and fulfill goods uses the same terminology: orders, products, shipments, returns, etc. However, every brand's fulfillment stack has an API that speaks in its own dialect. Every integration between selling channel and fulfillment system is unique (or even custom-built). And frequently a merchant will have 2, 3, 6 or even 10 different systems connected together to support their processes from posting and selling products through last mile delivery. If those systems do not inherently “understand” each other, none of that scales to an agentic world.</p>
 
@@ -677,14 +677,14 @@ npm run test:coverage</code></pre>
 
   <p>Standards like this one tend to get written about twice. Once at launch, when everything is still a promise and a founding roster, and again decades later, when someone explains to a newer generation of engineers that the infrastructure they've never thought twice about had an origin story at all. Most people only get to read the second version. This is the first one, written while the outcome is still being decided by the people choosing to show up and do the work, which is, in the end, the only way any standard like this has ever actually succeeded.</p>`,
 };
-const PLACEHOLDER_ARTICLE_BODY = `<div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
+const PLACEHOLDER_ARTICLE_BODY = `<div class="placeholder-note">📝 Placeholder article: a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
   <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
   <h2>The shift is already underway</h2>
   <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
   <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
   <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
   <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>`;
+  <p>Sample closing section pointing the reader to the relevant next step; every article ends by routing back into the right persona flow.</p>`;
 fs.mkdirSync(path.join(ROOT,'insights'),{recursive:true});
 function formatPublicationDate(date){
   return new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(date+'T00:00:00Z'));
@@ -697,7 +697,7 @@ posts.forEach(p=>{
   page({
     file:path.join('insights',p.slug+'.html'),
     path:'/insights/'+p.slug, active:'insights',
-    title:p.title+' — onX Insights',
+    title:p.title+' | onX Insights',
     articleTitle:p.title,
     desc:p.excerpt,
     type:'article',
@@ -719,13 +719,13 @@ posts.forEach(p=>{
 /* ============================ 404 ============================ */
 page({
   file:'404.html', path:'/404', active:'',
-  title:'Page not found — onX',
+  title:'Page not found | onX',
   desc:'The page you were looking for could not be found.',
   body:`
 <section class="phero" style="--accent:var(--lime)"><div class="wrap"><div class="phero-inner" style="text-align:center;margin:0 auto">
   <div class="ptag" style="margin-left:auto;margin-right:auto">Error 404</div>
   <h1>This page took a wrong turn.</h1>
-  <p style="margin:0 auto">The page you're after doesn't exist — but the standard does. Head back and pick your path.</p>
+  <p style="margin:0 auto">The page you're after doesn't exist, but the standard does. Head back and pick your path.</p>
   <div class="btn-row" style="margin-top:32px"><a class="btn btn-primary" href="/">Back to home</a><a class="btn btn-ghost" href="/insights">Browse insights</a></div>
 </div></div></section>`
 });

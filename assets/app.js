@@ -1,5 +1,5 @@
 /* ============================================================
-   onX site — shared behaviour (runs on every page)
+   onX site: shared behaviour (runs on every page)
    ============================================================ */
 
 /* ---- LOGO LOCKUP: official COF wordmark + onX mark ----
@@ -31,7 +31,7 @@ document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().get
 /* ---- Blueprint drafting marks (parallax depth layers) ---- */
 const markSpecs=[
   {t:'mark',x:'6%',y:'18%',s:0.5,txt:'onX // ORDER NETWORK eXCHANGE'},
-  {t:'mark',x:'72%',y:'12%',s:0.32,txt:'REV 2.0 — MCP'},
+  {t:'mark',x:'72%',y:'12%',s:0.32,txt:'REV 2.0 / MCP'},
   {t:'mark',x:'82%',y:'62%',s:0.7,txt:'SCALE 1:1'},
   {t:'mark',x:'4%',y:'74%',s:0.22,txt:'12 TOOLS / 9 RESOURCES'},
   {t:'mark',x:'40%',y:'88%',s:0.6,txt:'SEC. A-A'},

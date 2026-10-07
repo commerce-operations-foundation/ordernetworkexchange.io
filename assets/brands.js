@@ -1,12 +1,12 @@
 /* ============================================================
-   Brands — onX activation tool
+   Brands: onX activation tool
    Routes a brand's activation request to the monitored COF/onX inbox.
    The Foundation coordinates outreach to the (opted-in) vendor contacts.
    ------------------------------------------------------------
    REAL CONTACTS: once a vendor has agreed to monitor & follow up,
    add them to vendorContacts below and set ROUTE_DIRECT = true to
    surface their contact in the review step. Until then we keep the
-   flow honest — no placeholder names/addresses are shown or emailed.
+   flow honest; no placeholder names or addresses are shown or emailed.
    ============================================================ */
 const ROUTE_DIRECT = false;
 const vendorContacts = {
@@ -126,6 +126,6 @@ if(actForm){
         document.getElementById('actSuccess').classList.add('show');
         document.getElementById('actSuccess').scrollIntoView({behavior:'smooth',block:'center'});
       })
-      .catch(()=>{actForm.querySelector('.form-note').innerHTML='Something went wrong — please email us directly and we\'ll pick it up.';});
+      .catch(()=>{actForm.querySelector('.form-note').innerHTML='Something went wrong. Please email us directly and we\'ll pick it up.';});
   });
 }
