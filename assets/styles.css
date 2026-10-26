@@ -2,7 +2,7 @@
   /* ---- "Blueprint" mid-tone palette ---- */
   --canvas:#0e2a3a;          /* deep blueprint blue */
   --canvas-2:#0a2230;
-  --surface:#102f41;         /* panel — a shade lighter than canvas */
+  --surface:#102f41;         /* panel, a shade lighter than canvas */
   --surface-2:#0c2735;
   --ink:#eaf4f8;             /* near-white drafting ink */
   --ink-soft:#b7d2dd;
@@ -279,7 +279,7 @@ a{color:inherit;text-decoration:none}
 .scrollanim{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.3,1)}
 .scrollanim.in{opacity:1;transform:none}
 @media(max-width:900px){.nav-links{display:none}.doors,.cards,.cards.two,.posts,.tier-grid,.foot-top{grid-template-columns:1fr}.ba{grid-template-columns:1fr}.ba .arrow-mid{transform:rotate(90deg)}.hero{padding:64px 0 44px}.proof .stat-row{gap:28px}.blueprint-marks{display:none}}
-/* ===== HOW IT WORKS — animated blueprint demo ===== */
+/* ===== HOW IT WORKS: animated blueprint demo ===== */
 .hiw{padding:90px 0 96px;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .hiw .hiw-head{text-align:center;max-width:680px;margin:0 auto 14px}
 .hiw .hiw-head h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;margin-bottom:14px}
