@@ -1,11 +1,18 @@
 /* Page bodies required by build.js */
 const b = require('./build.js');
-const { page, posts, postCard, slugify, fs, path, ROOT } = b;
+const { page, posts, visiblePosts, postCard, slugify, fs, path, ROOT } = b;
 
 const GH = 'https://github.com/commerce-operations-foundation';
 
 /* ============================ HOME ============================ */
-const homeTeaser = ['brand','tech','vision'].map(t=>posts.find(p=>p.track===t)).filter(Boolean).map(postCard).join('');
+const homeTeaser = ['brand','tech','vision'].map(t=>visiblePosts.find(p=>p.track===t)).filter(Boolean).map(postCard).join('');
+const insightTracks = [
+  {key:'brand',label:'Brand Activation'},
+  {key:'tech',label:'Vendor Engineering'},
+  {key:'si',label:'Integrator Playbook'},
+  {key:'vision',label:'The Big Picture'},
+].filter(t=>visiblePosts.some(p=>p.track===t.key));
+const insightTrackFilters = insightTracks.map(t=>`<div class="tf" data-track="${t.key}" onclick="filterPosts('${t.key}',this)">${t.label}</div>`).join('');
 page({
   file:'index.html', path:'/', active:'home',
   title:'Commerce Operations Foundation | onX',
@@ -244,13 +251,13 @@ page({
 page({
   file:'insights.html', path:'/insights', active:'insights',
   title:'Insights | Commerce Operations Foundation',
-  desc:'Three running series turning the onX standard into action: Brand Activation, Vendor Engineering, the Integrator Playbook, and the Big Picture.',
+  desc:'Three running series turning the onX standard into action: Brand Activation, Vendor Engineering, and the Big Picture.',
   body:`
 <div style="--accent:var(--violet)">
   <section class="blog-hero"><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Insights</div><div class="eyebrow" style="--accent:var(--violet)">Insights</div><h2 style="font-size:clamp(32px,4.6vw,52px)">Three series. One mission:<br>turn the standard into action.</h2>
-    <div class="track-filter" id="trackFilter"><div class="tf active" data-track="all" onclick="filterPosts('all',this)">All insights</div><div class="tf" data-track="brand" onclick="filterPosts('brand',this)">Brand Activation</div><div class="tf" data-track="tech" onclick="filterPosts('tech',this)">Vendor Engineering</div><div class="tf" data-track="si" onclick="filterPosts('si',this)">Integrator Playbook</div><div class="tf" data-track="vision" onclick="filterPosts('vision',this)">The Big Picture</div></div>
+    <div class="track-filter" id="trackFilter"><div class="tf active" data-track="all" onclick="filterPosts('all',this)">All insights</div>${insightTrackFilters}</div>
   </div></section>
-  <div class="wrap"><div class="posts" id="blogPosts">${posts.map(postCard).join('')}</div><p class="center mono" style="color:var(--muted-2);padding-bottom:60px">More onX insights are in development.</p></div>
+  <div class="wrap"><div class="posts" id="blogPosts">${visiblePosts.map(postCard).join('')}</div><p class="center mono" style="color:var(--muted-2);padding-bottom:60px">More onX insights are in development.</p></div>
 </div>
 <script>
 function filterPosts(track,el){document.querySelectorAll('#trackFilter .tf').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.querySelectorAll('#blogPosts .post').forEach(p=>{p.style.display=(track==='all'||p.dataset.track===track)?'flex':'none';});}
@@ -689,7 +696,14 @@ fs.mkdirSync(path.join(ROOT,'insights'),{recursive:true});
 function formatPublicationDate(date){
   return new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(date+'T00:00:00Z'));
 }
-posts.forEach(p=>{
+posts.filter(p=>p.draft).forEach(p=>{
+  const draftFile=path.join(ROOT,'insights',p.slug+'.html');
+  if(fs.existsSync(draftFile)){
+    fs.unlinkSync(draftFile);
+    console.log('removed draft',path.relative(ROOT,draftFile));
+  }
+});
+visiblePosts.forEach(p=>{
   const cta=TRACK_CTA[p.track];
   const articleBody=ARTICLE_BODIES[p.slug] || PLACEHOLDER_ARTICLE_BODY;
   const byline=p.published ? `
@@ -730,4 +744,4 @@ page({
 </div></div></section>`
 });
 
-console.log('\\nBuild complete:', posts.length, 'articles +', 7, 'core pages.');
+console.log('\\nBuild complete:', visiblePosts.length, 'public articles +', posts.length-visiblePosts.length, 'draft articles +', 7, 'core pages.');

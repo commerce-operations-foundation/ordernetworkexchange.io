@@ -116,19 +116,20 @@ const posts=[
   {track:'tech',label:'Vendor Engineering',title:'Mapping Your Existing APIs to the 12 onX MCP Tools',slug:'mapping-your-existing-apis-to-the-14-onx-mcp-tools',excerpt:'A technical walkthrough of aligning your order surface to the spec, including the common gaps.',read:'11 min',published:'2026-05-19',c:'#5cc4e6'},
   {track:'tech',label:'Vendor Engineering',title:'From Clone to Conformant in a Sprint: Using the Reference Server',excerpt:'How early implementers stood up a compliant endpoint faster than expected.',read:'9 min',published:'2026-02-17',c:'#5cc4e6'},
   {track:'tech',label:'Vendor Engineering',title:'Inside the Technical Steering Committee: How the Spec Evolves',excerpt:'What it means to shape onX from the inside, and how decisions get made in the open.',read:'7 min',published:'2026-02-03',c:'#5cc4e6'},
-  {track:'si',label:'Integrator Playbook',title:'Productizing onX: Turning a Standard into a Service Line',excerpt:'How to package assessment, activation, and migration into named, estimable offerings.',read:'8 min',c:'#f0a94e'},
-  {track:'si',label:'Integrator Playbook',title:'The Anatomy of a Repeatable onX Rollout',excerpt:'A reference delivery plan you can adapt across clients: scopes, milestones, and gotchas.',read:'10 min',c:'#f0a94e'},
+  {track:'si',label:'Integrator Playbook',title:'Productizing onX: Turning a Standard into a Service Line',excerpt:'How to package assessment, activation, and migration into named, estimable offerings.',read:'8 min',draft:true,c:'#f0a94e'},
+  {track:'si',label:'Integrator Playbook',title:'The Anatomy of a Repeatable onX Rollout',excerpt:'A reference delivery plan you can adapt across clients: scopes, milestones, and gotchas.',read:'10 min',draft:true,c:'#f0a94e'},
   {track:'vision',label:'The Big Picture',title:'The EDI Moment: What 40 Years of Interoperability Teaches Us',excerpt:'Why the agentic-commerce era needs its own common language, and what history predicts.',read:'9 min',published:'2026-01-20',c:'#a78bfa'},
   {track:'vision',label:'The Big Picture',title:'Foundation Launch: A New Era for Commerce Operations',excerpt:'Introducing onX, the founding members, and the road ahead for the Foundation.',read:'6 min',published:'2025-12-09',c:'#a78bfa'},
 ];
 function slugify(t){return t.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
 posts.forEach(p=>p.slug=p.slug || slugify(p.title));
+const visiblePosts=posts.filter(p=>!p.draft);
 const TRACK_ICON={brand:'📋',tech:'⚙️',si:'🧩',vision:'🔭'};
 function postCard(p){
   return `<a class="post" href="/insights/${p.slug}" data-track="${p.track}" style="--pc:${p.c}"><div class="thumb" style="background:linear-gradient(135deg, color-mix(in srgb, ${p.c} 55%, #0a2230), #0a2230 92%)"><div class="pnum">${TRACK_ICON[p.track]||'onX'}</div></div><div class="pbody"><div class="ptrack">${p.label}</div><h4>${p.title}</h4><p>${p.excerpt}</p><div class="pmeta"><span>${p.read} read</span><span>Read →</span></div></div></a>`;
 }
 
-module.exports = { page, head, nav, footer, posts, postCard, slugify, SITE, ROOT, fs, path };
+module.exports = { page, head, nav, footer, posts, visiblePosts, postCard, slugify, SITE, ROOT, fs, path };
 
 /* page bodies live in build.pages.js to keep this file readable */
 require('./build.pages.js');
