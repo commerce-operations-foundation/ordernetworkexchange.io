@@ -230,11 +230,20 @@ a{color:inherit;text-decoration:none}
 .article{max-width:760px;margin:0 auto;padding:64px 0}
 .article .atrack{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:20px}
 .article h1{font-size:clamp(32px,4.6vw,52px);letter-spacing:-.03em;line-height:1.08;margin-bottom:24px}
-.article .abyline{display:flex;align-items:center;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px;color:var(--muted);font-size:14px}
-.article .abyline .aav{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--lime),var(--blue));flex:none}
+.article .abyline{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em}
 .article .lead{font-size:21px;line-height:1.55;color:var(--ink);margin-bottom:28px;font-weight:500}
 .article p{color:var(--ink-soft);margin-bottom:22px;font-size:17px}
+.article ul{color:var(--ink-soft);margin:0 0 22px;padding-left:42px;list-style-position:outside}
+.article li{font-size:17px;margin-bottom:12px;padding-left:4px}
 .article h2{font-size:28px;margin:42px 0 16px;letter-spacing:-.02em}
+.article .memo-template{margin:24px 0 40px;padding:30px 32px 8px;background:rgba(255,255,255,.035);border:1px solid var(--line-strong);border-radius:var(--radius)}
+.article .memo-template p,.article .memo-template li{font-size:16px}
+.article .memo-template strong{color:var(--ink)}
+@media(max-width:640px){.article .memo-template{padding:24px 20px 4px}}
+.article code{font-family:'IBM Plex Mono',monospace;font-size:.9em;color:var(--blue-bright)}
+.article pre{margin:22px 0 28px;padding:20px 22px;overflow-x:auto;background:var(--canvas-2);border:1px solid var(--line-strong);border-radius:var(--radius);line-height:1.65}
+.article pre code{color:var(--ink-soft);font-size:14px;white-space:pre}
+.article .article-sources a{color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px}
 /* ---- pull quote (home) ---- */
 .pullquote{margin:0 auto;max-width:880px;position:relative;padding:8px 0 8px 36px;border-left:3px solid var(--lime)}
 .pullquote blockquote{margin:0;font-size:clamp(21px,2.6vw,28px);line-height:1.4;font-weight:500;color:var(--ink);letter-spacing:-.01em}

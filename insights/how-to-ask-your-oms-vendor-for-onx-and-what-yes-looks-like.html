@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Scripts, questions, and red flags for the conversation that starts your activation.">
 <link rel="canonical" href="https://ordernetworkexchange.io/insights/how-to-ask-your-oms-vendor-for-onx-and-what-yes-looks-like">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://ordernetworkexchange.io/insights/how-to-ask-your-oms-vendor-for-onx-and-what-yes-looks-like">
 <meta property="og:site_name" content="Commerce Operations Foundation">
 <meta property="og:title" content="How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like) — onX Insights">
@@ -13,16 +13,21 @@
 <meta property="og:image" content="https://ordernetworkexchange.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-04-21">
+<meta property="article:modified_time" content="2026-04-21">
+<meta property="article:section" content="Brand Activation">
+<meta name="author" content="Commerce Operations Foundation">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like) — onX Insights">
 <meta name="twitter:description" content="Scripts, questions, and red flags for the conversation that starts your activation.">
 <meta name="twitter:image" content="https://ordernetworkexchange.io/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like)","description":"Scripts, questions, and red flags for the conversation that starts your activation.","image":["https://ordernetworkexchange.io/og-image.png"],"datePublished":"2026-04-21","dateModified":"2026-04-21","author":{"@type":"Organization","name":"Commerce Operations Foundation","url":"https://commerceopsfoundation.org/"},"publisher":{"@type":"Organization","name":"Commerce Operations Foundation","url":"https://commerceopsfoundation.org/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ordernetworkexchange.io/insights/how-to-ask-your-oms-vendor-for-onx-and-what-yes-looks-like"}}</script>
 <title>How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like) — onX Insights</title>
 <link rel="icon" type="image/svg+xml" href="/assets/onx-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css?v=20261006-article-code">
 </head>
 <body>
 <div class="blueprint-bg"></div>
@@ -42,16 +47,58 @@
   <div class="crumbs" style="margin-bottom:30px"><a href="/">Home</a><span>/</span><a href="/insights">Insights</a><span>/</span>Brand Activation</div>
   <div class="atrack" style="color:#b6e63a">BRAND ACTIVATION SERIES</div>
   <h1>How to Ask Your OMS Vendor for onX (and What “Yes” Looks Like)</h1>
-  <div class="abyline"><div class="aav"></div><div><b style="color:var(--ink)">Commerce Operations Foundation</b><br>6 min read · Brand Activation</div></div>
+  <div class="abyline"><time datetime="2026-04-21">April 21, 2026</time></div>
   <p class="lead">Scripts, questions, and red flags for the conversation that starts your activation.</p>
-  <div class="placeholder-note">📝 Placeholder article — a sample template showing how a published onX insight would read. Real copy to be written by the COF team.</div>
-  <p>This is sample body text demonstrating the article layout, typography, and reading experience. A finished piece would open with the stakes, ground them in a concrete scenario, and walk the reader toward a clear next action.</p>
-  <h2>The shift is already underway</h2>
-  <p>Sample paragraph. The published version would establish why agent-mediated commerce changes the stakes for this audience, with data points and member examples woven in.</p>
-  <blockquote>"AI has made buying effortless. Now we need to make fulfillment intelligent."</blockquote>
-  <p>Sample paragraph connecting the thesis back to the practical path: who to talk to, what to ask for, and how onX removes the friction.</p>
-  <h2>What to do this quarter</h2>
-  <p>Sample closing section pointing the reader to the relevant next step — every article ends by routing back into the right persona flow.</p>
+  <p>If the memo did its job, you've got permission to have this conversation. That's the easy part. The harder part is that most vendors, when asked "do you support onX?" will say yes to something. The question is whether it's the same thing you mean.</p>
+
+  <p>There's no badge to look for here, no certification logo you can ask a vendor to point to on their website. onX doesn't have a formal certification program yet, which sounds like a gap but is actually the reason this conversation matters more than it would for a standard with a tidy checkbox. Real conformance right now comes down to whether a vendor has actually built against the open spec and the open reference server, or whether they've built a proprietary layer they're calling "onX-compatible." Those two things can sound identical in a sales call and mean completely different things for you six months from now.</p>
+
+  <h2>Opening the conversation</h2>
+
+  <p>You don't need to lead with jargon. Something like this works:</p>
+
+  <blockquote>"We're evaluating our order and fulfillment stack against onX, the open standard for exposing order data to AI agents. It's built on the Model Context Protocol and governed by the Commerce Operations Foundation. It’s not owned by any single vendor. Where does that sit on your roadmap, and can you walk me through what you currently support?"</blockquote>
+
+  <p>That framing does two things. It signals you know enough to ask a real follow-up question, and it puts "vendor-neutral, open governance" on the table before they've had a chance to pitch you a proprietary alternative dressed up in similar language.</p>
+
+  <h2>The questions that actually tell you something</h2>
+
+  <p>A vague "yes, we support that" isn't an answer. Instead, go deeper, here are questions that will help you get a real answer.</p>
+
+  <p><strong>"Which of the standard tools do you support?"</strong></p>
+
+  <p>onX defines a specific, shared set of operations covering order creation and updates, cancellation, fulfillment, and returns, plus queries for orders, customers, products, inventory, and fulfillment status. A vendor who's actually implemented this can name what they've covered. A vendor who can't get more specific than "yes, orders and fulfillment" probably has a partial build, which matters because an agent that can query your order status but can't process a return is only half legible.</p>
+
+  <p><strong>"Did you build this against the public reference server, or is this your own implementation?"</strong></p>
+
+  <p>The reference implementation and the spec are both public. A vendor building toward them is building something you or anyone else can independently check. A vendor who says "we built our own onX-compatible layer" is often describing exactly the kind of custom, single-purpose integration onX exists to replace, just with the standard's name attached to it for marketing purposes.</p>
+
+  <p><strong>"Are you involved with the Technical Steering Committee, or do you track its updates?"</strong></p>
+
+  <p>The spec is still evolving, with real people deciding what changes next. A vendor with no connection to that process is a vendor whose "support" can quietly drift out of date the next time the standard moves. This doesn't have to mean a seat on the committee. It just needs to mean they're watching.</p>
+
+  <p><strong>"Can we get this in writing, with a date?"</strong></p>
+
+  <p>Roadmap items that live only in a sales call tend to stay there. Ask for it in the SOW or contract renewal, even as a single line.</p>
+
+  <h2>What a real yes sounds like</h2>
+
+  <p>A vendor who's actually there will answer in specifics without you having to pull them out. They'll name which tools and resources they cover, and be upfront about the ones they don't yet. They'll point you to something public, whether that's their own documentation referencing the spec or a demo you can inspect, rather than asking you to take their word for it. They'll have an actual date attached to any gaps, not "on the roadmap" with nothing behind it. And they won't seem thrown by the question, because a vendor who's serious about this has fielded it before.</p>
+
+  <h2>Red flags worth pausing on</h2>
+
+  <ul>
+    <li>Watch for the vendor who answers "yes" immediately and then can't go one layer deeper.</li>
+    <li>Watch for "we have our own commerce AI integration that does something similar," which is usually a polite way of saying no while sounding like a yes.</li>
+    <li>Watch for enthusiasm about the idea paired with nothing concrete when you ask what's actually shipped today.</li>
+    <li>And watch for a vendor who frames this as something only relevant to a future release, months or quarters out, with no interim plan for how you'd get partial support in the meantime.</li>
+  </ul>
+
+  <p>None of these are disqualifying on their own. A vendor early in their onX build who's honest about it is a better partner than one that is overselling. What you're really listening for is whether they understand the difference between those two things. The vendor who doesn't understand the difference will end up building you the wrong solution.</p>
+
+  <h2>After the conversation</h2>
+
+  <p>If you get a real yes, or a real "not yet, but here's the date," you've done what this conversation needed to do. The next step from here moves out of your hands and into your vendor's technical team, who'll be the ones actually mapping their APIs to the standard. If it's useful, you can point them to the next post in this series, written for exactly that audience. Your job was never to build this. It was to make sure the right question got asked before the contract got signed, and now it has.</p>
   <div class="btn-row" style="justify-content:flex-start;margin-top:30px"><a class="btn btn-primary" href="/brands">Build your activation packet →</a><a class="btn btn-ghost" style="border-color:var(--line-strong)" href="/insights">← All insights</a></div>
 </article></div>
 <footer class="footer"><div class="wrap">
@@ -63,6 +110,6 @@
   </div>
   <div class="foot-bottom"><span>© <span data-year>2026</span> Commerce Operations Foundation. All rights reserved.</span><span class="mono">Built on the Model Context Protocol</span></div>
 </div></footer>
-<script src="/assets/app.js"></script>
+<script src="/assets/app.js?v=20261006-12-tools"></script>
 </body>
 </html>
